@@ -551,8 +551,10 @@ inline double binaryTanCore(double x, double tail, int reduction) {
         x = (0.7853981633974483 - x) + (3.0616169978683824e-17 - tail);
     }
     const double z = x * 2.0 * tail + x * x;
+    // The target forms z * x before multiplying the numerator polynomial.
+    // Keeping that grouping matters at the final bit for mid-EQ coefficients.
     tail = (((z * 0.0002240444485370221 - 0.022934508005756565) * z
-             + 0.3723791597597922) * z * x)
+             + 0.3723791597597922) * (z * x))
         / (((0.026065662039864542 - z * 0.00023237149408856356) * z
             - 0.5156585157290311) * z + 1.1171374792793767) + tail;
     double result = 0.0;
