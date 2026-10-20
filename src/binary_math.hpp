@@ -545,10 +545,14 @@ inline double binaryTanCore(double x, double tail, int reduction) {
     int quadrant = 0;
     if (x <= -0.68) {
         quadrant = -1;
-        x = x + 0.7853981633974483 + tail + 3.0616169978683824e-17;
+        const double reducedHigh = x + 0.7853981633974483;
+        const double reducedTail = tail + 3.0616169978683824e-17;
+        x = reducedHigh + reducedTail;
+        tail = 0.0;
     } else if (x > 0.68) {
         quadrant = 1;
         x = (0.7853981633974483 - x) + (3.0616169978683824e-17 - tail);
+        tail = 0.0;
     }
     const double z = x * 2.0 * tail + x * x;
     // The target forms z * x before multiplying the numerator polynomial.
