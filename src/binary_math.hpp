@@ -452,17 +452,23 @@ inline BinarySinCos binarySinCos(double x) {
         if (magnitude >= 0x1.0p-13) {
             const double x2 = x * x;
             const double x4 = x2 * x2;
+            // Match the target's x6 product and its subtraction within the
+            // low polynomial before adding the high polynomial.
+            const double x6 = x4 * x2;
             const double cosBase = x2 * -0.5 + 1.0;
             const double cosValue = (1.0 - cosBase) + x2 * -0.5
                 + (x2 * -0.0013888888888887398 + 0.041666666666666664) * x4
                 + (x2 * -2.755731727234489e-07 + 2.4801587298767044e-05) * x4 * x4
                 + x4 * x4 * x4 * (x2 * -1.138263981623609e-11 + 2.0876146382372144e-09)
                 + cosBase;
-            const double sinValue = x + x * x2
-                * (((x2 * 1.5918144304485914e-10 - 2.5051132068021698e-08) * x2
-                    + 2.7557316103728802e-06) * x2 * x2 * x2
-                   + (x2 * -0.00019841269836761127 + 0.00833333333333095) * x2
-                   - 0.16666666666666666);
+            const double sinHigh = ((x2 * 1.5918144304485914e-10
+                                     - 2.5051132068021698e-08) * x2
+                                     + 2.7557316103728802e-06) * x6;
+            const double sinLow = (x2 * -0.00019841269836761127
+                                   + 0.00833333333333095) * x2
+                - 0.16666666666666666;
+            const double sinPolynomial = sinHigh + sinLow;
+            const double sinValue = x + (x * x2) * sinPolynomial;
             return {sinValue, cosValue};
         }
         if (magnitude < kTinySquare)
@@ -514,9 +520,9 @@ inline BinarySinCos binarySinCos(double x) {
         }
     } else {
         const double y2 = y * y;
+        const double y6 = y2 * y2 * y2;
         const double sinPoly = (((y2 * 1.5918144304485914e-10 - 2.5051132068021698e-08)
-                                 * y2 + 2.7557316103728802e-06)
-                                * y2 * y2 * y2
+                                 * y2 + 2.7557316103728802e-06) * y6
                                 + (y2 * -0.00019841269836761127 + 0.00833333333333095)
                                     * y2 - 0.16666666666666666);
         const double sinLike = tail + (y * y2 * sinPoly - y2 * 0.5 * tail) + y;
