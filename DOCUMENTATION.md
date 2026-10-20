@@ -151,8 +151,10 @@ The following REA/Ghidra records were captured against the supplied original plu
 | EQ cascade `FUN_180013090` | `ev_a9c2ba22e8269529fef23b68425e8d7d743a0033af6bc4e85fcc62f6922c18e3` | `rea-redo-eq-cascade.json` |
 | High-shelf handler `FUN_180011e40` | `ev_2109e4c402969e14400ea04351dbf92a0342bb7ccae53262d8c467cc0428108c` | `rea-current-highshelf-handler-followup.json` |
 | Shared biquad builder `FUN_1800112b0` | `ev_58bdc7f646b07f919901fb1c37890f946f08f7a85ff205005d8110ff5ef52413` | `rea-redo-biquad-builder.json` |
-| Line sample routine `FUN_1800152c0` | `ev_4749950d134de09866b6e6bb671e7753a947ab651ff6c6008bbae04e71086249` | `rea-redo-line-process.json` |
-| Line sample-rate reset `FUN_180014860` | `ev_44b51fa7a1119068226421ca5be222586a47655ed80b587cd150daa933b593cc` | `rea-line-reset-20261020.json` |
+| Line constructor `FUN_180014320` | `ev_a8fcdeab81ff780697c53ec62a9aac8c8492a538390baa47c46b619181feecd7` | `rea-line-constructor-refresh-20261020.json` |
+| Line mode setup `FUN_180014e40` | `ev_88be6dd9dcf166895411cffa27770b6838d6e63eff7f25b71ce42db5f4f4ca98` | `rea-line-mode-refresh-20261020.json` |
+| Line sample-rate reset `FUN_180014860` | `ev_44b51fa7a1119068226421ca5be222586a47655ed80b587cd150daa933b593cc` | `rea-line-reset-refresh-20261020.json` |
+| Line sample routine `FUN_1800152c0` | `ev_4749950d134de09866b6e6bb671e7753a947ab651ff6c6008bbae04e71086249` | `rea-line-process-refresh-20261020.json` |
 | Mic sample routine `FUN_180016a90` | `ev_88fdb9d22c10f9ee2d24e047b11df352519bf4ea53361a2cd830aab4a58170b8` | `rea-redo-mic-process.json` |
 | Output formatter `FUN_180008a70` | `ev_30564e14f9b14eb8144032022afe3d232b05acc2fed1a73633b26532b8e15f19` | `rea-output-formatter-20261020.json` |
 | Control registration `FUN_18000c120` | `ev_7c184e4755d03161a77353784cf11e09e2b1dd053ef28941ca960579024fba69` | `rea-register-controls-20261020.json` |
@@ -168,6 +170,8 @@ A statically linked MinGW harness loaded the licensed original VST3 under Wine a
 A controlled Win64 comparison called the original Line constructor (`FUN_180014320`), sample-rate reset (`FUN_180014860`), mode setup (`FUN_180014e40`), and in-place sample routine (`FUN_1800152c0`) directly from the licensed VST3 under Wine. It applied the same lifecycle to the port by resetting `ModelBank` at the same rate and mode, then compared the output sample bits after each frame. The explicit sample-rate reset matters: the constructor initially sets a `0.99` final-smoother coefficient, while reset replaces it with the rate-dependent coefficient from `FUN_180014860`.
 
 Across sample rates 44.1, 48, 88.2, 96, and 192 kHz; Line modes 0–7; and multi-impulse, dual 997 Hz/16 kHz tone, and broadband-noise inputs, all 3,932,160 compared samples matched bit-for-bit. The complete result is [`line-stateful-sample-parity-20261020.json`](evidence/line-stateful-sample-parity-20261020.json). Fresh reset evidence is [`rea-line-reset-20261020.json`](evidence/rea-line-reset-20261020.json), Evidence `ev_44b51fa7a1119068226421ca5be222586a47655ed80b587cd150daa933b593cc`. A fresh reference query for the sample routine returned `ev_64939b7e7a482f6ec69e3225a426f9f07f750d932c7255dc0e1d1a2c7b71edfa`; its raw references are retained in [`rea-line-sample-xrefs-20261020.json`](evidence/rea-line-sample-xrefs-20261020.json).
+
+A current-source refresh directly loaded the licensed module and called the REA-identified constructor, sample-rate reset, mode setup, and in-place sample routine. It compared `ModelBank::process` over 20,000 deterministic noise/impulse samples in each of five modes (0, 3, 4, 5, 7) at 44.1, 48, and 96 kHz. All 300,000 output samples matched bit-for-bit. The compact run record is [`line-model-refresh-20261020.json`](evidence/line-model-refresh-20261020.json), with the fresh full REA function records linked in the table above. This rechecks the Line child routine against the current source and still does not test the parent/VST3 path.
 
 This verifies the direct modeled Line sample path for the tested lifecycle, modes, rates, and stimuli. It does not exercise VST3 host audio/parameter plumbing or parent output-factor smoothing.
 
