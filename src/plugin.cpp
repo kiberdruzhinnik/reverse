@@ -19,7 +19,8 @@ using namespace Steinberg::Vst;
 
 namespace burnley73 {
 namespace {
-constexpr ParamID kFirstParamId = 0x7300;
+// The licensed controller advertises the 15 DSP controls as IDs 0..14.
+constexpr ParamID kFirstParamId = 0;
 constexpr ParamID kHostBypassParamId = 0x62706173; // 'bpas'
 ParamID paramId(std::size_t index) { return kFirstParamId + static_cast<ParamID>(index); }
 Parameter parameterFor(ParamID id) { return static_cast<Parameter>(id - kFirstParamId); }
@@ -81,6 +82,12 @@ public:
 };
 void addParameters(ParameterContainer& container) {
     const auto& infos = parameterInfo();
+    auto* bypass = new StringListParameter(USTRING("Bypass"), kHostBypassParamId);
+    bypass->appendString(USTRING("Off"));
+    bypass->appendString(USTRING("On"));
+    bypass->getInfo().defaultNormalizedValue = 0.0;
+    bypass->setNormalized(0.0);
+    container.addParameter(bypass);
     for (std::size_t i = 0; i < kParameterCount; ++i) {
         const auto& info = infos[i];
         const ParamID id = paramId(i);
