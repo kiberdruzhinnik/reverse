@@ -30,6 +30,8 @@ The processor also recognizes a special `prst` parameter queue (`0x70727374`) an
 
 Output converts normalized host value `n` to plain dB as `−24 + 40 * n^p`, where `p = 0x1.6437c5692b3ccp−1` (about 0.695738). The inverse conversion raises `(dB + 24)/40` to `1/p`. Thus plain 0 dB is normalized about `0.479879022`, and the shipped default remains 0 dB. Licensed runtime renders at normalized `0.479879022`, `0.6`, and `0.8012644258244325` matched the native port bit-for-bit in the tested bypass setup; the latter values exercise the higher portion of the curve. This supersedes earlier notes that treated the first value as inconsistent with the constructor.
 
+A fresh REA read of Output formatter `FUN_180008a70` confirms it applies the stored exponent and range, then formats either an enum label or a numeric string at the configured precision. The registration constructor `FUN_18000c120` passes plain `0` as Output's initial value and overwrites its exponent with `0x3fe6437c5692b3cc`; combined with the recorded `−24..+16 dB` range, normalized `0.479879022` maps to approximately `0 dB`. This resolves the earlier REAPER formatting discrepancy; a serialized project value alone still cannot establish whether a host instance is fresh. Full REA records: [`rea-output-formatter-20261020.json`](evidence/rea-output-formatter-20261020.json), Evidence `ev_30564e14f9b14eb8144032022afe3d232b05acc2fed1a73633b26532b8e15f19`; [`rea-register-controls-20261020.json`](evidence/rea-register-controls-20261020.json), Evidence `ev_7c184e4755d03161a77353784cf11e09e2b1dd053ef28941ca960579024fba69`.
+
 ## Parent processing path
 
 For each sample on the ordinary stereo path, the parent:
@@ -141,7 +143,7 @@ Current unresolved work:
 
 ## REA evidence for the restored core analysis
 
-The following REA/Ghidra records were captured against the supplied original plug-in while rebuilding this document. Most older full records were removed when the repository was narrowed to the requested tracked scope; current retained records are linked in the topic sections below and in `PROGRESS.md`.
+The following REA/Ghidra records were captured against the supplied original plug-in while rebuilding this document. Historical full payloads were removed during the requested history cleanup; their Evidence IDs remain cited in the topic sections. The fresh formatter read below is retained as a full JSON record.
 
 | Target routine | Evidence | Earlier record name |
 |---|---|---|
@@ -152,8 +154,10 @@ The following REA/Ghidra records were captured against the supplied original plu
 | Line sample routine `FUN_1800152c0` | `ev_4749950d134de09866b6e6bb671e7753a947ab651ff6c6008bbae04e71086249` | `rea-redo-line-process.json` |
 | Line sample-rate reset `FUN_180014860` | `ev_44b51fa7a1119068226421ca5be222586a47655ed80b587cd150daa933b593cc` | `rea-line-reset-20261020.json` |
 | Mic sample routine `FUN_180016a90` | `ev_88fdb9d22c10f9ee2d24e047b11df352519bf4ea53361a2cd830aab4a58170b8` | `rea-redo-mic-process.json` |
+| Output formatter `FUN_180008a70` | `ev_30564e14f9b14eb8144032022afe3d232b05acc2fed1a73633b26532b8e15f19` | `rea-output-formatter-20261020.json` |
+| Control registration `FUN_18000c120` | `ev_7c184e4755d03161a77353784cf11e09e2b1dd053ef28941ca960579024fba69` | `rea-register-controls-20261020.json` |
 
-Earlier supporting records for parameter conversion, reset/setup, nonlinear helpers, low-shelf/mid handlers, the bypass path, and runtime argument captures remain in the adjacent `rea-*.json` files and are indexed chronologically in `PROGRESS.md`.
+Earlier supporting Evidence IDs for parameter conversion, reset/setup, nonlinear helpers, low-shelf/mid handlers, the bypass path, and runtime argument captures are indexed chronologically in `PROGRESS.md`; their full JSON payloads are no longer tracked.
 
 ## Latest direct high-shelf handler comparison
 
