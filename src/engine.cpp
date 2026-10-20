@@ -34,11 +34,10 @@ void initializeReferenceRandomTable() {
 
 AudioEngine::AudioEngine() {
     initializeReferenceRandomTable();
-    // FUN_1800415e0 consumes four CRT values during controller/UI setup before
-    // the parent constructs its two Mic children.
-    for (int i = 0; i < 4; ++i)
-        (void)detail::binaryMsvcRand15();
-
+    // FUN_1800415e0 is a separate UI setup path. The licensed VST3 processing
+    // path does not consume its four UI draws before constructing the Mic
+    // children; fixed-seed host captures match when the child resets take the
+    // next values directly from the parent thread's CRT stream.
     // Each Mic child constructor performs its own sample-rate reset and draws
     // the random-loop count once, before setupProcessing resets it again.
     for (auto& model : model_)
