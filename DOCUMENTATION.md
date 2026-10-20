@@ -4,7 +4,7 @@
 
 This reference describes the DSP implemented by the VST3 reconstruction in `src/`. The target examined is the licensed Windows x64 plug-in at `data/Burnley73.vst3` (SHA-256 `a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a`). Its license registration was imported into the dedicated Wine prefix before host comparisons. REA/Ghidra analysis is static unless explicitly described as a runtime render; a decompilation alone does not prove output parity.
 
-The reconstruction implements the parent processing path, six EQ sections, three model families, parameter conversion, smoothers, and model reset state. Parity is strong across many tested EQ settings and moderate-level model captures. It is not yet proven 1:1 for every control value, transient, host sample rate, or parameter transition. Five small but repeatable positive high-shelf gain outliers remain unresolved; see [Measured parity and open work](#measured-parity-and-open-work).
+The reconstruction implements the parent processing path, six EQ sections, three model families, parameter conversion, smoothers, and model reset state. Parity is strong across many tested EQ settings and moderate-level model captures. It is not yet proven 1:1 for every control value, transient, host sample rate, or parameter transition. The five formerly large positive high-shelf errors were fixed by correcting section A's nested frequency lookup. The dense sweep still has tiny residuals at 118 positive-gain settings; see [Measured parity and open work](#measured-parity-and-open-work).
 
 ## Controls and value conversion
 
@@ -25,6 +25,8 @@ The processor exposes 15 automatable controls. VST3 parameter IDs start at `0x73
 | 14 | Show Labels | Off/On | On |
 
 The model selector uses indices 0–7 for Line, 8 for the bypass model, and 9–20 for Mic. Index 5 has no model label in the binary and is displayed as `5`; index 20 is the Mic processing branch although its visible label was not resolved. The gain controls are continuous at the DSP input even though their displayed precision is 0.1 dB. Choice parameters round to the nearest declared index; booleans use a 0.5 threshold.
+
+The generic normalized-to-plain setter first evaluates the parameter's stored exponent with the binary's power routine, scales the result by `(maximum - minimum)`, adds `minimum`, and stores that value. It only enters the step-quantization branch when the parameter type tag is not `4`; the three EQ gain parameters use type `4`, so their displayed `0.1 dB` step does not quantize the DSP value. The final stored value is capped at the parameter maximum. The decompiled instruction order is `pow(normalized, exponent) * range + minimum`. This confirms the no-snap behavior but does not explain the remaining sub-`1e-12` high-shelf sweep differences, whose exact queued normalized input bits still need to be captured. REA Evidence: `ev_d3fcd28f8701359af704a2d6c6f705f8f74fd7e727951d13d37a9e86c0745283` (`FUN_18001bcb0`, `rea-current-normalized-to-plain-conversion-20261020.json`) and `ev_7549cd8a655a7bae7da79921994d12cfe5a60d91405bb972efc8450618b39017` (`FUN_1800ee000`, binary power helper, `rea-current-parameter-range-interpolation-20261020.json`).
 
 Output converts normalized host value `n` to plain dB as `−24 + 40 * n^p`, where `p = 0x1.6437c5692b3ccp−1` (about 0.695738). The inverse conversion raises `(dB + 24)/40` to `1/p`. Thus plain 0 dB is normalized about `0.479879022`, and the shipped default remains 0 dB. Licensed runtime renders at normalized `0.479879022`, `0.6`, and `0.8012644258244325` matched the native port bit-for-bit in the tested bypass setup; the latter values exercise the higher portion of the curve. This supersedes earlier notes that treated the first value as inconsistent with the constructor.
 
@@ -126,7 +128,7 @@ Runtime evidence uses licensed-original and reconstructed VST3 renders in REAPER
 
 Current unresolved work:
 
-1. Trace the upstream high-shelf polynomial/table interpolation rounding that makes the five positive-gain integer-frequency boundaries differ; capture original section-B arguments and coefficient bytes, then rerender the full 321-point sweep.
+1. Capture the exact queued normalized high-shelf gain bits, handler intermediates, and both sections' coefficients for representative settings among the 118 tiny-residual gains. The generic setter confirms continuous, unsnapped EQ gains, but does not yet identify where the remaining sub-`1e-12` differences enter.
 2. Expand EQ settings and sample-rate coverage, particularly automation and state transitions where retained smoother/filter histories matter.
 3. Establish deterministic Mic reset/random thread state across the VST3 host boundary, then compare transient and broadband response over time.
 4. Re-run end-to-end checks on the final rebuilt binaries after any parity fix. Static REA agreement and selected passing renders do not establish complete 1:1 behavior.
