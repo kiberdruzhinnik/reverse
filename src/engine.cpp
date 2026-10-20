@@ -3,7 +3,6 @@
 
 #include <algorithm>
 #include <array>
-#include <atomic>
 #include <cmath>
 #include <ctime>
 #include <mutex>
@@ -15,7 +14,6 @@ constexpr double kFloor = 1.0e-25;
 double alpha(double hz, double fs) { return 1.0 - detail::binaryExp(-2.0 * kPi * hz / fs); }
 
 std::once_flag referenceRandomTableInit;
-std::atomic<bool> firstReferenceEngine{true};
 
 void initializeReferenceRandomTable() {
     // FUN_18000c120 guards FUN_180040310 with process-global
@@ -28,14 +26,9 @@ void initializeReferenceRandomTable() {
         for (auto& value : table)
             value = detail::binaryMsvcRand15() % (999 - 11 + 1) + 11;
 
-        // FUN_1800406f0 compares entries 0xc00..0xc03 against 1850, 752,
-        // 850, and 1263. Out-of-window values consume a fallback CRT draw.
-        (void)detail::binaryMsvcRand15();
-        if (table[0xc01] < 752 || table[0xc01] > 761)
-            (void)detail::binaryMsvcRand15();
-        if (table[0xc02] < 850 || table[0xc02] > 859)
-            (void)detail::binaryMsvcRand15();
-        (void)detail::binaryMsvcRand15();
+        // FUN_1800404a0 and FUN_1800406f0 can make conditional fallback draws
+        // from derived tables. Their current values are not yet reconstructed.
+        (void)table;
     });
 }
 }
@@ -44,11 +37,8 @@ AudioEngine::AudioEngine() {
     initializeReferenceRandomTable();
     // Each controller setup calls FUN_1800415e0, which consumes four draws
     // from the same thread's CRT stream before the processor's Mic resets.
-    // The first instance's equivalent draws are represented by the four
-    // fallback draws in initializeReferenceRandomTable().
-    if (!firstReferenceEngine.exchange(false, std::memory_order_relaxed))
-        for (int i = 0; i < 4; ++i)
-            (void)detail::binaryMsvcRand15();
+    for (int i = 0; i < 4; ++i)
+        (void)detail::binaryMsvcRand15();
     // Each Mic child constructor performs its own sample-rate reset and draws
     // the random-loop count once, before setupProcessing resets it again.
     for (auto& model : model_)
