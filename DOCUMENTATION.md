@@ -173,6 +173,8 @@ Across sample rates 44.1, 48, 88.2, 96, and 192 kHz; Line modes 0–7; and multi
 
 A current-source refresh directly loaded the licensed module and called the REA-identified constructor, sample-rate reset, mode setup, and in-place sample routine. It compared `ModelBank::process` over 20,000 deterministic noise/impulse samples in each of five modes (0, 3, 4, 5, 7) at 44.1, 48, and 96 kHz. All 300,000 output samples matched bit-for-bit. The compact run record is [`line-model-refresh-20261020.json`](evidence/line-model-refresh-20261020.json), with the fresh full REA function records linked in the table above. This rechecks the Line child routine against the current source and still does not test the parent/VST3 path.
 
+A separate state-retaining transition check called the original Line mode-setup routine and `ModelBank::select` on already-running instances. Across the sequence 0→7→2→5→1→6→3→0, each mode ran for 4,096 samples before the next switch; all 65,536 samples matched bit-for-bit at 44.1 and 96 kHz. The run record is [`line-mode-transition-parity-20261020.json`](evidence/line-mode-transition-parity-20261020.json). This verifies Line child mode configuration while histories are live, but excludes parent smoothers, EQ, host parameter queues, and transitions to Mic or bypass.
+
 This verifies the direct modeled Line sample path for the tested lifecycle, modes, rates, and stimuli. It does not exercise VST3 host audio/parameter plumbing or parent output-factor smoothing.
 
 ## Deterministic Mic stateful sample parity
