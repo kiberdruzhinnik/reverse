@@ -255,7 +255,7 @@ void configureHighShelf(EqState& eq, double sampleRate, const Parameters& parame
                       gain2 * 0.0329947916812927 * gain) * 1.125;
     const double coordinate = interpolate(kTable_1800d4040, kTable_1800d42d0, T);
     eq.highShelfMix = 1.0;
-    buildHighShelf(eq.highShelfA, interpolate(kTable_1800d4040, kTable_1800d4180, T),
+    buildHighShelf(eq.highShelfA, interpolate(kTable_1800d42d0, kTable_1800d4180, coordinate),
         static_cast<int>(interpolate(kTable_1800d42d0, kTable_1800d40e0, coordinate)), sampleRate, 0.521);
     buildHighShelf(eq.highShelfB, coordinate,
         static_cast<int>(interpolate(kTable_1800d42d0, kTable_1800d4230, coordinate)), sampleRate,

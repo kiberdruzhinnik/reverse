@@ -731,7 +731,9 @@ inline double binaryPower(double base, double power) {
         + (logSum - splitLogHigh);
     const double productLow = (power - powerHigh) * logCorrection
         + (power - powerHigh) * splitLogHigh + logCorrection * powerHigh;
-    const double product = splitLogHigh * powerHigh + productLow;
+    const double productHigh = splitLogHigh * powerHigh;
+    const double product = productHigh + productLow;
+    const double productResidual = (productHigh - product) + productLow;
 
     constexpr double kRangeScale = 92.33248261689366;
     const double reduced = product * kRangeScale;
@@ -744,12 +746,14 @@ inline double binaryPower(double base, double power) {
     const double cellDouble = static_cast<double>(cell);
     const double remainder = (product - cellDouble * 0.010830424260348082)
         + cellDouble * -4.359010638708991e-10
-        + (splitLogHigh * powerHigh - product) + productLow;
-    const double remainder3 = remainder * remainder * remainder;
+        + productResidual;
+    const double remainder2 = remainder * remainder;
+    const double remainder3 = remainder2 * remainder;
+    const double remainder5 = remainder2 * remainder3;
     const double polynomial = (remainder * 0.5 + 1.0) * remainder
         + (remainder * 0.041666666666666664 + 0.16666666666666666) * remainder3
         + (remainder * 0.001388888888888889 + 0.008333333333333333)
-            * remainder * remainder * remainder3;
+            * remainder5;
     const double expHigh = kPowExpHigh[index];
     const double expLow = kPowExpLow[index];
     const double expLowTerm = expLow * polynomial + expLow;
