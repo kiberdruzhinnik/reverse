@@ -136,14 +136,14 @@ Runtime evidence uses licensed-original and reconstructed VST3 renders in REAPER
 
 Current unresolved work:
 
-1. Broaden full VST3 output comparisons across the EQ gain/frequency grids and sample rates. A current-build broadband sweep covers 20 selected high-shelf, mid, and low-shelf settings at 44.1 and 96 kHz with exact target/port output matches; the earlier 321-point high-shelf audio sweep still predates the final custom-power fix and has not been rerun in full.
-2. Compare automated EQ and model changes while histories are live, including parent input/output factor smoothing and Line/Mic/bypass transitions.
+1. Broaden full VST3 EQ output comparisons across additional gain/frequency combinations and sample rates. Current-build evidence includes all 321 High Shelf gains at 44.1 kHz, nine Low Shelf combinations across three normalized frequency values and −8/0/+8 dB at 44.1 kHz, and the earlier selected 20-case EQ matrix at 44.1/96 kHz. This leaves the full low/mid grids and denser cross-rate host coverage open.
+2. Compare automated EQ and model changes while histories are live, including parent input/output factor smoothing and Line/Mic/bypass transitions. Static selector coverage now includes Line 0–7 and bypass selector 8 at 44.1 and 96 kHz, but does not test live transitions.
 3. Establish deterministic Mic reset/random thread state across the VST3 host boundary, then compare Mic transient and broadband response over time.
 4. Re-run end-to-end checks on the final rebuilt binaries after any parity fix. Static REA agreement and selected passing renders do not establish complete 1:1 behavior.
 
 ## REA evidence for the restored core analysis
 
-The following REA/Ghidra records were captured against the supplied original plug-in while rebuilding this document. Historical full payloads were removed during the requested history cleanup; their Evidence IDs remain cited in the topic sections. The fresh formatter read below is retained as a full JSON record.
+The following REA/Ghidra records were captured against the supplied original plug-in while rebuilding this document. Historical full payloads were removed during the requested history cleanup; their Evidence IDs remain cited in the topic sections. The fresh formatter read and current Mic shaper function read are retained as full JSON records.
 
 | Target routine | Evidence | Earlier record name |
 |---|---|---|
@@ -159,6 +159,7 @@ The following REA/Ghidra records were captured against the supplied original plu
 | Mic sample-rate reset `FUN_180015da0` | `ev_7ffd4405faf0c2faa07be78942699ae88bc6b3b9b62afbfcf683779d48636e2e` | `rea-mic-reset-refresh-20261020.json` |
 | Mic mode setup `FUN_1800163f0` | `ev_999202be06f037d655b0a0b868b26d2fd19252408dd28c4f94fef6d2005f8346` | `rea-mic-mode-setup-refresh-20261020.json` |
 | Mic sample routine `FUN_180016a90` | `ev_66d08bfa6e047202e3fc217851afb4339a293bd32fe8bd1190622040b2732ce5` | `rea-mic-process-refresh-20261020.json` |
+| Mic waveshaper helper `FUN_180015ce0` | `ev_fdc39f963e7b184b598a2e03384bec53515f10a988f84d7e1bdaa7ce332b039b` | [`rea-mic-shaper-refresh-20261020.json`](evidence/rea-mic-shaper-refresh-20261020.json) |
 | CRT thread seed setter `FUN_1800794b8` | `ev_519a4d17e830c721bd22d19a5ba0a952f8b1d15d8781f33ee22053d1b510b898` | `rea-mic-rng-setter-refresh-20261020.json` |
 | Output formatter `FUN_180008a70` | `ev_30564e14f9b14eb8144032022afe3d232b05acc2fed1a73633b26532b8e15f19` | `rea-output-formatter-20261020.json` |
 | Control registration `FUN_18000c120` | `ev_7c184e4755d03161a77353784cf11e09e2b1dd053ef28941ca960579024fba69` | `rea-register-controls-20261020.json` |
@@ -180,6 +181,8 @@ A follow-up used four-second broadband noise with alternating impulses to exerci
 A dense current-build host-path sweep then rendered Line 40 at 44.1 kHz for every High Shelf gain from −16 to +16 dB in 0.1 dB steps, with the same four-second deterministic broadband noise and impulse stimulus. All 321 original/port cases matched byte-for-byte: 113,248,800 stereo Float64 output values, zero differing values, and identical per-case hashes. The original plug-in required continuing past Wine's initial debugger SIGTRAP as described above. Binary/probe hashes, each gain, and output hashes are in [`high-shelf-vst3-host-parity-20261020.json`](evidence/high-shelf-vst3-host-parity-20261020.json). This closes the previous pre-fix high-shelf render comparison; it does not cover all frequencies, other models, rates, automation, or independent stereo input.
 
 A separate current-build Low Shelf host-path grid used the same Line 40, 44.1 kHz, four-second deterministic input and swept three normalized frequency values (0, 0.5, 1) against gain values −8, 0, and +8 dB. All nine original/port renders matched byte-for-byte across 3,175,200 stereo Float64 outputs. This adds selected end-to-end Low Shelf frequency/gain combinations; intermediate values, alternate rates, automation, stereo patterns, and other model selectors remain outside this grid. Per-case hashes and exact normalized settings are in [`vst3-low-shelf-host-grid-parity-20261020.json`](evidence/vst3-low-shelf-host-grid-parity-20261020.json).
+
+Static selector renders compared every Line model (indices 0–7) and the dedicated bypass model (index 8) through the licensed original and current VST3 at 44.1 and 96 kHz. Each render used four seconds of deterministic broadband noise with impulses. All 18 host renders matched bit-for-bit across 10,087,200 stereo Float64 values. This exercises the complete Line saturation family and the separate bypass model through VST3 parameter setup, while leaving live selector transitions, parent factor smoothing, Mic host initialization, and automation untested. Per-selector output hashes and shared binary/probe hashes are in [`vst3-line-selector-host-parity-20261020.json`](evidence/vst3-line-selector-host-parity-20261020.json).
 
 ## Deterministic Line stateful sample parity
 
