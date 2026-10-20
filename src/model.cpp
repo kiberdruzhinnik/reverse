@@ -285,7 +285,7 @@ double ModelBank::processMic(double input) {
     const double xB = mic_.filterBInput.update(xBTarget);
     const double yB = mic_.filterB.processModel(xB);
 
-    const double t = mic_.dc.update(0.00161107219) + 1.34839892781 + yB;
+    const double t = mic_.dc.update(0x1.a65539785ded2p-10) + 1.34839892781 + yB;
     const double z = 0.55 * t * t - 1.0;
     const double zLow = mic_.nonlinearLow.update(z);
     const double qOld = mic_.shaped;
