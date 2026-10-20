@@ -750,10 +750,12 @@ inline double binaryPower(double base, double power) {
     const double remainder2 = remainder * remainder;
     const double remainder3 = remainder2 * remainder;
     const double remainder5 = remainder2 * remainder3;
-    const double polynomial = (remainder * 0.5 + 1.0) * remainder
-        + (remainder * 0.041666666666666664 + 0.16666666666666666) * remainder3
-        + (remainder * 0.001388888888888889 + 0.008333333333333333)
-            * remainder5;
+    const double polynomialFirst = (remainder * 0.5 + 1.0) * remainder;
+    const double polynomialSecond = (remainder * 0.041666666666666664 + 0.16666666666666666)
+        * remainder3;
+    const double polynomialThird = (remainder * 0.001388888888888889 + 0.008333333333333333)
+        * remainder5;
+    const double polynomial = polynomialFirst + (polynomialSecond + polynomialThird);
     const double expHigh = kPowExpHigh[index];
     const double expLow = kPowExpLow[index];
     const double expLowTerm = expLow * polynomial + expLow;
