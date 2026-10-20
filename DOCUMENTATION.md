@@ -126,7 +126,7 @@ Selector 8 still processes audio. It applies `input + 0.03*(input-low)` and a de
 
 ## Measured parity and open work
 
-Runtime evidence uses licensed-original and reconstructed VST3 renders in REAPER or a local Wine VST3 harness, with channel alignment and paired parameter values recorded in `PROGRESS.md`. No REAPER MCP was used. At 44.1 kHz, captured 997 Hz Mic 5/10/60 tones showed close deterministic output; Mic 60's remaining error was concentrated in near-Nyquist folded harmonics. Additional paired Mic sine and noise captures at 44.1/48 kHz approached the original's run-to-run variation. A four-second Mic 60 impulse's late modulation tail also varied between original runs, so it is not a clean deterministic parity measure without matched reset randomness.
+Runtime evidence uses licensed-original and reconstructed VST3 renders in REAPER or a local Wine VST3 harness, with channel alignment and paired parameter values recorded in `PROGRESS.md`. No REAPER MCP was used. Direct child-sample comparisons now match the licensed Line processor bit-for-bit for 3,932,160 samples across all eight Line modes and five sample rates, and the Mic processor bit-for-bit for 5,898,240 samples across selectors 9–20 and five rates when its reset random draw is aligned. Earlier VST3-hosted Mic tone captures at 44.1 kHz showed close deterministic output; Mic 60 residuals were concentrated in near-Nyquist folded harmonics. The four-second Mic 60 impulse tail varied between original runs, so host-level transient parity still needs matched constructor/reset random history.
 
 Current unresolved work:
 
@@ -137,7 +137,7 @@ Current unresolved work:
 
 ## REA evidence for the restored core analysis
 
-The following REA/Ghidra records were captured against the supplied original plug-in while rebuilding this document. Their raw JSON files were removed from the current tree when the repository was narrowed to the requested tracked scope; earlier revisions retain those artifacts.
+The following REA/Ghidra records were captured against the supplied original plug-in while rebuilding this document. Most older full records were removed when the repository was narrowed to the requested tracked scope; current retained records are linked in the topic sections below and in `PROGRESS.md`.
 
 | Target routine | Evidence | Earlier record name |
 |---|---|---|
@@ -146,13 +146,22 @@ The following REA/Ghidra records were captured against the supplied original plu
 | High-shelf handler `FUN_180011e40` | `ev_2109e4c402969e14400ea04351dbf92a0342bb7ccae53262d8c467cc0428108c` | `rea-current-highshelf-handler-followup.json` |
 | Shared biquad builder `FUN_1800112b0` | `ev_58bdc7f646b07f919901fb1c37890f946f08f7a85ff205005d8110ff5ef52413` | `rea-redo-biquad-builder.json` |
 | Line sample routine `FUN_1800152c0` | `ev_4749950d134de09866b6e6bb671e7753a947ab651ff6c6008bbae04e71086249` | `rea-redo-line-process.json` |
+| Line sample-rate reset `FUN_180014860` | `ev_44b51fa7a1119068226421ca5be222586a47655ed80b587cd150daa933b593cc` | `rea-line-reset-20261020.json` |
 | Mic sample routine `FUN_180016a90` | `ev_88fdb9d22c10f9ee2d24e047b11df352519bf4ea53361a2cd830aab4a58170b8` | `rea-redo-mic-process.json` |
 
 Earlier supporting records for parameter conversion, reset/setup, nonlinear helpers, low-shelf/mid handlers, the bypass path, and runtime argument captures remain in the adjacent `rea-*.json` files and are indexed chronologically in `PROGRESS.md`.
 
 ## Latest direct high-shelf handler comparison
 
-A statically linked MinGW harness loaded the licensed original VST3 under Wine and called `FUN_180011e40` across 321 requested gains from −16 to +16 dB in 0.1 dB increments at 44.1 kHz, then repeated the sweep at 48 and 96 kHz. All 1,926 builder calls matched the port on gain, integer frequency, shape, and sample rate. All active custom-power outputs and every coefficient bit matched at each rate. A breakpoint capture localized the former +9.9 dB discrepancy to the polynomial summation tree in `FUN_1800ee000`: the target adds the second and third terms, then adds the first. `binaryPower` now follows that order. Evidence: `evidence/high-shelf-handler-bit-parity-20261020.json`, `evidence/high-shelf-handler-multirate-parity-20261020.json`, and REA helper record `evidence/rea-power-helper-active-mismatch-20261020.json`. The current plugin was rebuilt as static MinGW Win64 (`88b56c129ef2dc6d35f4bcb35cb55150c46e0fa43ef1f47fb802cd383d3dd405`). The existing end-to-end Windows host probe breaks inside Wine before writing audio with both the licensed original and reconstructed plugin, so this probe cannot establish sample-level parity. The current build’s render parity remains unverified.
+A statically linked MinGW harness loaded the licensed original VST3 under Wine and called `FUN_180011e40` across 321 requested gains from −16 to +16 dB in 0.1 dB increments at 44.1 kHz, then repeated the sweep at 48 and 96 kHz. All 1,926 builder calls matched the port on gain, integer frequency, shape, and sample rate. All active custom-power outputs and every coefficient bit matched at each rate. A breakpoint capture localized the former +9.9 dB discrepancy to the polynomial summation tree in `FUN_1800ee000`: the target adds the second and third terms, then adds the first. `binaryPower` now follows that order. Evidence: `evidence/high-shelf-handler-bit-parity-20261020.json`, `evidence/high-shelf-handler-multirate-parity-20261020.json`, and REA helper record `evidence/rea-power-helper-active-mismatch-20261020.json`. The current plugin was rebuilt as static MinGW Win64 (`82013d833fc9b3e36612d8e75c77d2cc77662e920c9bd4bc2595898d4f305716`); this digest includes the later Mic DC coefficient correction. The existing end-to-end Windows host probe breaks inside Wine before writing audio with both the licensed original and reconstructed plugin, so this probe cannot establish sample-level parity. The current build’s render parity remains unverified.
+
+## Deterministic Line stateful sample parity
+
+A controlled Win64 comparison called the original Line constructor (`FUN_180014320`), sample-rate reset (`FUN_180014860`), mode setup (`FUN_180014e40`), and in-place sample routine (`FUN_1800152c0`) directly from the licensed VST3 under Wine. It applied the same lifecycle to the port by resetting `ModelBank` at the same rate and mode, then compared the output sample bits after each frame. The explicit sample-rate reset matters: the constructor initially sets a `0.99` final-smoother coefficient, while reset replaces it with the rate-dependent coefficient from `FUN_180014860`.
+
+Across sample rates 44.1, 48, 88.2, 96, and 192 kHz; Line modes 0–7; and multi-impulse, dual 997 Hz/16 kHz tone, and broadband-noise inputs, all 3,932,160 compared samples matched bit-for-bit. The complete result is [`line-stateful-sample-parity-20261020.json`](evidence/line-stateful-sample-parity-20261020.json). Fresh reset evidence is [`rea-line-reset-20261020.json`](evidence/rea-line-reset-20261020.json), Evidence `ev_44b51fa7a1119068226421ca5be222586a47655ed80b587cd150daa933b593cc`. A fresh reference query for the sample routine returned `ev_64939b7e7a482f6ec69e3225a426f9f07f750d932c7255dc0e1d1a2c7b71edfa`; its raw references are retained in [`rea-line-sample-xrefs-20261020.json`](evidence/rea-line-sample-xrefs-20261020.json).
+
+This verifies the direct modeled Line sample path for the tested lifecycle, modes, rates, and stimuli. It does not exercise VST3 host audio/parameter plumbing or parent output-factor smoothing.
 
 ## Deterministic Mic stateful sample parity
 
