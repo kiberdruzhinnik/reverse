@@ -136,7 +136,7 @@ Runtime evidence uses licensed-original and reconstructed VST3 renders in REAPER
 
 Current unresolved work:
 
-1. Broaden full VST3 output comparisons across the EQ gain/frequency grids and sample rates. The current Win64 build now matches the licensed original bit-for-bit for four selected parent-path cases; the earlier 321-point high-shelf audio sweep still predates the final custom-power fix and has not been rerun in full.
+1. Broaden full VST3 output comparisons across the EQ gain/frequency grids and sample rates. A current-build broadband sweep covers 20 selected high-shelf, mid, and low-shelf settings at 44.1 and 96 kHz with exact target/port output matches; the earlier 321-point high-shelf audio sweep still predates the final custom-power fix and has not been rerun in full.
 2. Compare automated EQ and model changes while histories are live, including parent input/output factor smoothing and Line/Mic/bypass transitions.
 3. Establish deterministic Mic reset/random thread state across the VST3 host boundary, then compare Mic transient and broadband response over time.
 4. Re-run end-to-end checks on the final rebuilt binaries after any parity fix. Static REA agreement and selected passing renders do not establish complete 1:1 behavior.
@@ -174,6 +174,8 @@ A statically linked MinGW harness loaded the licensed original VST3 under Wine a
 The licensed target and current MinGW Win64 VST3 were rendered through the retained VST3 host probes using mono Float64 997 Hz sine inputs at 0.1 amplitude. The host emitted stereo Float64 output. At 44.1 kHz, Line 40 with default EQ, High Shelf +1.4 dB, and Mid 3.2 kHz at +9.6 dB each matched bit-for-bit across 176,400 frames. A combined Mid/High Shelf case at 96 kHz also matched across 384,000 frames. The combined four cases contain 1,826,400 output doubles; each original/port pair has identical bytes and SHA-256. Full settings, binary hashes, inputs, and output hashes are in [`vst3-parent-render-parity-20261020.json`](evidence/vst3-parent-render-parity-20261020.json). The compared target hash is `a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a`; the port bundle hash is `e7da601840aba61e184c77613711ffc2798d34ec147605f58a7652c54fb4b2e4`.
 
 The original host probe hit Wine's initial `ntdll!DbgBreakPoint` SIGTRAP before loading the plug-in. Continuing past that Wine debugger stop with SIGTRAP set to `nostop/noprint/nopass` allowed the probe to load the licensed target, process the full input, write output, and exit normally. This is a test-environment workaround. These renders establish exact output for the listed VST3 settings and host path; they do not cover exhaustive EQ values, block sizes, automation, independent stereo input patterns, Mic host transients, or transitions between model families.
+
+A follow-up used four-second broadband noise with alternating impulses to exercise filter response across frequency. Twenty matched renders all passed bit-for-bit: High Shelf at −16, −9.6, 0, +9.6, and +16 dB at 44.1 and 96 kHz; Mid at 360, 1,600, and 7,200 Hz with ±9.6 dB at 44.1 kHz; and Low Shelf at 35 and 220 Hz with ±9.6 dB at 44.1 kHz. These cases compared 9,132,000 stereo output doubles. Full per-case parameters and hashes are in [`vst3-broadband-eq-parity-20261020.json`](evidence/vst3-broadband-eq-parity-20261020.json). All cases used Line 40 and the same current port bundle; exhaustive automation and the remaining gain/frequency combinations are still open.
 
 ## Deterministic Line stateful sample parity
 
