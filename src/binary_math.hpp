@@ -752,8 +752,8 @@ inline double binaryPower(double base, double power) {
             * remainder * remainder * remainder3;
     const double expHigh = kPowExpHigh[index];
     const double expLow = kPowExpLow[index];
-    const double mantissaResult = expHigh * polynomial + expLow * polynomial
-        + expLow + expHigh;
+    const double expLowTerm = expLow * polynomial + expLow;
+    const double mantissaResult = expHigh * polynomial + expLowTerm + expHigh;
     const int scaleExponent = exponent + 0x3ff;
     if (scaleExponent <= 0 || scaleExponent >= 0x7ff)
         return std::pow(base, power);
