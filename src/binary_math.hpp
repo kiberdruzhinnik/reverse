@@ -487,7 +487,7 @@ inline BinarySinCos binarySinCos(double x) {
     const std::uint64_t yExponent = (yBits & 0x7ff0000000000000ULL) >> 52;
     const std::uint64_t xExponent = (xBits & 0x7ff0000000000000ULL) >> 52;
     if (static_cast<std::int64_t>(xExponent) - static_cast<std::int64_t>(yExponent) > 15) {
-        const double correctedR = positive - q * 6.077100506303966e-11;
+        const double correctedR = r - q * 6.077100506303966e-11;
         tail = q * 2.0222662487959506e-21
             - ((r - correctedR) - q * 6.077100506303966e-11);
         r = correctedR;
