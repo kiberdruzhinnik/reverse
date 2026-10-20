@@ -3,8 +3,10 @@
 
 #include <algorithm>
 #include <array>
+#include <atomic>
 #include <cmath>
 #include <ctime>
+#include <mutex>
 
 namespace burnley73 {
 namespace {
@@ -12,32 +14,41 @@ constexpr double kPi = 3.14159265358979323846264338327950288;
 constexpr double kFloor = 1.0e-25;
 double alpha(double hz, double fs) { return 1.0 - detail::binaryExp(-2.0 * kPi * hz / fs); }
 
-void initializeReferenceRandomTable() {
-    // Static initialization sets DAT_1800e59e8 to zero, and the analyzed
-    // constructor path never makes it nonzero. Thus each parent instance calls
-    // FUN_180040310, which reseeds this thread from _time64.
-    detail::binaryMsvcSrand(static_cast<std::uint32_t>(std::time(nullptr)));
-    std::array<std::int32_t, 0xc08> table{};
-    for (auto& value : table)
-        value = detail::binaryMsvcRand15() % (999 - 11 + 1) + 11;
+std::once_flag referenceRandomTableInit;
+std::atomic<bool> firstReferenceEngine{true};
 
-    // FUN_1800406f0 compares entries 0xc00..0xc03 against 1850, 752,
-    // 850, and 1263. Out-of-window values consume a fallback CRT draw.
-    (void)detail::binaryMsvcRand15();
-    if (table[0xc01] < 752 || table[0xc01] > 761)
+void initializeReferenceRandomTable() {
+    // FUN_18000c120 guards FUN_180040310 with process-global
+    // DAT_1800e59e8. The initializer increments that guard, so only the
+    // first engine in a process seeds the calling thread and advances it
+    // through the shared 0xc08-entry table and its conditional fallback draws.
+    std::call_once(referenceRandomTableInit, [] {
+        detail::binaryMsvcSrand(static_cast<std::uint32_t>(std::time(nullptr)));
+        std::array<std::int32_t, 0xc08> table{};
+        for (auto& value : table)
+            value = detail::binaryMsvcRand15() % (999 - 11 + 1) + 11;
+
+        // FUN_1800406f0 compares entries 0xc00..0xc03 against 1850, 752,
+        // 850, and 1263. Out-of-window values consume a fallback CRT draw.
         (void)detail::binaryMsvcRand15();
-    if (table[0xc02] < 850 || table[0xc02] > 859)
+        if (table[0xc01] < 752 || table[0xc01] > 761)
+            (void)detail::binaryMsvcRand15();
+        if (table[0xc02] < 850 || table[0xc02] > 859)
+            (void)detail::binaryMsvcRand15();
         (void)detail::binaryMsvcRand15();
-    (void)detail::binaryMsvcRand15();
+    });
 }
 }
 
 AudioEngine::AudioEngine() {
     initializeReferenceRandomTable();
-    // FUN_1800415e0 is a separate UI setup path. The licensed VST3 processing
-    // path does not consume its four UI draws before constructing the Mic
-    // children; fixed-seed host captures match when the child resets take the
-    // next values directly from the parent thread's CRT stream.
+    // Each controller setup calls FUN_1800415e0, which consumes four draws
+    // from the same thread's CRT stream before the processor's Mic resets.
+    // The first instance's equivalent draws are represented by the four
+    // fallback draws in initializeReferenceRandomTable().
+    if (!firstReferenceEngine.exchange(false, std::memory_order_relaxed))
+        for (int i = 0; i < 4; ++i)
+            (void)detail::binaryMsvcRand15();
     // Each Mic child constructor performs its own sample-rate reset and draws
     // the random-loop count once, before setupProcessing resets it again.
     for (auto& model : model_)
