@@ -1,0 +1,1032 @@
+{
+  "record_type": "runtime-dsp-parity",
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "f7731d614ac17e01adabd10e62b0668b643466a274f2e3dfd2bf8685a2a9f4fa",
+    "build": "Win64 MinGW static-runtime VST3"
+  },
+  "host": {
+    "path": "codex-tmp/host-work/isolated-multinstance-mixed-eq-host.exe",
+    "sha256": "a5c20b7cf23bc72917d7ca9b106028fe9d5bcd9c8ba84ebdd831a5ee7c8b28ab",
+    "source_path": "codex-tmp/host-work/isolated-multinstance-mixed-eq-host.cpp",
+    "source_sha256": "a83cdf39f9a9d6b8b4150d72cc51803184c26870512fe1e725199c269328c466",
+    "platform": "Win64 under Wine",
+    "instances_in_one_process": [
+      "target-0",
+      "port-0",
+      "target-1",
+      "port-1"
+    ],
+    "host_threads": 1,
+    "process_context": "offline Float64, state 0x2400",
+    "input_policy": "Fresh copy of every original block for each plugin instance; selector ID 6 is queued at 0.5 every block along with six EQ parameter queues."
+  },
+  "automation": {
+    "segment_frames": 1024,
+    "parameter_ids": {
+      "low_shelf_frequency": 1,
+      "low_shelf_gain": 2,
+      "mid_frequency": 3,
+      "mid_gain": 4,
+      "high_shelf_gain": 5,
+      "model_selector": 6,
+      "eq_in": 12
+    },
+    "segments": [
+      {
+        "low_shelf_freq": {
+          "normalized": 0.3333333333333333,
+          "index": 1,
+          "hz": 60
+        },
+        "low_shelf_gain": {
+          "normalized": 0.75,
+          "db": 8
+        },
+        "mid_freq": {
+          "normalized": 0.4,
+          "index": 2,
+          "hz": 1600
+        },
+        "mid_gain": {
+          "normalized": 0.25,
+          "db": -8
+        },
+        "high_shelf_gain": {
+          "normalized": 0.75,
+          "db": 8
+        },
+        "eq_in": true
+      },
+      {
+        "low_shelf_freq": {
+          "normalized": 0.6666666666666666,
+          "index": 2,
+          "hz": 110
+        },
+        "low_shelf_gain": {
+          "normalized": 0.25,
+          "db": -8
+        },
+        "mid_freq": {
+          "normalized": 0.8,
+          "index": 4,
+          "hz": 4800
+        },
+        "mid_gain": {
+          "normalized": 0.75,
+          "db": 8
+        },
+        "high_shelf_gain": {
+          "normalized": 0.25,
+          "db": -8
+        },
+        "eq_in": true
+      },
+      {
+        "low_shelf_freq": {
+          "normalized": 0,
+          "index": 0,
+          "hz": 35
+        },
+        "low_shelf_gain": {
+          "normalized": 0.625,
+          "db": 4
+        },
+        "mid_freq": {
+          "normalized": 1,
+          "index": 5,
+          "hz": 7200
+        },
+        "mid_gain": {
+          "normalized": 0.625,
+          "db": 4
+        },
+        "high_shelf_gain": {
+          "normalized": 0.625,
+          "db": 4
+        },
+        "eq_in": true
+      },
+      {
+        "low_shelf_freq": {
+          "normalized": 1,
+          "index": 3,
+          "hz": 220
+        },
+        "low_shelf_gain": {
+          "normalized": 0.375,
+          "db": -4
+        },
+        "mid_freq": {
+          "normalized": 0.2,
+          "index": 1,
+          "hz": 700
+        },
+        "mid_gain": {
+          "normalized": 0.375,
+          "db": -4
+        },
+        "high_shelf_gain": {
+          "normalized": 0.375,
+          "db": -4
+        },
+        "eq_in": true
+      },
+      {
+        "low_shelf_freq": {
+          "normalized": 0.3333333333333333,
+          "index": 1,
+          "hz": 60
+        },
+        "low_shelf_gain": {
+          "normalized": 0.75,
+          "db": 8
+        },
+        "mid_freq": {
+          "normalized": 0.6,
+          "index": 3,
+          "hz": 3200
+        },
+        "mid_gain": {
+          "normalized": 0.75,
+          "db": 8
+        },
+        "high_shelf_gain": {
+          "normalized": 0.5,
+          "db": 0
+        },
+        "eq_in": false
+      },
+      {
+        "low_shelf_freq": {
+          "normalized": 0.6666666666666666,
+          "index": 2,
+          "hz": 110
+        },
+        "low_shelf_gain": {
+          "normalized": 0.25,
+          "db": -8
+        },
+        "mid_freq": {
+          "normalized": 0.4,
+          "index": 2,
+          "hz": 1600
+        },
+        "mid_gain": {
+          "normalized": 0.25,
+          "db": -8
+        },
+        "high_shelf_gain": {
+          "normalized": 0.5,
+          "db": 0
+        },
+        "eq_in": true
+      },
+      {
+        "low_shelf_freq": {
+          "normalized": 0,
+          "index": 0,
+          "hz": 35
+        },
+        "low_shelf_gain": {
+          "normalized": 0.5,
+          "db": 0
+        },
+        "mid_freq": {
+          "normalized": 0,
+          "index": 0,
+          "hz": 360
+        },
+        "mid_gain": {
+          "normalized": 0.5,
+          "db": 0
+        },
+        "high_shelf_gain": {
+          "normalized": 0.5,
+          "db": 0
+        },
+        "eq_in": true
+      },
+      {
+        "low_shelf_freq": {
+          "normalized": 1,
+          "index": 3,
+          "hz": 220
+        },
+        "low_shelf_gain": {
+          "normalized": 0.5,
+          "db": 0
+        },
+        "mid_freq": {
+          "normalized": 1,
+          "index": 5,
+          "hz": 7200
+        },
+        "mid_gain": {
+          "normalized": 0.5,
+          "db": 0
+        },
+        "high_shelf_gain": {
+          "normalized": 0.5,
+          "db": 0
+        },
+        "eq_in": true
+      }
+    ]
+  },
+  "runs": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "frames_per_instance": 8192,
+      "sample_format": "Float64",
+      "model_selector_normalized": 0.5,
+      "model_selector_index": 10,
+      "model": "Mic 10",
+      "input_sha256": "f0334b0a57058dbfd9e5eff7b283beb470929a0458e9ce1d023fc4e77ff04569",
+      "input_after_sha256": "f0334b0a57058dbfd9e5eff7b283beb470929a0458e9ce1d023fc4e77ff04569",
+      "input_unchanged": true,
+      "instance_output_sha256": {
+        "target-0": "aa948b5019e1b1507710102054aff969327f2042dbf5f58a5b5783d6d8cf4e1d",
+        "port-0": "aa948b5019e1b1507710102054aff969327f2042dbf5f58a5b5783d6d8cf4e1d",
+        "target-1": "d5a04a23dd04e3df8e12692820fe21adc4f7ccb5005928077e6a2c2427001b36",
+        "port-1": "d5a04a23dd04e3df8e12692820fe21adc4f7ccb5005928077e6a2c2427001b36"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0.3333333333333333,
+              "index": 1,
+              "hz": 60
+            },
+            "low_shelf_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "mid_freq": {
+              "normalized": 0.4,
+              "index": 2,
+              "hz": 1600
+            },
+            "mid_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "high_shelf_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "7b3efc62b418df30b44925bdf843c757ff609f1668f78147e92ef81c371b7a17",
+              "port_segment_sha256": "7b3efc62b418df30b44925bdf843c757ff609f1668f78147e92ef81c371b7a17"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "7476d9a415238562dfa6e478f89cf52447751e420d55918f74dbe43bb04572db",
+              "port_segment_sha256": "7476d9a415238562dfa6e478f89cf52447751e420d55918f74dbe43bb04572db"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 1024,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0.6666666666666666,
+              "index": 2,
+              "hz": 110
+            },
+            "low_shelf_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "mid_freq": {
+              "normalized": 0.8,
+              "index": 4,
+              "hz": 4800
+            },
+            "mid_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "high_shelf_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "c22ea2e69099dfa566c7c4e3bfa653ccdf53dc7c78197b55fbf1f6ce46ec1ca5",
+              "port_segment_sha256": "c22ea2e69099dfa566c7c4e3bfa653ccdf53dc7c78197b55fbf1f6ce46ec1ca5"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "65767ad74202f4231d6bb4906f8b0acf9f2c1a99cfead6e13428798ccd152dc3",
+              "port_segment_sha256": "65767ad74202f4231d6bb4906f8b0acf9f2c1a99cfead6e13428798ccd152dc3"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 2048,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0,
+              "index": 0,
+              "hz": 35
+            },
+            "low_shelf_gain": {
+              "normalized": 0.625,
+              "db": 4
+            },
+            "mid_freq": {
+              "normalized": 1,
+              "index": 5,
+              "hz": 7200
+            },
+            "mid_gain": {
+              "normalized": 0.625,
+              "db": 4
+            },
+            "high_shelf_gain": {
+              "normalized": 0.625,
+              "db": 4
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "acc8553e04c87d87404fbc3a318874512040c0fc7d7a053804877bb29932ed6b",
+              "port_segment_sha256": "acc8553e04c87d87404fbc3a318874512040c0fc7d7a053804877bb29932ed6b"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "329e41f1369b2ce900abdca20b905684920196038970c9128aa8943c1e75977d",
+              "port_segment_sha256": "329e41f1369b2ce900abdca20b905684920196038970c9128aa8943c1e75977d"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 3072,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 1,
+              "index": 3,
+              "hz": 220
+            },
+            "low_shelf_gain": {
+              "normalized": 0.375,
+              "db": -4
+            },
+            "mid_freq": {
+              "normalized": 0.2,
+              "index": 1,
+              "hz": 700
+            },
+            "mid_gain": {
+              "normalized": 0.375,
+              "db": -4
+            },
+            "high_shelf_gain": {
+              "normalized": 0.375,
+              "db": -4
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "de6cf6385f302a321bd4e3cd258d1d18ded7948446055f7681585cf67fb1947d",
+              "port_segment_sha256": "de6cf6385f302a321bd4e3cd258d1d18ded7948446055f7681585cf67fb1947d"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "b13500eb97fdc12a63e2d3a2f023a24ebb5ed2dea503e8e70fe0b7ecace034cc",
+              "port_segment_sha256": "b13500eb97fdc12a63e2d3a2f023a24ebb5ed2dea503e8e70fe0b7ecace034cc"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 4096,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0.3333333333333333,
+              "index": 1,
+              "hz": 60
+            },
+            "low_shelf_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "mid_freq": {
+              "normalized": 0.6,
+              "index": 3,
+              "hz": 3200
+            },
+            "mid_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "high_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "eq_in": false
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "ceb1455642a6239cb3e4338edf84c5d72143e068d1a0b13a722cb350ce770ae2",
+              "port_segment_sha256": "ceb1455642a6239cb3e4338edf84c5d72143e068d1a0b13a722cb350ce770ae2"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "f0f40009f6e59bc3ca05af5c9a3d2a2d6d52c4324ce484eeab72050dbc6991fa",
+              "port_segment_sha256": "f0f40009f6e59bc3ca05af5c9a3d2a2d6d52c4324ce484eeab72050dbc6991fa"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 5120,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0.6666666666666666,
+              "index": 2,
+              "hz": 110
+            },
+            "low_shelf_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "mid_freq": {
+              "normalized": 0.4,
+              "index": 2,
+              "hz": 1600
+            },
+            "mid_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "high_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "0c8d074ac1c3075431bf483eab6468b3f273d0fdc187371f33fec12992b937e3",
+              "port_segment_sha256": "0c8d074ac1c3075431bf483eab6468b3f273d0fdc187371f33fec12992b937e3"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "4297fcb299c6097b47ef83d2c5f993d6bdbbc9548bcee8d88513985b427eb213",
+              "port_segment_sha256": "4297fcb299c6097b47ef83d2c5f993d6bdbbc9548bcee8d88513985b427eb213"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 6144,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0,
+              "index": 0,
+              "hz": 35
+            },
+            "low_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "mid_freq": {
+              "normalized": 0,
+              "index": 0,
+              "hz": 360
+            },
+            "mid_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "high_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "c58186770f9afec438eafb5d15eab3c5fc88894d25f37e6d45e9e1b40c78b71b",
+              "port_segment_sha256": "c58186770f9afec438eafb5d15eab3c5fc88894d25f37e6d45e9e1b40c78b71b"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "90b8ff38c51637e0aac0be2d442ed27cb291e7a8984c33e90161967f8e4372de",
+              "port_segment_sha256": "90b8ff38c51637e0aac0be2d442ed27cb291e7a8984c33e90161967f8e4372de"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 7168,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 1,
+              "index": 3,
+              "hz": 220
+            },
+            "low_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "mid_freq": {
+              "normalized": 1,
+              "index": 5,
+              "hz": 7200
+            },
+            "mid_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "high_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "ee51f54869a3474605759c4c5968d7d2ff85e52e883f3323e5d0d3438dc47e08",
+              "port_segment_sha256": "ee51f54869a3474605759c4c5968d7d2ff85e52e883f3323e5d0d3438dc47e08"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "6c40194813bafe8985de0c27eefe98e8d2697a87aa63a53ac12e3181ad73d5a4",
+              "port_segment_sha256": "6c40194813bafe8985de0c27eefe98e8d2697a87aa63a53ac12e3181ad73d5a4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "frames_per_instance": 8192,
+      "sample_format": "Float64",
+      "model_selector_normalized": 0.5,
+      "model_selector_index": 10,
+      "model": "Mic 10",
+      "input_sha256": "c9cd8649cf6f90f8b2b7cbea14c1f9cf41ed8a1e0142b640a35d977f68e698f2",
+      "input_after_sha256": "c9cd8649cf6f90f8b2b7cbea14c1f9cf41ed8a1e0142b640a35d977f68e698f2",
+      "input_unchanged": true,
+      "instance_output_sha256": {
+        "target-0": "1a54eceffc5223bbeb2497dd2a558a1c59f1457b8ce9606369f59880e8b216de",
+        "port-0": "1a54eceffc5223bbeb2497dd2a558a1c59f1457b8ce9606369f59880e8b216de",
+        "target-1": "63f7c0912e34c6a85823ff8195fc47ae9243a61c2567dc4de9b0c24ac9b2565d",
+        "port-1": "63f7c0912e34c6a85823ff8195fc47ae9243a61c2567dc4de9b0c24ac9b2565d"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0.3333333333333333,
+              "index": 1,
+              "hz": 60
+            },
+            "low_shelf_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "mid_freq": {
+              "normalized": 0.4,
+              "index": 2,
+              "hz": 1600
+            },
+            "mid_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "high_shelf_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "19a67014985d875e9cb8c56b8ec84decaaec98a05b4c61187dd8f13730e14125",
+              "port_segment_sha256": "19a67014985d875e9cb8c56b8ec84decaaec98a05b4c61187dd8f13730e14125"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "149d100ad67cbc0ea967f482c250065994292630d8563687f85ab2ebb061a705",
+              "port_segment_sha256": "149d100ad67cbc0ea967f482c250065994292630d8563687f85ab2ebb061a705"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 1024,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0.6666666666666666,
+              "index": 2,
+              "hz": 110
+            },
+            "low_shelf_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "mid_freq": {
+              "normalized": 0.8,
+              "index": 4,
+              "hz": 4800
+            },
+            "mid_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "high_shelf_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "04aaa5b5288d5e400c92c705bffa8ec4c2aaac046e5a29bb363e7abfb9177516",
+              "port_segment_sha256": "04aaa5b5288d5e400c92c705bffa8ec4c2aaac046e5a29bb363e7abfb9177516"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "e9484a989db48df3aca1f14f6f9398841293a649324cec2061c83605e86e7001",
+              "port_segment_sha256": "e9484a989db48df3aca1f14f6f9398841293a649324cec2061c83605e86e7001"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 2048,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0,
+              "index": 0,
+              "hz": 35
+            },
+            "low_shelf_gain": {
+              "normalized": 0.625,
+              "db": 4
+            },
+            "mid_freq": {
+              "normalized": 1,
+              "index": 5,
+              "hz": 7200
+            },
+            "mid_gain": {
+              "normalized": 0.625,
+              "db": 4
+            },
+            "high_shelf_gain": {
+              "normalized": 0.625,
+              "db": 4
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "ab377b4df6b7b73af4640cb8e7ad731f14fb3ef1f0124acbadfbb71472536705",
+              "port_segment_sha256": "ab377b4df6b7b73af4640cb8e7ad731f14fb3ef1f0124acbadfbb71472536705"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "a8f3f39159923599f04d686261bc95e28538e6bf4354abe91aecd437ad59f6a3",
+              "port_segment_sha256": "a8f3f39159923599f04d686261bc95e28538e6bf4354abe91aecd437ad59f6a3"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 3072,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 1,
+              "index": 3,
+              "hz": 220
+            },
+            "low_shelf_gain": {
+              "normalized": 0.375,
+              "db": -4
+            },
+            "mid_freq": {
+              "normalized": 0.2,
+              "index": 1,
+              "hz": 700
+            },
+            "mid_gain": {
+              "normalized": 0.375,
+              "db": -4
+            },
+            "high_shelf_gain": {
+              "normalized": 0.375,
+              "db": -4
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "874ee3f08dbf73867ff859869a6c97402cb690fd3888e81594ed1501fce0ea0e",
+              "port_segment_sha256": "874ee3f08dbf73867ff859869a6c97402cb690fd3888e81594ed1501fce0ea0e"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "3c6a57d606a9a35d68db0dbf02f3d7f696f83a1bef414c93dfa1aea919facbf7",
+              "port_segment_sha256": "3c6a57d606a9a35d68db0dbf02f3d7f696f83a1bef414c93dfa1aea919facbf7"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 4096,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0.3333333333333333,
+              "index": 1,
+              "hz": 60
+            },
+            "low_shelf_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "mid_freq": {
+              "normalized": 0.6,
+              "index": 3,
+              "hz": 3200
+            },
+            "mid_gain": {
+              "normalized": 0.75,
+              "db": 8
+            },
+            "high_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "eq_in": false
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "dc9484dab29cc74f1164cff1d97f5d57881259d0482158a867c969ce44ed71a2",
+              "port_segment_sha256": "dc9484dab29cc74f1164cff1d97f5d57881259d0482158a867c969ce44ed71a2"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "5f09ac2f316f29312d98f35389fc74f548f63b1b923128905abe784ab1811444",
+              "port_segment_sha256": "5f09ac2f316f29312d98f35389fc74f548f63b1b923128905abe784ab1811444"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 5120,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0.6666666666666666,
+              "index": 2,
+              "hz": 110
+            },
+            "low_shelf_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "mid_freq": {
+              "normalized": 0.4,
+              "index": 2,
+              "hz": 1600
+            },
+            "mid_gain": {
+              "normalized": 0.25,
+              "db": -8
+            },
+            "high_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "a58c08e78d0beb94a60f53029437a0b11142b24a8eedc20a3867fece51bcea87",
+              "port_segment_sha256": "a58c08e78d0beb94a60f53029437a0b11142b24a8eedc20a3867fece51bcea87"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "5ea5032a341e78171066536eabc9eac8a3b1041a667a1a1e9ad73fe8acacd67b",
+              "port_segment_sha256": "5ea5032a341e78171066536eabc9eac8a3b1041a667a1a1e9ad73fe8acacd67b"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 6144,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 0,
+              "index": 0,
+              "hz": 35
+            },
+            "low_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "mid_freq": {
+              "normalized": 0,
+              "index": 0,
+              "hz": 360
+            },
+            "mid_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "high_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "a73233697727aa130358d1d74e6e5ddc5e9614fb70a54d4cad1e927333021585",
+              "port_segment_sha256": "a73233697727aa130358d1d74e6e5ddc5e9614fb70a54d4cad1e927333021585"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "5fd6d3ef51da2ff9ceefd2068c65160783e457056b90416b3d09fc0cfc208641",
+              "port_segment_sha256": "5fd6d3ef51da2ff9ceefd2068c65160783e457056b90416b3d09fc0cfc208641"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 7168,
+          "frame_count": 1024,
+          "parameters": {
+            "low_shelf_freq": {
+              "normalized": 1,
+              "index": 3,
+              "hz": 220
+            },
+            "low_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "mid_freq": {
+              "normalized": 1,
+              "index": 5,
+              "hz": 7200
+            },
+            "mid_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "high_shelf_gain": {
+              "normalized": 0.5,
+              "db": 0
+            },
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "713699f8fcd97eb7c1ebb565491c09fc7d3fcac244f9631d215784d7e9578daa",
+              "port_segment_sha256": "713699f8fcd97eb7c1ebb565491c09fc7d3fcac244f9631d215784d7e9578daa"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "b9153069d217699a04926c7e3f7fc41a62c4f0c66e08836d62e690d737360403",
+              "port_segment_sha256": "b9153069d217699a04926c7e3f7fc41a62c4f0c66e08836d62e690d737360403"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "run_count": 2,
+    "corresponding_instance_pairs": 4,
+    "values_compared": 65536,
+    "mismatches": 0,
+    "all_pairs_bit_identical": true
+  },
+  "rea_evidence": {
+    "parameter_apply_helper": "ev_8b91c608876be1f47eca90417aea2996437f402583e4880a8ba3e54442425aeb"
+  },
+  "conclusion": "All listed mixed Low/Mid/High EQ parameter combinations, EQ In transitions, and Mic 10 processing renders match bit-for-bit for both corresponding instance pairs. This does not exhaust all EQ values, transition orders, input levels or rates."
+}
