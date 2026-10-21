@@ -1,0 +1,723 @@
+{
+  "record_type": "runtime-dsp-parity",
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "f7731d614ac17e01adabd10e62b0668b643466a274f2e3dfd2bf8685a2a9f4fa",
+    "build": "Win64 MinGW static-runtime VST3"
+  },
+  "host": {
+    "path": "codex-tmp/host-work/isolated-multinstance-highdrive-eq-host.exe",
+    "sha256": "00daf76611c2814e6dcfeeff9e5c4253135c5bf2dfca414ddd6176a5f0548775",
+    "source_path": "codex-tmp/host-work/isolated-multinstance-highdrive-eq.cpp",
+    "source_sha256": "c398471ee054f54564c0a5a3738e1be4ca6f772084294aae9fbe2e7e26765b79",
+    "platform": "Win64 under Wine",
+    "instances": [
+      "target-0",
+      "port-0",
+      "target-1",
+      "port-1"
+    ],
+    "host_threads": 1,
+    "input_policy": "Each instance gets fresh copies of original input blocks. Model selector ID 6 is queued at normalized 0.5 each block alongside six EQ controls."
+  },
+  "stimulus": "Independent stereo 997 Hz and 613 Hz tones, deterministic noise, and periodic impulses scaled to peaks about 6.4 at 44.1 kHz and 6.0 at 96 kHz.",
+  "automation": {
+    "segment_frames": 1024,
+    "parameter_ids": {
+      "low_shelf_frequency": 1,
+      "low_shelf_gain": 2,
+      "mid_frequency": 3,
+      "mid_gain": 4,
+      "high_shelf_gain": 5,
+      "model_selector": 6,
+      "eq_in": 12
+    },
+    "sequence": [
+      {
+        "low_shelf_frequency_normalized": 0.3333333333333333,
+        "low_shelf_gain_normalized": 0.75,
+        "low_shelf_gain_db": 8,
+        "mid_frequency_normalized": 0.4,
+        "mid_frequency_index": 2,
+        "mid_gain_normalized": 0.25,
+        "mid_gain_db": -8,
+        "high_shelf_gain_normalized": 0.75,
+        "high_shelf_gain_db": 8,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 0.6666666666666666,
+        "low_shelf_gain_normalized": 0.25,
+        "low_shelf_gain_db": -8,
+        "mid_frequency_normalized": 0.8,
+        "mid_frequency_index": 4,
+        "mid_gain_normalized": 0.75,
+        "mid_gain_db": 8,
+        "high_shelf_gain_normalized": 0.25,
+        "high_shelf_gain_db": -8,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 0,
+        "low_shelf_gain_normalized": 0.625,
+        "low_shelf_gain_db": 4,
+        "mid_frequency_normalized": 1,
+        "mid_frequency_index": 5,
+        "mid_gain_normalized": 0.625,
+        "mid_gain_db": 4,
+        "high_shelf_gain_normalized": 0.625,
+        "high_shelf_gain_db": 4,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 1,
+        "low_shelf_gain_normalized": 0.375,
+        "low_shelf_gain_db": -4,
+        "mid_frequency_normalized": 0.2,
+        "mid_frequency_index": 1,
+        "mid_gain_normalized": 0.375,
+        "mid_gain_db": -4,
+        "high_shelf_gain_normalized": 0.375,
+        "high_shelf_gain_db": -4,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 0.3333333333333333,
+        "low_shelf_gain_normalized": 0.75,
+        "low_shelf_gain_db": 8,
+        "mid_frequency_normalized": 0.6,
+        "mid_frequency_index": 3,
+        "mid_gain_normalized": 0.75,
+        "mid_gain_db": 8,
+        "high_shelf_gain_normalized": 0.5,
+        "high_shelf_gain_db": 0,
+        "eq_in": false
+      },
+      {
+        "low_shelf_frequency_normalized": 0.6666666666666666,
+        "low_shelf_gain_normalized": 0.25,
+        "low_shelf_gain_db": -8,
+        "mid_frequency_normalized": 0.4,
+        "mid_frequency_index": 2,
+        "mid_gain_normalized": 0.25,
+        "mid_gain_db": -8,
+        "high_shelf_gain_normalized": 0.5,
+        "high_shelf_gain_db": 0,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 0,
+        "low_shelf_gain_normalized": 0.5,
+        "low_shelf_gain_db": 0,
+        "mid_frequency_normalized": 0,
+        "mid_frequency_index": 0,
+        "mid_gain_normalized": 0.5,
+        "mid_gain_db": 0,
+        "high_shelf_gain_normalized": 0.5,
+        "high_shelf_gain_db": 0,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 1,
+        "low_shelf_gain_normalized": 0.5,
+        "low_shelf_gain_db": 0,
+        "mid_frequency_normalized": 1,
+        "mid_frequency_index": 5,
+        "mid_gain_normalized": 0.5,
+        "mid_gain_db": 0,
+        "high_shelf_gain_normalized": 0.5,
+        "high_shelf_gain_db": 0,
+        "eq_in": true
+      }
+    ]
+  },
+  "runs": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "frames_per_instance": 8192,
+      "model_selector_normalized": 0.5,
+      "model_selector_index": 10,
+      "model": "Mic 10",
+      "sample_format": "Float64",
+      "input_sha256": "b3bd52642b78ca506ebe0ebc8a5fe1d305e2d9280362d7c69f78677ccd1e9315",
+      "input_after_sha256": "b3bd52642b78ca506ebe0ebc8a5fe1d305e2d9280362d7c69f78677ccd1e9315",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.395262083420468,
+      "full_output_sha256": {
+        "target-0": "aa51cd39e8235b59050745579892ab060c63ed78cec8ecafda2b4239d7fb395e",
+        "port-0": "aa51cd39e8235b59050745579892ab060c63ed78cec8ecafda2b4239d7fb395e",
+        "target-1": "c66614377ae9d4663d9400c519608f94364eaa28b38ee84caf9e8b47babfce7b",
+        "port-1": "c66614377ae9d4663d9400c519608f94364eaa28b38ee84caf9e8b47babfce7b"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.3333333333333333,
+            "low_shelf_gain_normalized": 0.75,
+            "low_shelf_gain_db": 8,
+            "mid_frequency_normalized": 0.4,
+            "mid_frequency_index": 2,
+            "mid_gain_normalized": 0.25,
+            "mid_gain_db": -8,
+            "high_shelf_gain_normalized": 0.75,
+            "high_shelf_gain_db": 8,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "e5ba143db08a16cb36f23d459628d4f43a8a590934eda7ceae12fc786061a3c8",
+              "port_segment_sha256": "e5ba143db08a16cb36f23d459628d4f43a8a590934eda7ceae12fc786061a3c8"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "a5d4405f4783f2a216dcc340814235779086731f2bba2aca0b92b9b954113c89",
+              "port_segment_sha256": "a5d4405f4783f2a216dcc340814235779086731f2bba2aca0b92b9b954113c89"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 1024,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.6666666666666666,
+            "low_shelf_gain_normalized": 0.25,
+            "low_shelf_gain_db": -8,
+            "mid_frequency_normalized": 0.8,
+            "mid_frequency_index": 4,
+            "mid_gain_normalized": 0.75,
+            "mid_gain_db": 8,
+            "high_shelf_gain_normalized": 0.25,
+            "high_shelf_gain_db": -8,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "d99ce39e2ef0547bdc4728a4691e04ceb0eac03546059e5eb9941ba547319083",
+              "port_segment_sha256": "d99ce39e2ef0547bdc4728a4691e04ceb0eac03546059e5eb9941ba547319083"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "9033c25a38fcbc6232b4e7c1212cd3e48a572af1ee4390f5b1c9f5a65d09a33f",
+              "port_segment_sha256": "9033c25a38fcbc6232b4e7c1212cd3e48a572af1ee4390f5b1c9f5a65d09a33f"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 2048,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0,
+            "low_shelf_gain_normalized": 0.625,
+            "low_shelf_gain_db": 4,
+            "mid_frequency_normalized": 1,
+            "mid_frequency_index": 5,
+            "mid_gain_normalized": 0.625,
+            "mid_gain_db": 4,
+            "high_shelf_gain_normalized": 0.625,
+            "high_shelf_gain_db": 4,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "d0f21429dccb0fa7a514bc0cf19244d8396706c1d5ffd35dfe6cfc8c088b01dd",
+              "port_segment_sha256": "d0f21429dccb0fa7a514bc0cf19244d8396706c1d5ffd35dfe6cfc8c088b01dd"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "0b6a163810ef5acb3fbc4ac9b3eb9a91f0a66bd6f0e9db32845a634a659aa604",
+              "port_segment_sha256": "0b6a163810ef5acb3fbc4ac9b3eb9a91f0a66bd6f0e9db32845a634a659aa604"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 3072,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 1,
+            "low_shelf_gain_normalized": 0.375,
+            "low_shelf_gain_db": -4,
+            "mid_frequency_normalized": 0.2,
+            "mid_frequency_index": 1,
+            "mid_gain_normalized": 0.375,
+            "mid_gain_db": -4,
+            "high_shelf_gain_normalized": 0.375,
+            "high_shelf_gain_db": -4,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "f19f6f6eca300aaa6c8609a19b49f1499abe7a9c36abf45cddff59da727c0c26",
+              "port_segment_sha256": "f19f6f6eca300aaa6c8609a19b49f1499abe7a9c36abf45cddff59da727c0c26"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "e4814b935bc77551ab002753ba5d348c5fb812ff118baa05180fddcc03dea333",
+              "port_segment_sha256": "e4814b935bc77551ab002753ba5d348c5fb812ff118baa05180fddcc03dea333"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 4096,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.3333333333333333,
+            "low_shelf_gain_normalized": 0.75,
+            "low_shelf_gain_db": 8,
+            "mid_frequency_normalized": 0.6,
+            "mid_frequency_index": 3,
+            "mid_gain_normalized": 0.75,
+            "mid_gain_db": 8,
+            "high_shelf_gain_normalized": 0.5,
+            "high_shelf_gain_db": 0,
+            "eq_in": false
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "18cd4457c9f9044c0e8f86226e14e73457f8e8889c4743418dab240f5be809eb",
+              "port_segment_sha256": "18cd4457c9f9044c0e8f86226e14e73457f8e8889c4743418dab240f5be809eb"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "c7f5c3c7d81e57f09bb53c3cd77400d6af6073f26571a072656e4b17b3ede0b9",
+              "port_segment_sha256": "c7f5c3c7d81e57f09bb53c3cd77400d6af6073f26571a072656e4b17b3ede0b9"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 5120,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.6666666666666666,
+            "low_shelf_gain_normalized": 0.25,
+            "low_shelf_gain_db": -8,
+            "mid_frequency_normalized": 0.4,
+            "mid_frequency_index": 2,
+            "mid_gain_normalized": 0.25,
+            "mid_gain_db": -8,
+            "high_shelf_gain_normalized": 0.5,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "918af94d8ad86758ee38788959e8693eaa2be056ec3d8ba4c56a035a243b3e88",
+              "port_segment_sha256": "918af94d8ad86758ee38788959e8693eaa2be056ec3d8ba4c56a035a243b3e88"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "6f145f217f651ac63a6a64a9048eb980b47908dc6b1e293cc7b59ddaa2933999",
+              "port_segment_sha256": "6f145f217f651ac63a6a64a9048eb980b47908dc6b1e293cc7b59ddaa2933999"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 6144,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0,
+            "low_shelf_gain_normalized": 0.5,
+            "low_shelf_gain_db": 0,
+            "mid_frequency_normalized": 0,
+            "mid_frequency_index": 0,
+            "mid_gain_normalized": 0.5,
+            "mid_gain_db": 0,
+            "high_shelf_gain_normalized": 0.5,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "79aca335779c3fa581f6e649331efac8da21f2391456c1def66ffd983f4600db",
+              "port_segment_sha256": "79aca335779c3fa581f6e649331efac8da21f2391456c1def66ffd983f4600db"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "c2e8a285df6c4811506352c7a0e750ac16f6940dceac4369ac190cce4b655c29",
+              "port_segment_sha256": "c2e8a285df6c4811506352c7a0e750ac16f6940dceac4369ac190cce4b655c29"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 7168,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 1,
+            "low_shelf_gain_normalized": 0.5,
+            "low_shelf_gain_db": 0,
+            "mid_frequency_normalized": 1,
+            "mid_frequency_index": 5,
+            "mid_gain_normalized": 0.5,
+            "mid_gain_db": 0,
+            "high_shelf_gain_normalized": 0.5,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "f6f918e8b575f59a0d6f129d380f696184c4a449a924b4a7002e8efe6233be1d",
+              "port_segment_sha256": "f6f918e8b575f59a0d6f129d380f696184c4a449a924b4a7002e8efe6233be1d"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "2260ad6aa84a1e3bd076781c98b8ee810dba59a3a65d76d72ccb43a48ebd6680",
+              "port_segment_sha256": "2260ad6aa84a1e3bd076781c98b8ee810dba59a3a65d76d72ccb43a48ebd6680"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "frames_per_instance": 8192,
+      "model_selector_normalized": 0.5,
+      "model_selector_index": 10,
+      "model": "Mic 10",
+      "sample_format": "Float64",
+      "input_sha256": "7816fb4a6b39ebfaa610c74aa977a9c574ad5fc962040040bd84366da456cf30",
+      "input_after_sha256": "7816fb4a6b39ebfaa610c74aa977a9c574ad5fc962040040bd84366da456cf30",
+      "input_unchanged": true,
+      "input_peak_absolute": 5.962654720785837,
+      "full_output_sha256": {
+        "target-0": "97b6e8d1fc020d3296feb6f9fa080c413a444b9b287ed5cbc9d72f893b28ca83",
+        "port-0": "97b6e8d1fc020d3296feb6f9fa080c413a444b9b287ed5cbc9d72f893b28ca83",
+        "target-1": "d8033b6a571034b06bf20ba9f3f90461402178e5d736579c56ee1254896bc5e2",
+        "port-1": "d8033b6a571034b06bf20ba9f3f90461402178e5d736579c56ee1254896bc5e2"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.3333333333333333,
+            "low_shelf_gain_normalized": 0.75,
+            "low_shelf_gain_db": 8,
+            "mid_frequency_normalized": 0.4,
+            "mid_frequency_index": 2,
+            "mid_gain_normalized": 0.25,
+            "mid_gain_db": -8,
+            "high_shelf_gain_normalized": 0.75,
+            "high_shelf_gain_db": 8,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "6dd471a1ea7a9e289c11286aa3c0d47fe26ffd880c70a1fcfd7d3e1c7d1b1ca4",
+              "port_segment_sha256": "6dd471a1ea7a9e289c11286aa3c0d47fe26ffd880c70a1fcfd7d3e1c7d1b1ca4"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "d70f7257977826dfa4cefddf1a0b4e361da1652abf59207314892479e67fadff",
+              "port_segment_sha256": "d70f7257977826dfa4cefddf1a0b4e361da1652abf59207314892479e67fadff"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 1024,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.6666666666666666,
+            "low_shelf_gain_normalized": 0.25,
+            "low_shelf_gain_db": -8,
+            "mid_frequency_normalized": 0.8,
+            "mid_frequency_index": 4,
+            "mid_gain_normalized": 0.75,
+            "mid_gain_db": 8,
+            "high_shelf_gain_normalized": 0.25,
+            "high_shelf_gain_db": -8,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "60ab99647c1552c886272d37f7a86c8992ce6b21bcf6990d636b1bd54fcbfc92",
+              "port_segment_sha256": "60ab99647c1552c886272d37f7a86c8992ce6b21bcf6990d636b1bd54fcbfc92"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "0ad7b3d0e1a0bcb8ad7516b2ab4a0bc97841aa23376ef235ed5b7e2ba8c43adf",
+              "port_segment_sha256": "0ad7b3d0e1a0bcb8ad7516b2ab4a0bc97841aa23376ef235ed5b7e2ba8c43adf"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 2048,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0,
+            "low_shelf_gain_normalized": 0.625,
+            "low_shelf_gain_db": 4,
+            "mid_frequency_normalized": 1,
+            "mid_frequency_index": 5,
+            "mid_gain_normalized": 0.625,
+            "mid_gain_db": 4,
+            "high_shelf_gain_normalized": 0.625,
+            "high_shelf_gain_db": 4,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "58e3f1e5cda2aad85ec1d5bbf2007d1dad96edc0489f1f0daf1235dd386ebe76",
+              "port_segment_sha256": "58e3f1e5cda2aad85ec1d5bbf2007d1dad96edc0489f1f0daf1235dd386ebe76"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "d140dde6058e6a69af60d1d21966b01339c1d99063c4ac5d16d45eed399224fd",
+              "port_segment_sha256": "d140dde6058e6a69af60d1d21966b01339c1d99063c4ac5d16d45eed399224fd"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 3072,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 1,
+            "low_shelf_gain_normalized": 0.375,
+            "low_shelf_gain_db": -4,
+            "mid_frequency_normalized": 0.2,
+            "mid_frequency_index": 1,
+            "mid_gain_normalized": 0.375,
+            "mid_gain_db": -4,
+            "high_shelf_gain_normalized": 0.375,
+            "high_shelf_gain_db": -4,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "5f87971f01790a64eeb1e270d69fb01557228ea0768c3f82330e0f75dca0a264",
+              "port_segment_sha256": "5f87971f01790a64eeb1e270d69fb01557228ea0768c3f82330e0f75dca0a264"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "7d9cb26ee5e6d7aab587bab3e662b17b24a062f3d7e4dcc3d34803a35877889e",
+              "port_segment_sha256": "7d9cb26ee5e6d7aab587bab3e662b17b24a062f3d7e4dcc3d34803a35877889e"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 4096,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.3333333333333333,
+            "low_shelf_gain_normalized": 0.75,
+            "low_shelf_gain_db": 8,
+            "mid_frequency_normalized": 0.6,
+            "mid_frequency_index": 3,
+            "mid_gain_normalized": 0.75,
+            "mid_gain_db": 8,
+            "high_shelf_gain_normalized": 0.5,
+            "high_shelf_gain_db": 0,
+            "eq_in": false
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "a85259df9d77ced2674101a43cc82f7d6599466bcc8c19ccc6c99f48c6d51024",
+              "port_segment_sha256": "a85259df9d77ced2674101a43cc82f7d6599466bcc8c19ccc6c99f48c6d51024"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "c5641e8b1e073586d862f9a22b56d07125dc4cc898f582750f01dc80a82e1659",
+              "port_segment_sha256": "c5641e8b1e073586d862f9a22b56d07125dc4cc898f582750f01dc80a82e1659"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 5120,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.6666666666666666,
+            "low_shelf_gain_normalized": 0.25,
+            "low_shelf_gain_db": -8,
+            "mid_frequency_normalized": 0.4,
+            "mid_frequency_index": 2,
+            "mid_gain_normalized": 0.25,
+            "mid_gain_db": -8,
+            "high_shelf_gain_normalized": 0.5,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "aa5c55caab3bb9f7a79b578913e329c0c4137044032e002d42a7a5ad61d547a8",
+              "port_segment_sha256": "aa5c55caab3bb9f7a79b578913e329c0c4137044032e002d42a7a5ad61d547a8"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "24de2d7c380bedbab4886d8c06780d7b81bcb8695b0aa569c02c7490ab49859f",
+              "port_segment_sha256": "24de2d7c380bedbab4886d8c06780d7b81bcb8695b0aa569c02c7490ab49859f"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 6144,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0,
+            "low_shelf_gain_normalized": 0.5,
+            "low_shelf_gain_db": 0,
+            "mid_frequency_normalized": 0,
+            "mid_frequency_index": 0,
+            "mid_gain_normalized": 0.5,
+            "mid_gain_db": 0,
+            "high_shelf_gain_normalized": 0.5,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "2091913b525781e3826a2fb9e719aa6bb1e17a88fa1b282f5ac700ccf2c6b78f",
+              "port_segment_sha256": "2091913b525781e3826a2fb9e719aa6bb1e17a88fa1b282f5ac700ccf2c6b78f"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "1f2ee642fbee726828ef8cccabdfab3b5e826212b4be872cfdc1b28de7dd2584",
+              "port_segment_sha256": "1f2ee642fbee726828ef8cccabdfab3b5e826212b4be872cfdc1b28de7dd2584"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 7168,
+          "frame_count": 1024,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 1,
+            "low_shelf_gain_normalized": 0.5,
+            "low_shelf_gain_db": 0,
+            "mid_frequency_normalized": 1,
+            "mid_frequency_index": 5,
+            "mid_gain_normalized": 0.5,
+            "mid_gain_db": 0,
+            "high_shelf_gain_normalized": 0.5,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "63f860d7cc56152ddc3a9c5aba7eff147aab3acec6b8c210105b6823db39924b",
+              "port_segment_sha256": "63f860d7cc56152ddc3a9c5aba7eff147aab3acec6b8c210105b6823db39924b"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_segment_sha256": "caeeafc25e3e56f82f53577bbdd1a43451adf2f9032cfffca6faabb584f08444",
+              "port_segment_sha256": "caeeafc25e3e56f82f53577bbdd1a43451adf2f9032cfffca6faabb584f08444"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "run_count": 2,
+    "instance_pairs": 4,
+    "total_values_compared": 65536,
+    "mismatches": 0,
+    "all_pairs_bit_identical": true
+  },
+  "rea_evidence": {
+    "eq_cascade": "ev_a9c2ba22e8269529fef23b68425e8d7d743a0033af6bc4e85fcc62f6922c18e3",
+    "mic_shaper": "ev_fdc39f963e7b184b598a2e03384bec53515f10a988f84d7e1bdaa7ce332b039b"
+  },
+  "conclusion": "The exercised mixed-EQ state sequence remains bit-identical to the licensed target under high-level stereo drive at both sample rates."
+}
