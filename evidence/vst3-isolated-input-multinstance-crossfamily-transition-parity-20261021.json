@@ -1,0 +1,523 @@
+{
+  "record_type": "runtime-dsp-parity",
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "f7731d614ac17e01adabd10e62b0668b643466a274f2e3dfd2bf8685a2a9f4fa",
+    "build": "Win64 MinGW static-runtime VST3"
+  },
+  "host": {
+    "path": "codex-tmp/host-work/isolated-multinstance-transitions-host.exe",
+    "sha256": "aa86dac99fccad0c453edadc9b8222f5a9021b490d8fb083199a00bd907c7ae7",
+    "source_path": "codex-tmp/host-work/isolated-multinstance-matrix-host.cpp",
+    "source_sha256": "fdc14ddcebed4daa05fc43af6b03a75f8a514fd0fe8bdba5f6950996743ea659",
+    "platform": "Win64 under Wine",
+    "instances": [
+      "target-0",
+      "port-0",
+      "target-1",
+      "port-1"
+    ],
+    "host_threads": 1,
+    "process_format": "offline Float64",
+    "process_context_state": "0x2400",
+    "input_policy": "Fresh copy of each original input block per plugin instance."
+  },
+  "selector_sequence": [
+    {
+      "normalized": 0.2,
+      "index": 4,
+      "model": "Line 20"
+    },
+    {
+      "normalized": 0.4,
+      "index": 8,
+      "model": "Off"
+    },
+    {
+      "normalized": 0.5,
+      "index": 10,
+      "model": "Mic 10"
+    },
+    {
+      "normalized": 0.75,
+      "index": 15,
+      "model": "Mic 35"
+    },
+    {
+      "normalized": 1.0,
+      "index": 20,
+      "model": "Mic 60"
+    },
+    {
+      "normalized": 0.4,
+      "index": 8,
+      "model": "Off"
+    },
+    {
+      "normalized": 0.2,
+      "index": 4,
+      "model": "Line 20"
+    },
+    {
+      "normalized": 0.5,
+      "index": 10,
+      "model": "Mic 10"
+    }
+  ],
+  "runs": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "frames_per_instance": 8192,
+      "sample_format": "Float64",
+      "input_sha256": "f0334b0a57058dbfd9e5eff7b283beb470929a0458e9ce1d023fc4e77ff04569",
+      "input_after_sha256": "f0334b0a57058dbfd9e5eff7b283beb470929a0458e9ce1d023fc4e77ff04569",
+      "input_unchanged": true,
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.2,
+            "index": 4,
+            "model": "Line 20"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "840a418f96316d01b1ede5f7ff8827058d1e24dc568641f98a9ef0b3b4fc39be",
+              "port_output_sha256": "840a418f96316d01b1ede5f7ff8827058d1e24dc568641f98a9ef0b3b4fc39be"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "840a418f96316d01b1ede5f7ff8827058d1e24dc568641f98a9ef0b3b4fc39be",
+              "port_output_sha256": "840a418f96316d01b1ede5f7ff8827058d1e24dc568641f98a9ef0b3b4fc39be"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 1024,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.4,
+            "index": 8,
+            "model": "Off"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "31c5ecb5653545a816d96a1d70433db6f12b6e9d105754bbd761c0b4ec84e0ea",
+              "port_output_sha256": "31c5ecb5653545a816d96a1d70433db6f12b6e9d105754bbd761c0b4ec84e0ea"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "31c5ecb5653545a816d96a1d70433db6f12b6e9d105754bbd761c0b4ec84e0ea",
+              "port_output_sha256": "31c5ecb5653545a816d96a1d70433db6f12b6e9d105754bbd761c0b4ec84e0ea"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 2048,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.5,
+            "index": 10,
+            "model": "Mic 10"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "8d90d0ce36ecad4b635765096bfb85eb68b14f15af0b1002a0375ca281f2537b",
+              "port_output_sha256": "8d90d0ce36ecad4b635765096bfb85eb68b14f15af0b1002a0375ca281f2537b"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "ea79a35fa72ae31f5aebb7d8c6775305ca45011476467199aa15ff8fdef05f2b",
+              "port_output_sha256": "ea79a35fa72ae31f5aebb7d8c6775305ca45011476467199aa15ff8fdef05f2b"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 3072,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.75,
+            "index": 15,
+            "model": "Mic 35"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "1c794ce9323ff64995e38abad49ef54968b998c40063939f7f39e13d5dd6999e",
+              "port_output_sha256": "1c794ce9323ff64995e38abad49ef54968b998c40063939f7f39e13d5dd6999e"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "eefbade1cd703fc88fb9e2ac1394f97f65211d855b92a40542a6d9c1cd7c7953",
+              "port_output_sha256": "eefbade1cd703fc88fb9e2ac1394f97f65211d855b92a40542a6d9c1cd7c7953"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 4096,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 1.0,
+            "index": 20,
+            "model": "Mic 60"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "9ae9385defc1d20298b0dee8b8611212ca0fcc82c3acdf2db4e87ffe5b3ccbde",
+              "port_output_sha256": "9ae9385defc1d20298b0dee8b8611212ca0fcc82c3acdf2db4e87ffe5b3ccbde"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "5d3066350b056811a84bda1707f5925357a62d633976fdf94d5d69da8646f69e",
+              "port_output_sha256": "5d3066350b056811a84bda1707f5925357a62d633976fdf94d5d69da8646f69e"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 5120,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.4,
+            "index": 8,
+            "model": "Off"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "d43ee12017f2392c29f3b0e0bad7902b88d40b96f1ea7a07118e0aa340a3cb51",
+              "port_output_sha256": "d43ee12017f2392c29f3b0e0bad7902b88d40b96f1ea7a07118e0aa340a3cb51"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "2c5e8e903427701ed81e95c86ab13d03016e506b88498adfc37f88527573392c",
+              "port_output_sha256": "2c5e8e903427701ed81e95c86ab13d03016e506b88498adfc37f88527573392c"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 6144,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.2,
+            "index": 4,
+            "model": "Line 20"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "05b5e140483e9567cc1acfc06a0c58705e541598c6d25b64676921b78d93a6e1",
+              "port_output_sha256": "05b5e140483e9567cc1acfc06a0c58705e541598c6d25b64676921b78d93a6e1"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "395d90d510cecdaeab94d8ff13bd523381d319811db3f809cae3bfc40f165eb2",
+              "port_output_sha256": "395d90d510cecdaeab94d8ff13bd523381d319811db3f809cae3bfc40f165eb2"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 7168,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.5,
+            "index": 10,
+            "model": "Mic 10"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "2920b61f78b897d4667c8a905914bdea5b733decdb3e2a5d745032333bb77cb7",
+              "port_output_sha256": "2920b61f78b897d4667c8a905914bdea5b733decdb3e2a5d745032333bb77cb7"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "fb97116184d357727bf30b2df30ea3228334cfb539279768fcc32e206b68bd4a",
+              "port_output_sha256": "fb97116184d357727bf30b2df30ea3228334cfb539279768fcc32e206b68bd4a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "frames_per_instance": 8192,
+      "sample_format": "Float64",
+      "input_sha256": "c9cd8649cf6f90f8b2b7cbea14c1f9cf41ed8a1e0142b640a35d977f68e698f2",
+      "input_after_sha256": "c9cd8649cf6f90f8b2b7cbea14c1f9cf41ed8a1e0142b640a35d977f68e698f2",
+      "input_unchanged": true,
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.2,
+            "index": 4,
+            "model": "Line 20"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "dc72c145d53a2bfa826d8a3af8da3dd295a666160a9670e84c807e69ac69587d",
+              "port_output_sha256": "dc72c145d53a2bfa826d8a3af8da3dd295a666160a9670e84c807e69ac69587d"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "dc72c145d53a2bfa826d8a3af8da3dd295a666160a9670e84c807e69ac69587d",
+              "port_output_sha256": "dc72c145d53a2bfa826d8a3af8da3dd295a666160a9670e84c807e69ac69587d"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 1024,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.4,
+            "index": 8,
+            "model": "Off"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "a6470ed5adfafc314398b1a7b717545f87377d2a8d091129f5adc4089a81c829",
+              "port_output_sha256": "a6470ed5adfafc314398b1a7b717545f87377d2a8d091129f5adc4089a81c829"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "a6470ed5adfafc314398b1a7b717545f87377d2a8d091129f5adc4089a81c829",
+              "port_output_sha256": "a6470ed5adfafc314398b1a7b717545f87377d2a8d091129f5adc4089a81c829"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 2048,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.5,
+            "index": 10,
+            "model": "Mic 10"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "c3b0affbbec1352802d58d5a34040de0acba729822f3c441f9bd6de858b8ac76",
+              "port_output_sha256": "c3b0affbbec1352802d58d5a34040de0acba729822f3c441f9bd6de858b8ac76"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "ea2240faca342efaa0c195cb1283cfa631eb7a7e7cfe487b9ca09e585918c06c",
+              "port_output_sha256": "ea2240faca342efaa0c195cb1283cfa631eb7a7e7cfe487b9ca09e585918c06c"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 3072,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.75,
+            "index": 15,
+            "model": "Mic 35"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "74ea306223a8686c37af06588fed25519a0c649854dfb74a115cfc8e81736077",
+              "port_output_sha256": "74ea306223a8686c37af06588fed25519a0c649854dfb74a115cfc8e81736077"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "5c74633433dc173c44e4a6e5f9bef688baf325cae03e59afb22aa801acd5646e",
+              "port_output_sha256": "5c74633433dc173c44e4a6e5f9bef688baf325cae03e59afb22aa801acd5646e"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 4096,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 1.0,
+            "index": 20,
+            "model": "Mic 60"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "220c3127d792371c3db87b6cd6650d94295cdc64668943adc9a3a3f0fbd25a2d",
+              "port_output_sha256": "220c3127d792371c3db87b6cd6650d94295cdc64668943adc9a3a3f0fbd25a2d"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "fe08d274e9e9fd54707a8410e198cfd0bad318ff21b6c4ce0912b6e822e955e2",
+              "port_output_sha256": "fe08d274e9e9fd54707a8410e198cfd0bad318ff21b6c4ce0912b6e822e955e2"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 5120,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.4,
+            "index": 8,
+            "model": "Off"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "4a51b06f2ab728823c2188a995ae3ad8651d71d5aabe4dbbaaa709757952962d",
+              "port_output_sha256": "4a51b06f2ab728823c2188a995ae3ad8651d71d5aabe4dbbaaa709757952962d"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "3b261551ea17c13d8c00dd0d378ab015f4e14ae970088c6aba162b346c5e2c26",
+              "port_output_sha256": "3b261551ea17c13d8c00dd0d378ab015f4e14ae970088c6aba162b346c5e2c26"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 6144,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.2,
+            "index": 4,
+            "model": "Line 20"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "058fb66d779aa17a2a3f950d3f3922854b5f770f9f9edd865db0f77b8e510442",
+              "port_output_sha256": "058fb66d779aa17a2a3f950d3f3922854b5f770f9f9edd865db0f77b8e510442"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "f69ea61f8216947a7fc9d71d24b8ce94df6994da5a011b58536114dde28ca795",
+              "port_output_sha256": "f69ea61f8216947a7fc9d71d24b8ce94df6994da5a011b58536114dde28ca795"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 7168,
+          "frame_count": 1024,
+          "selector": {
+            "normalized": 0.5,
+            "index": 10,
+            "model": "Mic 10"
+          },
+          "pairs": [
+            {
+              "instance": 0,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "675dd88d215cb218aa6cac520b6499a68b6af1bc06c6a10f77aff9a6ed3a8fe0",
+              "port_output_sha256": "675dd88d215cb218aa6cac520b6499a68b6af1bc06c6a10f77aff9a6ed3a8fe0"
+            },
+            {
+              "instance": 1,
+              "bit_identical": true,
+              "values_compared": 2048,
+              "target_output_sha256": "6fe1cce78bb37ca07eba5e5bfb718eafe5a8c88ece705dec0255c429ae2beaa8",
+              "port_output_sha256": "6fe1cce78bb37ca07eba5e5bfb718eafe5a8c88ece705dec0255c429ae2beaa8"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "run_count": 2,
+    "pair_count": 4,
+    "total_values_compared": 65536,
+    "mismatches": 0,
+    "all_pairs_bit_identical": true
+  },
+  "rea_evidence": {
+    "parameter_apply_helper": "ev_8b91c608876be1f47eca90417aea2996437f402583e4880a8ba3e54442425aeb"
+  },
+  "conclusion": "The live selector updates and resulting model transitions matched target-to-port for both corresponding instance pairs. This covers the listed paths and states, not all possible selector orderings or transition timing."
+}
