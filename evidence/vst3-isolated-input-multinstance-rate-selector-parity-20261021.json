@@ -1,0 +1,97 @@
+{
+  "record_type": "runtime-dsp-parity",
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "f7731d614ac17e01adabd10e62b0668b643466a274f2e3dfd2bf8685a2a9f4fa",
+    "build": "Win64 MinGW static-runtime VST3"
+  },
+  "host": {
+    "path": "codex-tmp/host-work/isolated-multinstance-matrix-host.exe",
+    "sha256": "9de228263ee354bff5a1a8102110b790c979c7ce969f106f2d5015128eb80a52",
+    "source_path": "codex-tmp/host-work/isolated-multinstance-matrix-host.cpp",
+    "source_sha256": "93c9ff174b6bc85600804a51f1a45cc7af0349b71eb7474ecc529ddb7bcfd80a",
+    "platform": "Win64 under Wine",
+    "instances_in_one_process": [
+      "target-0",
+      "port-0",
+      "target-1",
+      "port-1"
+    ],
+    "input_policy": "Fresh original input copy supplied to each instance for every block; target in-place mutation cannot affect another instance.",
+    "sample_format": "Float64",
+    "host_thread_count": 1
+  },
+  "rea_evidence": {
+    "vst3_parent_process_callback": "ev_866258d4f4631a2a3ca4efbb962ad0e8888071d722a78fff335b23cca6ed7949"
+  },
+  "runs": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "frames_per_instance": 8192,
+      "selector_normalized": 0.75,
+      "selector_index": 15,
+      "model": "Mic 35",
+      "input_sha256": "f0334b0a57058dbfd9e5eff7b283beb470929a0458e9ce1d023fc4e77ff04569",
+      "input_after_sha256": "f0334b0a57058dbfd9e5eff7b283beb470929a0458e9ce1d023fc4e77ff04569",
+      "input_unchanged": true,
+      "pairs": [
+        {
+          "instance": 0,
+          "target_output_sha256": "0b7452e9b2108fc5853f8b7b2731dadaf35cb6d8bc447a7060a1da687d84d34c",
+          "port_output_sha256": "0b7452e9b2108fc5853f8b7b2731dadaf35cb6d8bc447a7060a1da687d84d34c",
+          "bit_identical": true,
+          "values_compared": 16384
+        },
+        {
+          "instance": 1,
+          "target_output_sha256": "0e7185747475b8c759dc525e420fa82eeffab951b0375c66f3c38ff03aea8b20",
+          "port_output_sha256": "0e7185747475b8c759dc525e420fa82eeffab951b0375c66f3c38ff03aea8b20",
+          "bit_identical": true,
+          "values_compared": 16384
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "frames_per_instance": 8192,
+      "selector_normalized": 1.0,
+      "selector_index": 20,
+      "model": "Mic 60",
+      "input_sha256": "c9cd8649cf6f90f8b2b7cbea14c1f9cf41ed8a1e0142b640a35d977f68e698f2",
+      "input_after_sha256": "c9cd8649cf6f90f8b2b7cbea14c1f9cf41ed8a1e0142b640a35d977f68e698f2",
+      "input_unchanged": true,
+      "pairs": [
+        {
+          "instance": 0,
+          "target_output_sha256": "d1894aa8f8b92474153dbf1565c64cefb8560eeddd73e17f04c3c24617f7e344",
+          "port_output_sha256": "d1894aa8f8b92474153dbf1565c64cefb8560eeddd73e17f04c3c24617f7e344",
+          "bit_identical": true,
+          "values_compared": 16384
+        },
+        {
+          "instance": 1,
+          "target_output_sha256": "33676ad7219de685b445d1029fb332b86b0ef1acb44d3c8c970edc81993e1ea7",
+          "port_output_sha256": "33676ad7219de685b445d1029fb332b86b0ef1acb44d3c8c970edc81993e1ea7",
+          "bit_identical": true,
+          "values_compared": 16384
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "instance_pair_outputs_bit_identical": true,
+    "total_values_compared": 65536,
+    "total_mismatches": 0
+  },
+  "remaining_work": [
+    "Repeat multi-instance parity at more rates, blocks, selectors, and cross-family transitions.",
+    "Continue mixed EQ automation and saturation input-level coverage across stereo stimuli and rates."
+  ]
+}
