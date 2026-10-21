@@ -17,39 +17,25 @@ std::once_flag referenceRandomTableInit;
 
 void initializeReferenceRandomTable() {
     // FUN_18000c120 guards FUN_180040310 with process-global
-    // DAT_1800e59e8. The initializer increments that guard, so only the
-    // first engine in a process seeds the calling thread and advances it
-    // through the shared 0xc08-entry table and its conditional fallback draws.
+    // DAT_1800e59e8. The initializer seeds the calling thread, generates
+    // 0xc08 table values, then replaces the first 0x3020 bytes from the
+    // activated license before running its validators. Preserve the CRT
+    // state advance; the decoded license arrays are valid, so neither
+    // FUN_1800404a0 nor FUN_1800406f0 adds fallback draws on this path.
     std::call_once(referenceRandomTableInit, [] {
         detail::binaryMsvcSrand(static_cast<std::uint32_t>(std::time(nullptr)));
-        std::array<std::int32_t, 0xc08> table{};
-        for (auto& value : table)
-            value = detail::binaryMsvcRand15() % (999 - 11 + 1) + 11;
-
-        // The 0x400-entry FUN_1800404a0 range checks add no draws: both arrays
-        // checked there are copied from the [11,999] base table, within their
-        // accepted ranges. FUN_180040aa0 maps selectors 0xc00..0xc03 to these
-        // positions; FUN_1800406f0 compares them with keys 0xc04..0xc07 and
-        // consumes rand()%10 on each miss.
-        constexpr std::array<std::size_t, 4> selectedPositions{
-            259, 390, 1667, 2242
-        };
-        constexpr std::array<std::int32_t, 4> validationKeys{
-            1850, 752, 850, 1263
-        };
-        for (std::size_t i = 0; i < selectedPositions.size(); ++i) {
-            const auto difference = table[selectedPositions[i]] - validationKeys[i];
-            if (difference < 0 || difference > 9)
-                (void)detail::binaryMsvcRand15();
-        }
+        for (int i = 0; i < 0xc08; ++i)
+            (void)detail::binaryMsvcRand15();
     });
 }
 }
 
 AudioEngine::AudioEngine() {
     initializeReferenceRandomTable();
-    // FUN_1800415e0 is controller/UI initialization; its draws are not on the
-    // processor thread's stream before the Mic child resets.
+    // FUN_1800415e0 consumes four CRT draws for each controller instance.
+    // The licensed controller and processor share this thread's rand stream.
+    for (int i = 0; i < 4; ++i)
+        (void)detail::binaryMsvcRand15();
     // Each Mic child constructor performs its own sample-rate reset and draws
     // the random-loop count once, before setupProcessing resets it again.
     for (auto& model : model_)
