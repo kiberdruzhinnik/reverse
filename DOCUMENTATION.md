@@ -156,7 +156,7 @@ Current unresolved work:
 
 ## REA evidence for the restored core analysis
 
-The following REA/Ghidra records were captured against the supplied original plug-in while rebuilding this document. Historical full payloads were removed during the requested history cleanup; their Evidence IDs remain cited in the topic sections. The fresh formatter read and current Mic shaper function read are retained as full JSON records.
+The following REA/Ghidra records were captured against the supplied original plug-in while rebuilding this document. Historical full payloads were removed during the requested history cleanup; their Evidence IDs remain cited in the topic sections. The fresh formatter read and current Mic shaper function read are retained as full JSON records. A current-session export containing the refreshed Mic mode setup, Mic sample routine, Mic shaper, EQ builder, and shaper reference records is preserved in [`rea-session-mic-eq-refresh-20261021.json`](evidence/rea-session-mic-eq-refresh-20261021.json); it was collected against the shipped binary SHA-256 `a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a`.
 
 | Target routine | Evidence | Earlier record name |
 |---|---|---|
