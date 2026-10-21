@@ -1,0 +1,133 @@
+{
+  "title": "Simultaneous full-range EQ automation across every saturation selector",
+  "date": "2026-10-21",
+  "reference_plugin": "data/Burnley73.vst3",
+  "reference_sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+  "port_plugin": "build-win64/VST3/Burnley73.vst3",
+  "port_sha256": "9ca7a8cd411624d136c9b9dd8a66e3f9e6c42c21a00913cd02b1d7afb6cdbb2f",
+  "host_source": "codex-tmp/tmp/eq-simultaneous-crossmode-host.cpp",
+  "host_executable_sha256": "0c267d199969a40b0c435adebc4d7a835ad688c271ff098575581331c5befbd3",
+  "selectors": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "states_per_selector": 321,
+  "frames_per_state": 512,
+  "input_scale": 10.0,
+  "parameter_schedule": {
+    "state": "k=0..320 for each selector",
+    "high_pass_choice": "k mod 5 normalized by 4",
+    "high_pass_power": "floor(k/5) mod 2",
+    "low_frequency": "(3k+1) mod 4 normalized by 3",
+    "low_gain": "k/320",
+    "low_power": "floor(k/3) mod 2",
+    "mid_frequency": "(5k+2) mod 6 normalized by 5",
+    "mid_gain": "(73k mod 321)/320",
+    "mid_power": "floor(k/2) mod 2",
+    "high_gain": "(151k+17 mod 321)/320",
+    "high_power": "floor(k/7) mod 2",
+    "eq_in": "floor(k/11) mod 2",
+    "queue_timing": "all parameter changes queued together at the beginning of each 512-frame state"
+  },
+  "input": "independent stereo tones, deterministic noise, periodic impulses; isolated audio copy per each of four plugin instances",
+  "rates": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 128,
+      "frames_per_instance": 3287040,
+      "input_sha256": "e9ee4cced7cdc0d3e61e71a1a0e3210cd98cdfd5d0bd48bfca9400e7cfe0727a",
+      "input_unchanged_after_processing": true,
+      "input_peak": 64.71859374798655,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 6574080,
+          "bit_mismatches": 0,
+          "target_sha256": "7804e75b88c446e7a89b8aaf179cf413a4e77aa6e9336c9931ef68f28fe5175d",
+          "port_sha256": "7804e75b88c446e7a89b8aaf179cf413a4e77aa6e9336c9931ef68f28fe5175d"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 6574080,
+          "bit_mismatches": 0,
+          "target_sha256": "eda2c61ba5c0997f78655464dc5e9e811e88045f31d765cba1777afee723eb98",
+          "port_sha256": "eda2c61ba5c0997f78655464dc5e9e811e88045f31d765cba1777afee723eb98"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 256,
+      "frames_per_instance": 3287040,
+      "input_sha256": "d8ca6dcc00853bcc5b08797e77753f2695f542ba459f2ac2c79c2890bab50793",
+      "input_unchanged_after_processing": true,
+      "input_peak": 64.78172671405216,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 6574080,
+          "bit_mismatches": 0,
+          "target_sha256": "b0ee515d00321603536f537e5c03eea75ae4c8545a85b2649798a4851c63a002",
+          "port_sha256": "b0ee515d00321603536f537e5c03eea75ae4c8545a85b2649798a4851c63a002"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 6574080,
+          "bit_mismatches": 0,
+          "target_sha256": "0de7778851284ff1d74261cc8c053203e90acb21e5fbdb4248626c69bb7e5e89",
+          "port_sha256": "0de7778851284ff1d74261cc8c053203e90acb21e5fbdb4248626c69bb7e5e89"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 512,
+      "frames_per_instance": 3287040,
+      "input_sha256": "960831cf07963c078d09ccec8cfc583d4e7313dd34dfc029d9abee5b23f8f80e",
+      "input_unchanged_after_processing": true,
+      "input_peak": 64.77431673180695,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 6574080,
+          "bit_mismatches": 0,
+          "target_sha256": "458e2f2d545e96a8e059fbbe90f37b620a52d0483e06b7541cc77933b7d5d1a7",
+          "port_sha256": "458e2f2d545e96a8e059fbbe90f37b620a52d0483e06b7541cc77933b7d5d1a7"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 6574080,
+          "bit_mismatches": 0,
+          "target_sha256": "2e3a9728f7c26836ede65ad37b5e7a776679daf820a820c0b7e189e928b7e36a",
+          "port_sha256": "2e3a9728f7c26836ede65ad37b5e7a776679daf820a820c0b7e189e928b7e36a"
+        }
+      ]
+    }
+  ],
+  "rea_evidence_export": "evidence/rea-eq-power-transition-analysis-20261021.json",
+  "rea_snapshot": "evidence/rea-eq-power-transition-snapshot-20261021.json",
+  "cause_and_fix": "REA observation of FUN_1800124b0 showed Low Shelf Power Off directly installs two 0 dB, 100 Hz, shape-2 sections and preserves the low shelf residual-mix sign. EqState::configure had instead followed the gain-zero positive path and forced individual band power states on when EQ In was off. src/eq.cpp now mirrors the target power-off setup and preserves the three band power states when EQ In is off.",
+  "comparison_result": "All corresponding output samples are bit-identical at all three sample rates and both instance positions.",
+  "limitations": [
+    "This deterministic 321-state schedule covers each EQ gain range and every frequency/power choice while all controls change together; it is not an exhaustive Cartesian product of all EQ values.",
+    "The target returned E_NOINTERFACE for setProcessing(1); process() rendered all frames."
+  ]
+}

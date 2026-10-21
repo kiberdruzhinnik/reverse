@@ -184,8 +184,15 @@ void configureHighPass(EqState& eq, double sampleRate, const Parameters& paramet
 
 void configureLowShelf(EqState& eq, double sampleRate, const Parameters& parameters) {
     const int frequencyIndex = static_cast<int>(parameters.get(Parameter::LowShelfFrequency));
-    const double requestedGain = parameters.get(Parameter::LowShelfPower) >= 0.5
-        ? parameters.get(Parameter::LowShelfGain) : 0.0;
+    if (parameters.get(Parameter::LowShelfPower) < 0.5) {
+        // FUN_1800124b0's power-off branch installs these two fixed unity
+        // sections directly and leaves the signed residual-mix selector alone.
+        // It does not run the positive-gain lookup path at zero dB.
+        buildLowShelf(eq.lowShelfA, 0.0, 100.0, sampleRate, 2.0);
+        buildLowShelf(eq.lowShelfB, 0.0, 100.0, sampleRate, 2.0);
+        return;
+    }
+    const double requestedGain = parameters.get(Parameter::LowShelfGain);
     // The binary scales the shared gain before branching, including the
     // positive-gain table paths.
     const double gain = requestedGain * 0.9375;
@@ -327,9 +334,6 @@ void EqState::configure(double sampleRate, const Parameters& parameters) {
         eqOff.setPlain(Parameter::LowShelfGain, 0.0);
         eqOff.setPlain(Parameter::MidGain, 0.0);
         eqOff.setPlain(Parameter::HighShelfGain, 0.0);
-        eqOff.setPlain(Parameter::LowShelfPower, 1.0);
-        eqOff.setPlain(Parameter::MidPower, 1.0);
-        eqOff.setPlain(Parameter::HighShelfPower, 1.0);
         configureLowShelf(*this, fs, eqOff);
         configureMid(*this, fs, eqOff);
         configureHighShelf(*this, fs, eqOff);
