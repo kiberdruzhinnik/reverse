@@ -1,0 +1,1285 @@
+{
+  "title": "Dense High Shelf gain sweep crossed with every Line and Mic saturation selector",
+  "date": "2026-10-21",
+  "reference_plugin": "data/Burnley73.vst3",
+  "reference_sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+  "port_plugin": "build-win64/VST3/Burnley73.vst3",
+  "port_sha256": "210bf2c6e0b37c3385aaa4854ba7bd6befe14bd2bb0a2635bc623fd01055f858",
+  "host_source": "codex-tmp/tmp/eq-all-saturation-highshelf-host.cpp",
+  "host_executable": "codex-tmp/tmp/eq-all-saturation-highshelf-host.exe",
+  "host_sha256": "cde918073a003866000d3f219307d4cad19ac25c1e513628ec6df6a6f1c2723f",
+  "selectors": [
+    {
+      "index": 0,
+      "family": "Line"
+    },
+    {
+      "index": 1,
+      "family": "Line"
+    },
+    {
+      "index": 2,
+      "family": "Line"
+    },
+    {
+      "index": 3,
+      "family": "Line"
+    },
+    {
+      "index": 4,
+      "family": "Line"
+    },
+    {
+      "index": 5,
+      "family": "Line"
+    },
+    {
+      "index": 6,
+      "family": "Line"
+    },
+    {
+      "index": 7,
+      "family": "Line"
+    },
+    {
+      "index": 9,
+      "family": "Mic"
+    },
+    {
+      "index": 10,
+      "family": "Mic"
+    },
+    {
+      "index": 11,
+      "family": "Mic"
+    },
+    {
+      "index": 12,
+      "family": "Mic"
+    },
+    {
+      "index": 13,
+      "family": "Mic"
+    },
+    {
+      "index": 14,
+      "family": "Mic"
+    },
+    {
+      "index": 15,
+      "family": "Mic"
+    },
+    {
+      "index": 16,
+      "family": "Mic"
+    },
+    {
+      "index": 17,
+      "family": "Mic"
+    },
+    {
+      "index": 18,
+      "family": "Mic"
+    },
+    {
+      "index": 19,
+      "family": "Mic"
+    },
+    {
+      "index": 20,
+      "family": "Mic"
+    }
+  ],
+  "high_shelf_gain_points": 321,
+  "gain_mapping": "normalized = gain_index / 320; plain dB = -16 + gain_index * 0.1",
+  "other_eq": "Low and Mid EQ remain active at fixed settings (Low Freq normalized 1/3, Low Gain 0.75, Mid Freq 0.4, Mid Gain 0.25), High Shelf Power and EQ In on, High Pass off",
+  "frames_per_gain_per_selector": 128,
+  "input_scale": 10.0,
+  "input": "independent stereo tones, deterministic noise and periodic impulses; each instance gets isolated copies",
+  "instance_layout": "two target and two port instances; corresponding positions compared",
+  "rates": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 128,
+      "frames_per_instance": 821760,
+      "input_peak": 64.67665427194738,
+      "input_sha256": "3fc3f2eba5123a8517637876d52e776ee945265018977fb6b4aa3d248723ca40",
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 1643520,
+          "bit_mismatches": 0,
+          "max_abs_error": 0.0,
+          "residual_dB_relative_to_target": null,
+          "target_peak": 362.170505388269,
+          "target_sha256": "f7f064ef604522a03d1ffad9c76735ee0e540fec334b816b304b72e35e946a26",
+          "port_sha256": "f7f064ef604522a03d1ffad9c76735ee0e540fec334b816b304b72e35e946a26",
+          "selector_results": [
+            {
+              "selector_index": 0,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "0be00d238f99c0e0302264762e7313f545d706321d5b34a8cb54b2bda40cbe8a",
+              "port_sha256": "0be00d238f99c0e0302264762e7313f545d706321d5b34a8cb54b2bda40cbe8a"
+            },
+            {
+              "selector_index": 1,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "ae1c820e9872138e33f7ba299b445053a7c7c94da369d8e9197a7a56ca96e1d9",
+              "port_sha256": "ae1c820e9872138e33f7ba299b445053a7c7c94da369d8e9197a7a56ca96e1d9"
+            },
+            {
+              "selector_index": 2,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "83f3e94c5fa83e9107466654a2691b371a0cf628aa9792c193cf2781f5ff7f73",
+              "port_sha256": "83f3e94c5fa83e9107466654a2691b371a0cf628aa9792c193cf2781f5ff7f73"
+            },
+            {
+              "selector_index": 3,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "b78e2d5490c33c92208689c33ebde11c3153e51fc1b2f016c462a81f699304bc",
+              "port_sha256": "b78e2d5490c33c92208689c33ebde11c3153e51fc1b2f016c462a81f699304bc"
+            },
+            {
+              "selector_index": 4,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "24e8fac619a9188ddbe49f9295c7dd0ee7feb4a3c1ab695055a16cd35994db63",
+              "port_sha256": "24e8fac619a9188ddbe49f9295c7dd0ee7feb4a3c1ab695055a16cd35994db63"
+            },
+            {
+              "selector_index": 5,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "df1620dd564957251386644e07a6176f51b0a79541c872286bb097955ca405ae",
+              "port_sha256": "df1620dd564957251386644e07a6176f51b0a79541c872286bb097955ca405ae"
+            },
+            {
+              "selector_index": 6,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "2d88b5f46528ae7b161f68a449f749f851810f61b76e68bc5037369b2381dff2",
+              "port_sha256": "2d88b5f46528ae7b161f68a449f749f851810f61b76e68bc5037369b2381dff2"
+            },
+            {
+              "selector_index": 7,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "4610222c5ada43fd7e723a2cb3bf3ad43201b1b4652af1579d2c5d9ea700267e",
+              "port_sha256": "4610222c5ada43fd7e723a2cb3bf3ad43201b1b4652af1579d2c5d9ea700267e"
+            },
+            {
+              "selector_index": 9,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a909be9aff51a0ec511a8218ec21c541217aee3b676800f61dc385db7c365a8c",
+              "port_sha256": "a909be9aff51a0ec511a8218ec21c541217aee3b676800f61dc385db7c365a8c"
+            },
+            {
+              "selector_index": 10,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "88f4a47d8e1613d69274614d065e3e2b37e877481816230f4654d71e04f28937",
+              "port_sha256": "88f4a47d8e1613d69274614d065e3e2b37e877481816230f4654d71e04f28937"
+            },
+            {
+              "selector_index": 11,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "49c0c109c4b25c094a4d516fed8a1f07d223d456e4ac0ac20d0eaf6e82d8c388",
+              "port_sha256": "49c0c109c4b25c094a4d516fed8a1f07d223d456e4ac0ac20d0eaf6e82d8c388"
+            },
+            {
+              "selector_index": 12,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "b27e933193ea3a1c17690885c36fdd003f5b4f5480da4d6ade247295470e9c00",
+              "port_sha256": "b27e933193ea3a1c17690885c36fdd003f5b4f5480da4d6ade247295470e9c00"
+            },
+            {
+              "selector_index": 13,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "65ae554ab66f9bf5b03e0f401f2d95ba1623e8ba6e71dd801514fbf6d4868af8",
+              "port_sha256": "65ae554ab66f9bf5b03e0f401f2d95ba1623e8ba6e71dd801514fbf6d4868af8"
+            },
+            {
+              "selector_index": 14,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "98fd877f2b67fd56650f071c08cb982f1be73ace7a72db4de33157209ab643da",
+              "port_sha256": "98fd877f2b67fd56650f071c08cb982f1be73ace7a72db4de33157209ab643da"
+            },
+            {
+              "selector_index": 15,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "76cb41b4cb3c8066a0a07b2e9157092975fadcc5b317e2aa47200d4be19bf192",
+              "port_sha256": "76cb41b4cb3c8066a0a07b2e9157092975fadcc5b317e2aa47200d4be19bf192"
+            },
+            {
+              "selector_index": 16,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "4920d96df1bf3000bdc1221bc9067cc62bb989917559402e13822ef91917f443",
+              "port_sha256": "4920d96df1bf3000bdc1221bc9067cc62bb989917559402e13822ef91917f443"
+            },
+            {
+              "selector_index": 17,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "1b29e9e1bb2e437be7a202538edd2a59399adcf0505032440926b4f2df0dd882",
+              "port_sha256": "1b29e9e1bb2e437be7a202538edd2a59399adcf0505032440926b4f2df0dd882"
+            },
+            {
+              "selector_index": 18,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "119d2072a23879487900e709de3b772342cd916a58c339acb1fee24240486873",
+              "port_sha256": "119d2072a23879487900e709de3b772342cd916a58c339acb1fee24240486873"
+            },
+            {
+              "selector_index": 19,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "c6e11fcc99359c7270c6696f3e1056e5e87923a20584bc48d01e4c2b2326530b",
+              "port_sha256": "c6e11fcc99359c7270c6696f3e1056e5e87923a20584bc48d01e4c2b2326530b"
+            },
+            {
+              "selector_index": 20,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a10bcd69e956410dd49e0041c89e9230f1056a4bf0e6071b193ae5ff25cbc980",
+              "port_sha256": "a10bcd69e956410dd49e0041c89e9230f1056a4bf0e6071b193ae5ff25cbc980"
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 1643520,
+          "bit_mismatches": 0,
+          "max_abs_error": 0.0,
+          "residual_dB_relative_to_target": null,
+          "target_peak": 362.1705053831977,
+          "target_sha256": "96b6539164363a2f8b7a601be276fa9802e457fb715257d92d7921bbf2d1ae33",
+          "port_sha256": "96b6539164363a2f8b7a601be276fa9802e457fb715257d92d7921bbf2d1ae33",
+          "selector_results": [
+            {
+              "selector_index": 0,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "0be00d238f99c0e0302264762e7313f545d706321d5b34a8cb54b2bda40cbe8a",
+              "port_sha256": "0be00d238f99c0e0302264762e7313f545d706321d5b34a8cb54b2bda40cbe8a"
+            },
+            {
+              "selector_index": 1,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "ae1c820e9872138e33f7ba299b445053a7c7c94da369d8e9197a7a56ca96e1d9",
+              "port_sha256": "ae1c820e9872138e33f7ba299b445053a7c7c94da369d8e9197a7a56ca96e1d9"
+            },
+            {
+              "selector_index": 2,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "83f3e94c5fa83e9107466654a2691b371a0cf628aa9792c193cf2781f5ff7f73",
+              "port_sha256": "83f3e94c5fa83e9107466654a2691b371a0cf628aa9792c193cf2781f5ff7f73"
+            },
+            {
+              "selector_index": 3,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "b78e2d5490c33c92208689c33ebde11c3153e51fc1b2f016c462a81f699304bc",
+              "port_sha256": "b78e2d5490c33c92208689c33ebde11c3153e51fc1b2f016c462a81f699304bc"
+            },
+            {
+              "selector_index": 4,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "24e8fac619a9188ddbe49f9295c7dd0ee7feb4a3c1ab695055a16cd35994db63",
+              "port_sha256": "24e8fac619a9188ddbe49f9295c7dd0ee7feb4a3c1ab695055a16cd35994db63"
+            },
+            {
+              "selector_index": 5,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "df1620dd564957251386644e07a6176f51b0a79541c872286bb097955ca405ae",
+              "port_sha256": "df1620dd564957251386644e07a6176f51b0a79541c872286bb097955ca405ae"
+            },
+            {
+              "selector_index": 6,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "2d88b5f46528ae7b161f68a449f749f851810f61b76e68bc5037369b2381dff2",
+              "port_sha256": "2d88b5f46528ae7b161f68a449f749f851810f61b76e68bc5037369b2381dff2"
+            },
+            {
+              "selector_index": 7,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "4610222c5ada43fd7e723a2cb3bf3ad43201b1b4652af1579d2c5d9ea700267e",
+              "port_sha256": "4610222c5ada43fd7e723a2cb3bf3ad43201b1b4652af1579d2c5d9ea700267e"
+            },
+            {
+              "selector_index": 9,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "665a3005ecfae220bbfe94fe7de8b4c8b5d3fc813e5cf0450e5844fc764510a1",
+              "port_sha256": "665a3005ecfae220bbfe94fe7de8b4c8b5d3fc813e5cf0450e5844fc764510a1"
+            },
+            {
+              "selector_index": 10,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "918b6208af8f85ac3260334b426e3443d80e23d1abde875a9e1df59e7dcdb46a",
+              "port_sha256": "918b6208af8f85ac3260334b426e3443d80e23d1abde875a9e1df59e7dcdb46a"
+            },
+            {
+              "selector_index": 11,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "edf676a85f829040e3db0d7a95a9b0761212986b6e29764a3b90dd48781da7d8",
+              "port_sha256": "edf676a85f829040e3db0d7a95a9b0761212986b6e29764a3b90dd48781da7d8"
+            },
+            {
+              "selector_index": 12,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "1bb48bfc4f9d9e770e912a5dcbd9756531ddd39120049f2bb561ad7412611141",
+              "port_sha256": "1bb48bfc4f9d9e770e912a5dcbd9756531ddd39120049f2bb561ad7412611141"
+            },
+            {
+              "selector_index": 13,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "69a50110143e1f9d8665153b384669373d63daf55ceaa41f0a80b0d5e07748df",
+              "port_sha256": "69a50110143e1f9d8665153b384669373d63daf55ceaa41f0a80b0d5e07748df"
+            },
+            {
+              "selector_index": 14,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "ca305045a1c96bba465259dc0137d6d0c1e28317a4b05b34ab57bdc3568243f1",
+              "port_sha256": "ca305045a1c96bba465259dc0137d6d0c1e28317a4b05b34ab57bdc3568243f1"
+            },
+            {
+              "selector_index": 15,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "cda3424ce131917b11c28b9336898f1184c8490bd50c01926aa001da4f7c9eec",
+              "port_sha256": "cda3424ce131917b11c28b9336898f1184c8490bd50c01926aa001da4f7c9eec"
+            },
+            {
+              "selector_index": 16,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "7d817084f91c2fb5ef5642a5b5ccebf7d9d619a605ba1b21fa50a1daa387e936",
+              "port_sha256": "7d817084f91c2fb5ef5642a5b5ccebf7d9d619a605ba1b21fa50a1daa387e936"
+            },
+            {
+              "selector_index": 17,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "b7ab7b32c15d09a80fa9f3f2327bd4a25991810f23099b7e3eb9518f4d7af5f1",
+              "port_sha256": "b7ab7b32c15d09a80fa9f3f2327bd4a25991810f23099b7e3eb9518f4d7af5f1"
+            },
+            {
+              "selector_index": 18,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "1960d546b8a897193e750a1008b3b7eba22b6fb12e5a04c18cfe7a524736bc0a",
+              "port_sha256": "1960d546b8a897193e750a1008b3b7eba22b6fb12e5a04c18cfe7a524736bc0a"
+            },
+            {
+              "selector_index": 19,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "87bb09fa1b6c2cd481c17e3a5cb0e5c573636074f2358d182a4eaf5111eeb9dc",
+              "port_sha256": "87bb09fa1b6c2cd481c17e3a5cb0e5c573636074f2358d182a4eaf5111eeb9dc"
+            },
+            {
+              "selector_index": 20,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "f17b615cadaa89c872090bfdb5d00312e1618e5d5573ce9829b6d663458d17fb",
+              "port_sha256": "f17b615cadaa89c872090bfdb5d00312e1618e5d5573ce9829b6d663458d17fb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 128,
+      "frames_per_instance": 821760,
+      "input_peak": 64.63852546770632,
+      "input_sha256": "86ae0d5797b473a8fcb67310c8a8e6d63295295156a4cc6a887738a38028f5bc",
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 1643520,
+          "bit_mismatches": 0,
+          "max_abs_error": 0.0,
+          "residual_dB_relative_to_target": null,
+          "target_peak": 734.9133370467534,
+          "target_sha256": "4b6e93896a3b2d5d05633684fda5f2ef6979cae0ecb13cc0ed639f3622b5ce53",
+          "port_sha256": "4b6e93896a3b2d5d05633684fda5f2ef6979cae0ecb13cc0ed639f3622b5ce53",
+          "selector_results": [
+            {
+              "selector_index": 0,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "de2ab30852984020805de963680649d6656423d4ee377fe77bc6472c9d230e02",
+              "port_sha256": "de2ab30852984020805de963680649d6656423d4ee377fe77bc6472c9d230e02"
+            },
+            {
+              "selector_index": 1,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "065bee50b5e3c61aa00fec5a0f43e29d36382e64577d10add3c43b7b587b87f2",
+              "port_sha256": "065bee50b5e3c61aa00fec5a0f43e29d36382e64577d10add3c43b7b587b87f2"
+            },
+            {
+              "selector_index": 2,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "52914e8988f5bb6cb6d06fe9fd99ea1b8f33be1038202cd5065a9e6f1a0d193f",
+              "port_sha256": "52914e8988f5bb6cb6d06fe9fd99ea1b8f33be1038202cd5065a9e6f1a0d193f"
+            },
+            {
+              "selector_index": 3,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "e86c8a0085fbefde5417050c344067f0d42d76bac6d581744bad6bddc66666c7",
+              "port_sha256": "e86c8a0085fbefde5417050c344067f0d42d76bac6d581744bad6bddc66666c7"
+            },
+            {
+              "selector_index": 4,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "baa9825f6a5508ea63bd0d557bb7d79b3c64e7b364e6b82043de5c164fe7e71d",
+              "port_sha256": "baa9825f6a5508ea63bd0d557bb7d79b3c64e7b364e6b82043de5c164fe7e71d"
+            },
+            {
+              "selector_index": 5,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "99b9435f3fddfe71540e752a5099edf3ae12c138c6dc6f1e092ba7e2cfe28f3b",
+              "port_sha256": "99b9435f3fddfe71540e752a5099edf3ae12c138c6dc6f1e092ba7e2cfe28f3b"
+            },
+            {
+              "selector_index": 6,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "107a0e305958d0fbdfb95099af34b0abfbc4699ed57449aa85157530bb5fec61",
+              "port_sha256": "107a0e305958d0fbdfb95099af34b0abfbc4699ed57449aa85157530bb5fec61"
+            },
+            {
+              "selector_index": 7,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "344b8f5c357f36c3acdf6274fc42013bf6b00d824c361cc94a71137c8a1fe3e3",
+              "port_sha256": "344b8f5c357f36c3acdf6274fc42013bf6b00d824c361cc94a71137c8a1fe3e3"
+            },
+            {
+              "selector_index": 9,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "45dec40795ed99fe00d915da1b76fb83d55970fb909c4af991a4e7406c7190eb",
+              "port_sha256": "45dec40795ed99fe00d915da1b76fb83d55970fb909c4af991a4e7406c7190eb"
+            },
+            {
+              "selector_index": 10,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a4e26ad2a2b87bcf6e501322bb1b3b77955dcdad6b3316ab163e911d1295a0b9",
+              "port_sha256": "a4e26ad2a2b87bcf6e501322bb1b3b77955dcdad6b3316ab163e911d1295a0b9"
+            },
+            {
+              "selector_index": 11,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a75a05c01ab447d992de4898203adce2a3a9506c66c4af3e8cfc9bb74e3d5712",
+              "port_sha256": "a75a05c01ab447d992de4898203adce2a3a9506c66c4af3e8cfc9bb74e3d5712"
+            },
+            {
+              "selector_index": 12,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "983864426bd0c25ed48281681d1c6e2124a75fbc2d7a68c0b79e5d53e73d1192",
+              "port_sha256": "983864426bd0c25ed48281681d1c6e2124a75fbc2d7a68c0b79e5d53e73d1192"
+            },
+            {
+              "selector_index": 13,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "c7e1bc40562eb0f840a2869bd2b1a731fa6f1fc76ef80e37a27b2fc410dfd21c",
+              "port_sha256": "c7e1bc40562eb0f840a2869bd2b1a731fa6f1fc76ef80e37a27b2fc410dfd21c"
+            },
+            {
+              "selector_index": 14,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "1997ebe4b7e4e0e36c5d109d424b20a7296ebc6e1cb03a67b362024ccba0ee5e",
+              "port_sha256": "1997ebe4b7e4e0e36c5d109d424b20a7296ebc6e1cb03a67b362024ccba0ee5e"
+            },
+            {
+              "selector_index": 15,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "bd18328cd3faa36d109026ffcdd8a2e13991435f2f85feb9cedfaa8239d142c7",
+              "port_sha256": "bd18328cd3faa36d109026ffcdd8a2e13991435f2f85feb9cedfaa8239d142c7"
+            },
+            {
+              "selector_index": 16,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "df50dd5be1b4aac8c94dbc4aa8413c82f6d7eb4649cfc22350e12529fdccdac2",
+              "port_sha256": "df50dd5be1b4aac8c94dbc4aa8413c82f6d7eb4649cfc22350e12529fdccdac2"
+            },
+            {
+              "selector_index": 17,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "de87f9ce955bd8b6d0f141dcc059449db0d4a1424073b667780aa0ac5c5f63b3",
+              "port_sha256": "de87f9ce955bd8b6d0f141dcc059449db0d4a1424073b667780aa0ac5c5f63b3"
+            },
+            {
+              "selector_index": 18,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a66f922d223c62a9cc994594cd79f7916f6901b723fe2471312f605b2d1c64a4",
+              "port_sha256": "a66f922d223c62a9cc994594cd79f7916f6901b723fe2471312f605b2d1c64a4"
+            },
+            {
+              "selector_index": 19,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "96f190709edb3eb2cbb0c48ea1b27b1ef67355106d50ea29edc32864a122f3ba",
+              "port_sha256": "96f190709edb3eb2cbb0c48ea1b27b1ef67355106d50ea29edc32864a122f3ba"
+            },
+            {
+              "selector_index": 20,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "4316587e826eeef4d2763c3b8ba9cc77e88791155064d738215f6072922cb76f",
+              "port_sha256": "4316587e826eeef4d2763c3b8ba9cc77e88791155064d738215f6072922cb76f"
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 1643520,
+          "bit_mismatches": 0,
+          "max_abs_error": 0.0,
+          "residual_dB_relative_to_target": null,
+          "target_peak": 734.9133370541018,
+          "target_sha256": "c4d0e0abb4eea8cb2a1000858f498819b281062fef187d9fbd5b1203b1f954b6",
+          "port_sha256": "c4d0e0abb4eea8cb2a1000858f498819b281062fef187d9fbd5b1203b1f954b6",
+          "selector_results": [
+            {
+              "selector_index": 0,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "de2ab30852984020805de963680649d6656423d4ee377fe77bc6472c9d230e02",
+              "port_sha256": "de2ab30852984020805de963680649d6656423d4ee377fe77bc6472c9d230e02"
+            },
+            {
+              "selector_index": 1,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "065bee50b5e3c61aa00fec5a0f43e29d36382e64577d10add3c43b7b587b87f2",
+              "port_sha256": "065bee50b5e3c61aa00fec5a0f43e29d36382e64577d10add3c43b7b587b87f2"
+            },
+            {
+              "selector_index": 2,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "52914e8988f5bb6cb6d06fe9fd99ea1b8f33be1038202cd5065a9e6f1a0d193f",
+              "port_sha256": "52914e8988f5bb6cb6d06fe9fd99ea1b8f33be1038202cd5065a9e6f1a0d193f"
+            },
+            {
+              "selector_index": 3,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "e86c8a0085fbefde5417050c344067f0d42d76bac6d581744bad6bddc66666c7",
+              "port_sha256": "e86c8a0085fbefde5417050c344067f0d42d76bac6d581744bad6bddc66666c7"
+            },
+            {
+              "selector_index": 4,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "baa9825f6a5508ea63bd0d557bb7d79b3c64e7b364e6b82043de5c164fe7e71d",
+              "port_sha256": "baa9825f6a5508ea63bd0d557bb7d79b3c64e7b364e6b82043de5c164fe7e71d"
+            },
+            {
+              "selector_index": 5,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "99b9435f3fddfe71540e752a5099edf3ae12c138c6dc6f1e092ba7e2cfe28f3b",
+              "port_sha256": "99b9435f3fddfe71540e752a5099edf3ae12c138c6dc6f1e092ba7e2cfe28f3b"
+            },
+            {
+              "selector_index": 6,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "107a0e305958d0fbdfb95099af34b0abfbc4699ed57449aa85157530bb5fec61",
+              "port_sha256": "107a0e305958d0fbdfb95099af34b0abfbc4699ed57449aa85157530bb5fec61"
+            },
+            {
+              "selector_index": 7,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "344b8f5c357f36c3acdf6274fc42013bf6b00d824c361cc94a71137c8a1fe3e3",
+              "port_sha256": "344b8f5c357f36c3acdf6274fc42013bf6b00d824c361cc94a71137c8a1fe3e3"
+            },
+            {
+              "selector_index": 9,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "2094e616155248c76c47d10bf8ce351975c18afcb858cff3746a9042297738a0",
+              "port_sha256": "2094e616155248c76c47d10bf8ce351975c18afcb858cff3746a9042297738a0"
+            },
+            {
+              "selector_index": 10,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "550d686d11f26787de2a9c27aad79ec143d94cc55f1868fb629168e9016d7383",
+              "port_sha256": "550d686d11f26787de2a9c27aad79ec143d94cc55f1868fb629168e9016d7383"
+            },
+            {
+              "selector_index": 11,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "9fd5959d1a3467cd54e86d6e385ac5ce4f4a4e57b9354d7b6489c9a07515b72d",
+              "port_sha256": "9fd5959d1a3467cd54e86d6e385ac5ce4f4a4e57b9354d7b6489c9a07515b72d"
+            },
+            {
+              "selector_index": 12,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "342aeaac3631fab942bfd1497762bbb71584df27cbf0fdec3fda034f68dbf7d7",
+              "port_sha256": "342aeaac3631fab942bfd1497762bbb71584df27cbf0fdec3fda034f68dbf7d7"
+            },
+            {
+              "selector_index": 13,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "552ba4ad74e479d78d810a2443592e600023c2c32ecc472226ffe7a30e00818d",
+              "port_sha256": "552ba4ad74e479d78d810a2443592e600023c2c32ecc472226ffe7a30e00818d"
+            },
+            {
+              "selector_index": 14,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "98c85fcd1fe8c10a20cc7841d9c0855cd9c3ee2e3ea9b0c67400e22a8dce8f8c",
+              "port_sha256": "98c85fcd1fe8c10a20cc7841d9c0855cd9c3ee2e3ea9b0c67400e22a8dce8f8c"
+            },
+            {
+              "selector_index": 15,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "84faba9e549bf41fa9d27d2a7d0a2fa35ad61788fbdf4b4f8c54598890eed3f8",
+              "port_sha256": "84faba9e549bf41fa9d27d2a7d0a2fa35ad61788fbdf4b4f8c54598890eed3f8"
+            },
+            {
+              "selector_index": 16,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "77bcfe91658a687d2e2f62f92d8c9c1c75efa81647e7b17bda3d1682b2ecdf35",
+              "port_sha256": "77bcfe91658a687d2e2f62f92d8c9c1c75efa81647e7b17bda3d1682b2ecdf35"
+            },
+            {
+              "selector_index": 17,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "8042f4041bd5adabaa2e7057d2b3183f676037ea1176b90e129166807baf15bd",
+              "port_sha256": "8042f4041bd5adabaa2e7057d2b3183f676037ea1176b90e129166807baf15bd"
+            },
+            {
+              "selector_index": 18,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "19f7ac9e6f96d160432d1ae2831c1f24b8d330f8132a39d03676b7fe14e373c9",
+              "port_sha256": "19f7ac9e6f96d160432d1ae2831c1f24b8d330f8132a39d03676b7fe14e373c9"
+            },
+            {
+              "selector_index": 19,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "cade876d98238e79036815ba30a1bb7bf29b2aaf51b74dd1785e8dc3b5f0aac4",
+              "port_sha256": "cade876d98238e79036815ba30a1bb7bf29b2aaf51b74dd1785e8dc3b5f0aac4"
+            },
+            {
+              "selector_index": 20,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "6de8d076eb2a3284a8aefb9bce8b1db09bed78f786867e344260eeec0c23c965",
+              "port_sha256": "6de8d076eb2a3284a8aefb9bce8b1db09bed78f786867e344260eeec0c23c965"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 128,
+      "frames_per_instance": 821760,
+      "input_peak": 64.60076434797581,
+      "input_sha256": "7d3fc50267b494926ba86217c2332acb1f36bd18c7ef161698a8f5ffad5cab46",
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 1643520,
+          "bit_mismatches": 0,
+          "max_abs_error": 0.0,
+          "residual_dB_relative_to_target": null,
+          "target_peak": 1088.3213981485835,
+          "target_sha256": "c499abbd0faa1d052678c4dc2a6fb6c02ba91a86b45e9bf4f7789a029f4e13ea",
+          "port_sha256": "c499abbd0faa1d052678c4dc2a6fb6c02ba91a86b45e9bf4f7789a029f4e13ea",
+          "selector_results": [
+            {
+              "selector_index": 0,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "e7ce34531cecddcf0d714ec7e84e743efecfe898b837f0a941aa3440d4e3d44d",
+              "port_sha256": "e7ce34531cecddcf0d714ec7e84e743efecfe898b837f0a941aa3440d4e3d44d"
+            },
+            {
+              "selector_index": 1,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "2dd07b85d45c9ceedc6731c9d6f5f93647cc7b3a5131c08a5126ffbd52e7630c",
+              "port_sha256": "2dd07b85d45c9ceedc6731c9d6f5f93647cc7b3a5131c08a5126ffbd52e7630c"
+            },
+            {
+              "selector_index": 2,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "f18813d7fc79592d8c3e42d0fe157e2bfa230165eb4034762f41fc56135813ea",
+              "port_sha256": "f18813d7fc79592d8c3e42d0fe157e2bfa230165eb4034762f41fc56135813ea"
+            },
+            {
+              "selector_index": 3,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "cb92550ba0df022bd04f4135b2495a8091af89688f0abe2672b236fac62e6b54",
+              "port_sha256": "cb92550ba0df022bd04f4135b2495a8091af89688f0abe2672b236fac62e6b54"
+            },
+            {
+              "selector_index": 4,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "4847fdace50a74286ab75cffcc2688c4e35b744bbb7d3587d63c7506e9498f24",
+              "port_sha256": "4847fdace50a74286ab75cffcc2688c4e35b744bbb7d3587d63c7506e9498f24"
+            },
+            {
+              "selector_index": 5,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a4991762b5de8f5990d601d61095b8c4489a79ce7a0f906848d843d3140bb7c0",
+              "port_sha256": "a4991762b5de8f5990d601d61095b8c4489a79ce7a0f906848d843d3140bb7c0"
+            },
+            {
+              "selector_index": 6,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "e40513ee08917cca51f218fef31a9f36f0fcc6244d525c9315857526e2fed2e4",
+              "port_sha256": "e40513ee08917cca51f218fef31a9f36f0fcc6244d525c9315857526e2fed2e4"
+            },
+            {
+              "selector_index": 7,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "d82488211279e0efcaf9dad65ee3d3952603f45728fd6e53971f0c16ad000d16",
+              "port_sha256": "d82488211279e0efcaf9dad65ee3d3952603f45728fd6e53971f0c16ad000d16"
+            },
+            {
+              "selector_index": 9,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "da7301d8c3e327f474721817e32f95c566e376abeadad19b8104c80d5a80a8b1",
+              "port_sha256": "da7301d8c3e327f474721817e32f95c566e376abeadad19b8104c80d5a80a8b1"
+            },
+            {
+              "selector_index": 10,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "7e1ddea20e5485d9d7cd7b5226d77b959778e512174e89612ee13e7e22e7216d",
+              "port_sha256": "7e1ddea20e5485d9d7cd7b5226d77b959778e512174e89612ee13e7e22e7216d"
+            },
+            {
+              "selector_index": 11,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "6cd0ca839eeb914a47db05130ab0cb92cb5a510316ae4a0819734489e5f1ceee",
+              "port_sha256": "6cd0ca839eeb914a47db05130ab0cb92cb5a510316ae4a0819734489e5f1ceee"
+            },
+            {
+              "selector_index": 12,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a909ce5bec4704a33bc298a4b89d75c16f5db6e41d5ea61fd61c0a94a6d59044",
+              "port_sha256": "a909ce5bec4704a33bc298a4b89d75c16f5db6e41d5ea61fd61c0a94a6d59044"
+            },
+            {
+              "selector_index": 13,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "78b76fdad50ff4ee1a91897f03bf781321f6ceb423fce2bde9f493a6333c0e12",
+              "port_sha256": "78b76fdad50ff4ee1a91897f03bf781321f6ceb423fce2bde9f493a6333c0e12"
+            },
+            {
+              "selector_index": 14,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "6a02c5be2bf80cd43c4f11e6c1e91b94cf0d02df170c148ecd89913d669c090e",
+              "port_sha256": "6a02c5be2bf80cd43c4f11e6c1e91b94cf0d02df170c148ecd89913d669c090e"
+            },
+            {
+              "selector_index": 15,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a78fa4ecf09db1ddb2f558f73ce7d0498335ad9180c3ee87800f2c63ad117974",
+              "port_sha256": "a78fa4ecf09db1ddb2f558f73ce7d0498335ad9180c3ee87800f2c63ad117974"
+            },
+            {
+              "selector_index": 16,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "6fe9e2553b611a82a4fe1eebeb24cacf58e5ee6baa124dd9f9f131dd4d867508",
+              "port_sha256": "6fe9e2553b611a82a4fe1eebeb24cacf58e5ee6baa124dd9f9f131dd4d867508"
+            },
+            {
+              "selector_index": 17,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "7851cdd0766b80000516dfd8cf4d4fdef077b370250c4cec5d0ef424204ef3f6",
+              "port_sha256": "7851cdd0766b80000516dfd8cf4d4fdef077b370250c4cec5d0ef424204ef3f6"
+            },
+            {
+              "selector_index": 18,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "d9a1e1f8007fb6f5680e5b29659fb3596d9f685f56df72ad041a422925f0077c",
+              "port_sha256": "d9a1e1f8007fb6f5680e5b29659fb3596d9f685f56df72ad041a422925f0077c"
+            },
+            {
+              "selector_index": 19,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "aadf4a894d51470a92551e244784a0887e5b6b6bec6e29055359c9260d21144a",
+              "port_sha256": "aadf4a894d51470a92551e244784a0887e5b6b6bec6e29055359c9260d21144a"
+            },
+            {
+              "selector_index": 20,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "fb411ea6ab8c919d086cc616365e568787cef975f601825cc633e15ce794bd0c",
+              "port_sha256": "fb411ea6ab8c919d086cc616365e568787cef975f601825cc633e15ce794bd0c"
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 1643520,
+          "bit_mismatches": 0,
+          "max_abs_error": 0.0,
+          "residual_dB_relative_to_target": null,
+          "target_peak": 1088.3213981644828,
+          "target_sha256": "03f1af469cebbe08e879741537743c628434b88beaa108fd624f62bdee598e1e",
+          "port_sha256": "03f1af469cebbe08e879741537743c628434b88beaa108fd624f62bdee598e1e",
+          "selector_results": [
+            {
+              "selector_index": 0,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "e7ce34531cecddcf0d714ec7e84e743efecfe898b837f0a941aa3440d4e3d44d",
+              "port_sha256": "e7ce34531cecddcf0d714ec7e84e743efecfe898b837f0a941aa3440d4e3d44d"
+            },
+            {
+              "selector_index": 1,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "2dd07b85d45c9ceedc6731c9d6f5f93647cc7b3a5131c08a5126ffbd52e7630c",
+              "port_sha256": "2dd07b85d45c9ceedc6731c9d6f5f93647cc7b3a5131c08a5126ffbd52e7630c"
+            },
+            {
+              "selector_index": 2,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "f18813d7fc79592d8c3e42d0fe157e2bfa230165eb4034762f41fc56135813ea",
+              "port_sha256": "f18813d7fc79592d8c3e42d0fe157e2bfa230165eb4034762f41fc56135813ea"
+            },
+            {
+              "selector_index": 3,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "cb92550ba0df022bd04f4135b2495a8091af89688f0abe2672b236fac62e6b54",
+              "port_sha256": "cb92550ba0df022bd04f4135b2495a8091af89688f0abe2672b236fac62e6b54"
+            },
+            {
+              "selector_index": 4,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "4847fdace50a74286ab75cffcc2688c4e35b744bbb7d3587d63c7506e9498f24",
+              "port_sha256": "4847fdace50a74286ab75cffcc2688c4e35b744bbb7d3587d63c7506e9498f24"
+            },
+            {
+              "selector_index": 5,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a4991762b5de8f5990d601d61095b8c4489a79ce7a0f906848d843d3140bb7c0",
+              "port_sha256": "a4991762b5de8f5990d601d61095b8c4489a79ce7a0f906848d843d3140bb7c0"
+            },
+            {
+              "selector_index": 6,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "e40513ee08917cca51f218fef31a9f36f0fcc6244d525c9315857526e2fed2e4",
+              "port_sha256": "e40513ee08917cca51f218fef31a9f36f0fcc6244d525c9315857526e2fed2e4"
+            },
+            {
+              "selector_index": 7,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "d82488211279e0efcaf9dad65ee3d3952603f45728fd6e53971f0c16ad000d16",
+              "port_sha256": "d82488211279e0efcaf9dad65ee3d3952603f45728fd6e53971f0c16ad000d16"
+            },
+            {
+              "selector_index": 9,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "07e1a94eeb0ccba191cdfd7c8452dab8a2c80f3191627ff5ef18877332b7cbf5",
+              "port_sha256": "07e1a94eeb0ccba191cdfd7c8452dab8a2c80f3191627ff5ef18877332b7cbf5"
+            },
+            {
+              "selector_index": 10,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "103db09b9785986836213574bd68b8a65d811f1dcc3c33cdfaea18e5918f428d",
+              "port_sha256": "103db09b9785986836213574bd68b8a65d811f1dcc3c33cdfaea18e5918f428d"
+            },
+            {
+              "selector_index": 11,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "55c3d9aab7c0abc0b8acf4d2f667eea7807b46314f7dc3ac163e200af1d24b18",
+              "port_sha256": "55c3d9aab7c0abc0b8acf4d2f667eea7807b46314f7dc3ac163e200af1d24b18"
+            },
+            {
+              "selector_index": 12,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "02339de4f849b699e7c3902524df7ad75d88c524c57b0e9af4ea0478297caf1a",
+              "port_sha256": "02339de4f849b699e7c3902524df7ad75d88c524c57b0e9af4ea0478297caf1a"
+            },
+            {
+              "selector_index": 13,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "03e234bd23f9637d7dd0ea4af970766c7b85b256857f0a9fdd71a90a59f53b25",
+              "port_sha256": "03e234bd23f9637d7dd0ea4af970766c7b85b256857f0a9fdd71a90a59f53b25"
+            },
+            {
+              "selector_index": 14,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "a10d19c5214fea9eb148080b7bf80cd12bd6fbe18d68793364e6122d4dcaec1f",
+              "port_sha256": "a10d19c5214fea9eb148080b7bf80cd12bd6fbe18d68793364e6122d4dcaec1f"
+            },
+            {
+              "selector_index": 15,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "7ad3a7d2a8006ab0683ffa7202f62311846742a482b82209056294d2c9eb1078",
+              "port_sha256": "7ad3a7d2a8006ab0683ffa7202f62311846742a482b82209056294d2c9eb1078"
+            },
+            {
+              "selector_index": 16,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "194a16072e01cd1017b9903b60fded410214fce9f189173e90a407848323a612",
+              "port_sha256": "194a16072e01cd1017b9903b60fded410214fce9f189173e90a407848323a612"
+            },
+            {
+              "selector_index": 17,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "8d5b415f84fac0d4aced0dfff38938631d8397c0c3a4253c3e04b0d47e21e9f6",
+              "port_sha256": "8d5b415f84fac0d4aced0dfff38938631d8397c0c3a4253c3e04b0d47e21e9f6"
+            },
+            {
+              "selector_index": 18,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "efee8d7c7c638d71129a819ad849ef571b9d0a5320cc9a8ef5372d76a5c7d342",
+              "port_sha256": "efee8d7c7c638d71129a819ad849ef571b9d0a5320cc9a8ef5372d76a5c7d342"
+            },
+            {
+              "selector_index": 19,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "acfaf6e9ff18be673db29e91f01ed750fdecc356fb0583180c86399b1354afab",
+              "port_sha256": "acfaf6e9ff18be673db29e91f01ed750fdecc356fb0583180c86399b1354afab"
+            },
+            {
+              "selector_index": 20,
+              "gain_points": 321,
+              "compared_float64_values": 82176,
+              "bit_mismatches": 0,
+              "max_abs_error": 0.0,
+              "target_sha256": "ab57dfbed7dbdac1ec8b91abfa153e51da5c3802efdbea1ea4ac28869834cc05",
+              "port_sha256": "ab57dfbed7dbdac1ec8b91abfa153e51da5c3802efdbea1ea4ac28869834cc05"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The target returned E_NOINTERFACE for setProcessing(1), matching established retained-host behavior; process() rendered all frames.",
+    "Short 128-frame gain states preserve live biquad history but do not test slower gain ramps or every other EQ-control cross-product."
+  ]
+}
