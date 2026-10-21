@@ -28,7 +28,7 @@ cmake -S . -B build-win64 \
 cmake --build build-win64 --target burnley73_dsp Burnley73
 ```
 
-This produces the Windows x64 VST3 DLL at `build-win64/VST3/Burnley73.vst3`. MinGW's compiler runtimes, including winpthreads, are linked statically; its imports are limited to Windows system DLLs. The SDK validator is disabled for this cross-build because it is a Windows executable; the MinGW build itself was verified by inspecting the resulting PE32+ x86-64 binary. Wine could not run the SDK metadata utility successfully here, so this build has no Windows runtime/host validation.
+This produces the Windows x64 VST3 DLL at `build-win64/VST3/Burnley73.vst3`. MinGW's compiler runtimes, including winpthreads, are linked statically; its imports are limited to Windows system DLLs. The SDK validator is disabled for this cross-build because it is a Windows executable. The licensed original and current build have also been loaded by a Win64 VST3 host under Wine 10; current Mic startup parity matches bit-for-bit across 44.1, 48, and 96 kHz at 512-frame blocks. This runtime check does not replace the SDK validator or cover multi-instance startup.
 
 ## Controls
 
