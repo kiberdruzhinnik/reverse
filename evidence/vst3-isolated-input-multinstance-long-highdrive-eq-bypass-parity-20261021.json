@@ -1,0 +1,718 @@
+{
+  "record_type": "runtime-dsp-parity",
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "f7731d614ac17e01adabd10e62b0668b643466a274f2e3dfd2bf8685a2a9f4fa",
+    "build": "Win64 MinGW static-runtime VST3"
+  },
+  "host": {
+    "path": "codex-tmp/host-work/isolated-multinstance-highdrive-bypass-host.exe",
+    "sha256": "8c27b78b3e160a7aee823d224550aaa055efabe8744cbf8a1b60021b40c05f29",
+    "source_path": "codex-tmp/host-work/isolated-multinstance-highdrive-bypass.cpp",
+    "source_sha256": "42f37827ce21b00c73ea7a5e1d765ea7648d10cba6c47ba223e27c05e5d351a3",
+    "platform": "Win64 under Wine",
+    "instances": [
+      "target-0",
+      "port-0",
+      "target-1",
+      "port-1"
+    ],
+    "host_threads": 1,
+    "input_policy": "Fresh original input copy for each plugin instance and process block. Model selector ID 6, host Bypass ID 0x62706173, and six EQ IDs are queued."
+  },
+  "stimulus": "Independent stereo 997 Hz/613 Hz tones, deterministic noise and periodic impulses at peaks about 6.4.",
+  "automation": {
+    "segment_frames": 4096,
+    "model_selector_normalized": 0.2,
+    "host_bypass_parameter_id": "0x62706173",
+    "host_bypass_by_segment": [
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      true
+    ],
+    "eq_parameter_ids": {
+      "low_shelf_frequency": 1,
+      "low_shelf_gain": 2,
+      "mid_frequency": 3,
+      "mid_gain": 4,
+      "high_shelf_gain": 5,
+      "eq_in": 12
+    },
+    "eq_states": [
+      {
+        "low_shelf_frequency_normalized": 0.3333333333333333,
+        "low_shelf_gain_normalized": 0.75,
+        "mid_frequency_normalized": 0.4,
+        "mid_gain_normalized": 0.25,
+        "high_shelf_gain_normalized": 0.75,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 0.6666666666666666,
+        "low_shelf_gain_normalized": 0.25,
+        "mid_frequency_normalized": 0.8,
+        "mid_gain_normalized": 0.75,
+        "high_shelf_gain_normalized": 0.25,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 0,
+        "low_shelf_gain_normalized": 0.625,
+        "mid_frequency_normalized": 1,
+        "mid_gain_normalized": 0.625,
+        "high_shelf_gain_normalized": 0.625,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 1,
+        "low_shelf_gain_normalized": 0.375,
+        "mid_frequency_normalized": 0.2,
+        "mid_gain_normalized": 0.375,
+        "high_shelf_gain_normalized": 0.375,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 0.3333333333333333,
+        "low_shelf_gain_normalized": 0.75,
+        "mid_frequency_normalized": 0.6,
+        "mid_gain_normalized": 0.75,
+        "high_shelf_gain_normalized": 0.5,
+        "eq_in": false
+      },
+      {
+        "low_shelf_frequency_normalized": 0.6666666666666666,
+        "low_shelf_gain_normalized": 0.25,
+        "mid_frequency_normalized": 0.4,
+        "mid_gain_normalized": 0.25,
+        "high_shelf_gain_normalized": 0.5,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 0,
+        "low_shelf_gain_normalized": 0.5,
+        "mid_frequency_normalized": 0,
+        "mid_gain_normalized": 0.5,
+        "high_shelf_gain_normalized": 0.5,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_normalized": 1,
+        "low_shelf_gain_normalized": 0.5,
+        "mid_frequency_normalized": 1,
+        "mid_gain_normalized": 0.5,
+        "high_shelf_gain_normalized": 0.5,
+        "eq_in": true
+      }
+    ]
+  },
+  "runs": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "frames_per_instance": 32768,
+      "model_selector_normalized": 0.2,
+      "model_selector_index": 4,
+      "model": "Line 20",
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "full_output_sha256": {
+        "target-0": "6f4564c48a6de4aecfafce47e66d94aa7b897e4bd553488485ed185ecc61b8c9",
+        "port-0": "6f4564c48a6de4aecfafce47e66d94aa7b897e4bd553488485ed185ecc61b8c9",
+        "target-1": "6f4564c48a6de4aecfafce47e66d94aa7b897e4bd553488485ed185ecc61b8c9",
+        "port-1": "6f4564c48a6de4aecfafce47e66d94aa7b897e4bd553488485ed185ecc61b8c9"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 4096,
+          "host_bypass_normalized": 0.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.3333333333333333,
+            "low_shelf_gain_normalized": 0.75,
+            "mid_frequency_normalized": 0.4,
+            "mid_gain_normalized": 0.25,
+            "high_shelf_gain_normalized": 0.75,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "525ec682af1e15c050421552875b1088199fecc99a416d55f19f37a60dc86681",
+              "port_sha256": "525ec682af1e15c050421552875b1088199fecc99a416d55f19f37a60dc86681"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "525ec682af1e15c050421552875b1088199fecc99a416d55f19f37a60dc86681",
+              "port_sha256": "525ec682af1e15c050421552875b1088199fecc99a416d55f19f37a60dc86681"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 4096,
+          "frame_count": 4096,
+          "host_bypass_normalized": 1.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.6666666666666666,
+            "low_shelf_gain_normalized": 0.25,
+            "mid_frequency_normalized": 0.8,
+            "mid_gain_normalized": 0.75,
+            "high_shelf_gain_normalized": 0.25,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "bc8b7198773ed2c5a19fad24f6835188e4541f038cca50ed8ecb0a71893b14c4",
+              "port_sha256": "bc8b7198773ed2c5a19fad24f6835188e4541f038cca50ed8ecb0a71893b14c4"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "bc8b7198773ed2c5a19fad24f6835188e4541f038cca50ed8ecb0a71893b14c4",
+              "port_sha256": "bc8b7198773ed2c5a19fad24f6835188e4541f038cca50ed8ecb0a71893b14c4"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 8192,
+          "frame_count": 4096,
+          "host_bypass_normalized": 1.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0,
+            "low_shelf_gain_normalized": 0.625,
+            "mid_frequency_normalized": 1,
+            "mid_gain_normalized": 0.625,
+            "high_shelf_gain_normalized": 0.625,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "11f155f907792b7d3c094610b0c1b8f465451cfffe702da20862d3acff9e7373",
+              "port_sha256": "11f155f907792b7d3c094610b0c1b8f465451cfffe702da20862d3acff9e7373"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "11f155f907792b7d3c094610b0c1b8f465451cfffe702da20862d3acff9e7373",
+              "port_sha256": "11f155f907792b7d3c094610b0c1b8f465451cfffe702da20862d3acff9e7373"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 12288,
+          "frame_count": 4096,
+          "host_bypass_normalized": 0.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 1,
+            "low_shelf_gain_normalized": 0.375,
+            "mid_frequency_normalized": 0.2,
+            "mid_gain_normalized": 0.375,
+            "high_shelf_gain_normalized": 0.375,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "82e3f1887c398f7d0f742723030aa4c7d3c67de34ad2ceed9ef07621efbae0c2",
+              "port_sha256": "82e3f1887c398f7d0f742723030aa4c7d3c67de34ad2ceed9ef07621efbae0c2"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "82e3f1887c398f7d0f742723030aa4c7d3c67de34ad2ceed9ef07621efbae0c2",
+              "port_sha256": "82e3f1887c398f7d0f742723030aa4c7d3c67de34ad2ceed9ef07621efbae0c2"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 16384,
+          "frame_count": 4096,
+          "host_bypass_normalized": 1.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.3333333333333333,
+            "low_shelf_gain_normalized": 0.75,
+            "mid_frequency_normalized": 0.6,
+            "mid_gain_normalized": 0.75,
+            "high_shelf_gain_normalized": 0.5,
+            "eq_in": false
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "207c0a42798800f653726ed096b169e4d53b7a7911fd7400bf992f4a681e1fd9",
+              "port_sha256": "207c0a42798800f653726ed096b169e4d53b7a7911fd7400bf992f4a681e1fd9"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "207c0a42798800f653726ed096b169e4d53b7a7911fd7400bf992f4a681e1fd9",
+              "port_sha256": "207c0a42798800f653726ed096b169e4d53b7a7911fd7400bf992f4a681e1fd9"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 20480,
+          "frame_count": 4096,
+          "host_bypass_normalized": 0.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.6666666666666666,
+            "low_shelf_gain_normalized": 0.25,
+            "mid_frequency_normalized": 0.4,
+            "mid_gain_normalized": 0.25,
+            "high_shelf_gain_normalized": 0.5,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "3c7c029334f7ce572491b14c9c9d9857afe92bd965f8c3080c4ef296306c856e",
+              "port_sha256": "3c7c029334f7ce572491b14c9c9d9857afe92bd965f8c3080c4ef296306c856e"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "3c7c029334f7ce572491b14c9c9d9857afe92bd965f8c3080c4ef296306c856e",
+              "port_sha256": "3c7c029334f7ce572491b14c9c9d9857afe92bd965f8c3080c4ef296306c856e"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 24576,
+          "frame_count": 4096,
+          "host_bypass_normalized": 0.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0,
+            "low_shelf_gain_normalized": 0.5,
+            "mid_frequency_normalized": 0,
+            "mid_gain_normalized": 0.5,
+            "high_shelf_gain_normalized": 0.5,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "4a472515435ac3d821fd4c101c347664c103b0676cec81f4fbad03ff6af94c1e",
+              "port_sha256": "4a472515435ac3d821fd4c101c347664c103b0676cec81f4fbad03ff6af94c1e"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "4a472515435ac3d821fd4c101c347664c103b0676cec81f4fbad03ff6af94c1e",
+              "port_sha256": "4a472515435ac3d821fd4c101c347664c103b0676cec81f4fbad03ff6af94c1e"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 28672,
+          "frame_count": 4096,
+          "host_bypass_normalized": 1.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 1,
+            "low_shelf_gain_normalized": 0.5,
+            "mid_frequency_normalized": 1,
+            "mid_gain_normalized": 0.5,
+            "high_shelf_gain_normalized": 0.5,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "a764c748920cd8ca7866f8d851f4ace1ffab03e989955492e10b68205c581b41",
+              "port_sha256": "a764c748920cd8ca7866f8d851f4ace1ffab03e989955492e10b68205c581b41"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "a764c748920cd8ca7866f8d851f4ace1ffab03e989955492e10b68205c581b41",
+              "port_sha256": "a764c748920cd8ca7866f8d851f4ace1ffab03e989955492e10b68205c581b41"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "frames_per_instance": 32768,
+      "model_selector_normalized": 0.2,
+      "model_selector_index": 4,
+      "model": "Line 20",
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "full_output_sha256": {
+        "target-0": "ac87d4966cd976c1e503f15d273a10d53d724e5ef52ece6002a8a695c0be54e1",
+        "port-0": "ac87d4966cd976c1e503f15d273a10d53d724e5ef52ece6002a8a695c0be54e1",
+        "target-1": "ac87d4966cd976c1e503f15d273a10d53d724e5ef52ece6002a8a695c0be54e1",
+        "port-1": "ac87d4966cd976c1e503f15d273a10d53d724e5ef52ece6002a8a695c0be54e1"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 4096,
+          "host_bypass_normalized": 0.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.3333333333333333,
+            "low_shelf_gain_normalized": 0.75,
+            "mid_frequency_normalized": 0.4,
+            "mid_gain_normalized": 0.25,
+            "high_shelf_gain_normalized": 0.75,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "b115ce2af5a053024c57bfc023ba612e226ffca4ada89a56fe1de5469f614c58",
+              "port_sha256": "b115ce2af5a053024c57bfc023ba612e226ffca4ada89a56fe1de5469f614c58"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "b115ce2af5a053024c57bfc023ba612e226ffca4ada89a56fe1de5469f614c58",
+              "port_sha256": "b115ce2af5a053024c57bfc023ba612e226ffca4ada89a56fe1de5469f614c58"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 4096,
+          "frame_count": 4096,
+          "host_bypass_normalized": 1.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.6666666666666666,
+            "low_shelf_gain_normalized": 0.25,
+            "mid_frequency_normalized": 0.8,
+            "mid_gain_normalized": 0.75,
+            "high_shelf_gain_normalized": 0.25,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "b60cc01fd6547be6f6ce079b4a26b4b0de780757394f2b06a3a69927ccb57bfd",
+              "port_sha256": "b60cc01fd6547be6f6ce079b4a26b4b0de780757394f2b06a3a69927ccb57bfd"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "b60cc01fd6547be6f6ce079b4a26b4b0de780757394f2b06a3a69927ccb57bfd",
+              "port_sha256": "b60cc01fd6547be6f6ce079b4a26b4b0de780757394f2b06a3a69927ccb57bfd"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 8192,
+          "frame_count": 4096,
+          "host_bypass_normalized": 1.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0,
+            "low_shelf_gain_normalized": 0.625,
+            "mid_frequency_normalized": 1,
+            "mid_gain_normalized": 0.625,
+            "high_shelf_gain_normalized": 0.625,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "9ce8c315f03b25fad67737a2f3bf848e22a220b26d23f22e855c00e9ca91650f",
+              "port_sha256": "9ce8c315f03b25fad67737a2f3bf848e22a220b26d23f22e855c00e9ca91650f"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "9ce8c315f03b25fad67737a2f3bf848e22a220b26d23f22e855c00e9ca91650f",
+              "port_sha256": "9ce8c315f03b25fad67737a2f3bf848e22a220b26d23f22e855c00e9ca91650f"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 12288,
+          "frame_count": 4096,
+          "host_bypass_normalized": 0.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 1,
+            "low_shelf_gain_normalized": 0.375,
+            "mid_frequency_normalized": 0.2,
+            "mid_gain_normalized": 0.375,
+            "high_shelf_gain_normalized": 0.375,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "6a7438d618b1bdbafa91adc1c2c4f58efa651c84c95b0c5560ca23c2def74deb",
+              "port_sha256": "6a7438d618b1bdbafa91adc1c2c4f58efa651c84c95b0c5560ca23c2def74deb"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "6a7438d618b1bdbafa91adc1c2c4f58efa651c84c95b0c5560ca23c2def74deb",
+              "port_sha256": "6a7438d618b1bdbafa91adc1c2c4f58efa651c84c95b0c5560ca23c2def74deb"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 16384,
+          "frame_count": 4096,
+          "host_bypass_normalized": 1.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.3333333333333333,
+            "low_shelf_gain_normalized": 0.75,
+            "mid_frequency_normalized": 0.6,
+            "mid_gain_normalized": 0.75,
+            "high_shelf_gain_normalized": 0.5,
+            "eq_in": false
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "d2ff4bb537d1f0b72703b94847ab0cd5e6d34d234ea69108b53d1b08ebd3c839",
+              "port_sha256": "d2ff4bb537d1f0b72703b94847ab0cd5e6d34d234ea69108b53d1b08ebd3c839"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "d2ff4bb537d1f0b72703b94847ab0cd5e6d34d234ea69108b53d1b08ebd3c839",
+              "port_sha256": "d2ff4bb537d1f0b72703b94847ab0cd5e6d34d234ea69108b53d1b08ebd3c839"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 20480,
+          "frame_count": 4096,
+          "host_bypass_normalized": 0.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0.6666666666666666,
+            "low_shelf_gain_normalized": 0.25,
+            "mid_frequency_normalized": 0.4,
+            "mid_gain_normalized": 0.25,
+            "high_shelf_gain_normalized": 0.5,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "7ec471c90f2078a9eb4ebd70aaa8b051d1920a43e0c75d76cf16b0cca34e28c9",
+              "port_sha256": "7ec471c90f2078a9eb4ebd70aaa8b051d1920a43e0c75d76cf16b0cca34e28c9"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "7ec471c90f2078a9eb4ebd70aaa8b051d1920a43e0c75d76cf16b0cca34e28c9",
+              "port_sha256": "7ec471c90f2078a9eb4ebd70aaa8b051d1920a43e0c75d76cf16b0cca34e28c9"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 24576,
+          "frame_count": 4096,
+          "host_bypass_normalized": 0.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 0,
+            "low_shelf_gain_normalized": 0.5,
+            "mid_frequency_normalized": 0,
+            "mid_gain_normalized": 0.5,
+            "high_shelf_gain_normalized": 0.5,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "26c5f2bed4c6581f113830405b7ef1345dc2f4136512760381f9d45b688c361a",
+              "port_sha256": "26c5f2bed4c6581f113830405b7ef1345dc2f4136512760381f9d45b688c361a"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": null,
+              "port_passes_input_exactly_when_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "26c5f2bed4c6581f113830405b7ef1345dc2f4136512760381f9d45b688c361a",
+              "port_sha256": "26c5f2bed4c6581f113830405b7ef1345dc2f4136512760381f9d45b688c361a"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 28672,
+          "frame_count": 4096,
+          "host_bypass_normalized": 1.0,
+          "eq_parameters": {
+            "low_shelf_frequency_normalized": 1,
+            "low_shelf_gain_normalized": 0.5,
+            "mid_frequency_normalized": 1,
+            "mid_gain_normalized": 0.5,
+            "high_shelf_gain_normalized": 0.5,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "297bad6148b1a1a8640b4176dec9f91465d5b23d9002b866ba48a0de0eff8334",
+              "port_sha256": "297bad6148b1a1a8640b4176dec9f91465d5b23d9002b866ba48a0de0eff8334"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_when_bypassed": true,
+              "port_passes_input_exactly_when_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "297bad6148b1a1a8640b4176dec9f91465d5b23d9002b866ba48a0de0eff8334",
+              "port_sha256": "297bad6148b1a1a8640b4176dec9f91465d5b23d9002b866ba48a0de0eff8334"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "run_count": 2,
+    "corresponding_instance_pairs": 4,
+    "values_compared": 262144,
+    "mismatches": 0,
+    "all_pairs_bit_identical": true,
+    "bypassed_segments_copy_input_bit_exactly": true
+  },
+  "rea_evidence": {
+    "vst3_parameter_and_bypass_dispatch": "ev_1b53f079ec04d4bbeb8c3e4b8ef88dc255479943e55b86d715fcd30d65cac29a"
+  },
+  "conclusion": "Longer high-drive Line 20 renders with live EQ and host Bypass automation matched the licensed target for both corresponding pairs at both rates. Bypassed segments copied input exactly, and processing resumed with bit-identical output."
+}
