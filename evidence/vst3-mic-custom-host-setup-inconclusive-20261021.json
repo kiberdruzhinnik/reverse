@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-21",
+  "purpose": "Investigate why a custom VST3 host returned silence from the licensed target during the unresolved multi-instance study.",
+  "license": {
+    "registry_file": "data/license.reg",
+    "sha256": "033be9106ccbe89eb94be4021ca51a07e6f29bc3a05252520e0660f2051d5e7c",
+    "wine_prefix": "build-win64/rea-license-prefix"
+  },
+  "artifacts": {
+    "licensed_target_sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+    "rebuilt_vst3_sha256": "4a7287fb73ef7ee0716b959bd5ef1493617dbbb8038ee8a46c45ec17c20d58e2",
+    "known_working_host_sha256": "f1d0f7a80dd219b0667b815b2b7d899c9ea866baf71df7c1c922d19bf6f143e6",
+    "custom_host_silence_flags_build_sha256": "dcf6640f4fa5f3046326a26e86c65629602ab468ec22447f60d10698bcd1b209",
+    "custom_host_lifecycle_return_build_sha256": "97119ee7c2cf28cde2f08aa61b1bf458a4a3bf59ad73d4fb8ace9caa1ba31dc1"
+  },
+  "rea": {
+    "host_overview_evidence_id": "ev_a83aa2fcddb5e7bc6d8b313bb3ec6978d38d4f0907f45dbd8f8469c891191151",
+    "host_main_search_evidence_id": "ev_8917c271ada7f3081ddf9f8d08f83ff21d0a50979df264cdf4a2ace3530bf799",
+    "host_main_decompile_evidence_id": "ev_d9fa4eb3ab0d75f189840b3f3d234de6207cea9470d264cda5627c72578d8956",
+    "host_main_address": "0x1400fcbc0",
+    "target_sha256_for_host_records": "f1d0f7a80dd219b0667b815b2b7d899c9ea866baf71df7c1c922d19bf6f143e6"
+  },
+  "known_working_host_path": {
+    "parameter_id": 6,
+    "parameter_set_before_setup": true,
+    "bus_arrangement": "stereo",
+    "setup_mode": "offline",
+    "sample_size": "Float64",
+    "context_state_flags": "0x2400",
+    "tempo_bpm": 120,
+    "time_signature": "4/4",
+    "uses_host_process_data": true,
+    "checks_set_processing_return": false
+  },
+  "custom_host_observations": {
+    "host_process_data_api_used": true,
+    "input_and_output_silence_flags_explicitly_cleared": true,
+    "target_set_processing_result": {
+      "symbol": "E_NOINTERFACE",
+      "hex": "0x80004002",
+      "signed_decimal": -2147467263
+    },
+    "port_set_processing_result": {
+      "symbol": "kResultOk",
+      "signed_decimal": 0
+    },
+    "target_process_returned_success": true,
+    "target_output_sha256": "fa43239bcee7b97ca62f007cc68487560a39e19f74f3dde7486db3f98df8e471",
+    "target_output_nonzero_values": 0,
+    "port_output_nonzero_values": 8192,
+    "clearing_silence_flags_changed_target_output": false,
+    "other_model_selectors_checked": [0, 8],
+    "other_model_selectors_also_silent": true
+  },
+  "known_host_runs": {
+    "sample_rate_hz": 48000,
+    "block_size": 512,
+    "frames": 4096,
+    "selector_normalized": 0.5,
+    "input_sha256": "0ddb6ba8894b06b6cd760989677d84c637cf3d2206ee48c772493c14c549518c",
+    "sequential_target_output_sha256": "f98707c9141b0f823a347383ab97e99aeff0d4aee916471f1b571a1d3935d64a",
+    "sequential_port_output_sha256": "4c349392f226b4dc0fcb689e510b8a0ecf779a39bb934d3f26693eeb8fe2264f",
+    "parallel_target_output_sha256": "526ca660555675c292801c933bc9cb5d45c58165df43668fae2edfafbf799737",
+    "parallel_port_output_sha256": "c6fcc00f3262ce80393218987114ef5157d22d427af0254cfdc078e0f8f48553",
+    "parallel_mismatched_values": 8192,
+    "parallel_peak_absolute_error": 3.991615756426814e-06,
+    "interpretation": "Both binaries render nonzero output through the retained host. The original has time-seeded Mic startup state; launch timing did not align it with the port. These are not parity measurements."
+  },
+  "conclusion": "The custom host remains invalid as a target parity harness. The E_NOINTERFACE return is ignored by the retained host and does not explain the silence by itself. The two-instance DSP/startup mismatch remains unresolved; no source change was justified."
+}

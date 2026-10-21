@@ -1,0 +1,64 @@
+{
+  "date_utc": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "runtime": {
+    "host": "build-win64/vst3-automation-host.exe",
+    "host_sha256": "b91ee2d3e12e207ccd4c93cef51f72fc6ed23f9b86fcb993c4df1454d91a06dc",
+    "wine_prefix": "build-win64/rea-license-prefix",
+    "license_imported": true,
+    "sample_rate_hz": 44100,
+    "selector_normalized": 0.5,
+    "input": "codex-tmp/tmp/mic-debug-input.f64",
+    "input_sha256": "5c722b70cf7957ebc1d1570ffb2ae43c3e956d5d7b7d47dc80f7e11acb59d54a",
+    "output": "codex-tmp/tmp/mic-debug-output.f64",
+    "output_sha256": "1ad3c2605224734c8675aaaeb419bfa84779a1ad6cdb2677be63c903a8999dfd",
+    "debugger": "Wine winedbg --gdb; breakpoint immediately after target rand wrapper returns",
+    "gdb_log_sha256": "f658942dd227e627e1560e352ed4a34ee7c34dab4a8cfb0709979a0dee07f378"
+  },
+  "rea_reset_analysis": {
+    "file": "rea-mic-reset-runtime-map-20261021.json",
+    "evidence_id": "ev_ac25e15b4367575a92a80866f41ca79dcd62607a3ec68b727ed6f11b7d0a07c2",
+    "procedure": "FUN_180015da0",
+    "target_sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+    "rand_call_return_address": "0x180016125"
+  },
+  "events": [
+    {
+      "ordinal": 1,
+      "thread": 1,
+      "mic_child_pointer": "0x7fffff771bd0",
+      "rand_result": 19232,
+      "interpretation": "first child reset during controller construction; slot +0x5f0 by constructor allocation order"
+    },
+    {
+      "ordinal": 2,
+      "thread": 1,
+      "mic_child_pointer": "0x7fffff772140",
+      "rand_result": 12674,
+      "interpretation": "second child reset during controller construction; slot +0x5f8 by constructor allocation order"
+    },
+    {
+      "ordinal": 3,
+      "thread": 1,
+      "mic_child_pointer": "0x7fffff771bd0",
+      "rand_result": 30267,
+      "interpretation": "first child reset again during processing setup"
+    },
+    {
+      "ordinal": 4,
+      "thread": 1,
+      "mic_child_pointer": "0x7fffff772140",
+      "rand_result": 6436,
+      "interpretation": "second child reset again during processing setup"
+    }
+  ],
+  "scope_and_limits": [
+    "One VST3 host process and one controller/plugin instance were instrumented.",
+    "Pointer-to-slot mapping is inferred by combining runtime order/pointer reuse with REA constructor allocation order: +0x5f0 then +0x5f8.",
+    "Each reset consumes one thread-local CRT rand() value for its recurrence iteration count; the capture does not establish instance-B state.",
+    "The 44.1 kHz, selector 0.5 render completed and wrote output; this record is a lifecycle capture, not an original-versus-port parity comparison."
+  ]
+}

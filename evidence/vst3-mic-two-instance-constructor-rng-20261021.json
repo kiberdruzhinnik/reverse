@@ -1,0 +1,106 @@
+{
+  "date_utc": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+    "activation_prefix": "build-win64/rea-license-prefix",
+    "license_imported": true
+  },
+  "rea": {
+    "operation": "decompile",
+    "procedure": "FUN_18000c120",
+    "provider": "ghidra 12.1.4",
+    "evidence_file": "rea-controller-mic-two-instance-constructor-20261021.json",
+    "evidence_id": "ev_c1d2a1e0836a1cfdfb6f5c0d31a03c2aa54f3bc2c6c674e74498ccbbf9bd13b2"
+  },
+  "host": {
+    "source_sha256": "6444b17a4a011876cb43131cb89fb76221221f4794fa435d8bfa63abed6df8ce",
+    "executable_sha256": "dd36917a75dd1fa2be0b2c6aee66c4099d20e392d047a3f7e70242f381c6e588",
+    "creation_api": "VST3::Hosting::Module::create followed by PluginFactory::createInstance<IComponent> twice",
+    "init_or_setup_processing_called": false,
+    "audio_rendered": false,
+    "thread": "main thread"
+  },
+  "debugger": {
+    "method": "Wine winedbg GDB bridge",
+    "target_module_base": "0x6ffffca50000",
+    "breakpoint_runtime_address": "0x6ffffca66125",
+    "breakpoint_target_address": "0x180016125",
+    "meaning": "immediately after CRT rand() return in Mic reset FUN_180015da0"
+  },
+  "events": [
+    {
+      "ordinal": 1,
+      "component_creation_ordinal": 0,
+      "child_pointer": "0x7fffff770340",
+      "rand15": 12757,
+      "inferred_child_slot": "+0x5f0"
+    },
+    {
+      "ordinal": 2,
+      "component_creation_ordinal": 0,
+      "child_pointer": "0x7fffff7708b0",
+      "rand15": 27035,
+      "inferred_child_slot": "+0x5f8"
+    },
+    {
+      "ordinal": 3,
+      "component_creation_ordinal": 1,
+      "child_pointer": "0x7fffff83a460",
+      "rand15": 47,
+      "inferred_child_slot": "+0x5f0"
+    },
+    {
+      "ordinal": 4,
+      "component_creation_ordinal": 1,
+      "child_pointer": "0x7fffff83a9d0",
+      "rand15": 25071,
+      "inferred_child_slot": "+0x5f8"
+    }
+  ],
+  "rng_sequence_check": {
+    "one_time_table_draw_count": 3080,
+    "ui_draw_count_per_component": 4,
+    "mic_constructor_draws_per_component": 2,
+    "expected_rand15_at_draw_positions": [
+      {
+        "draw": 3085,
+        "rand15": 12757
+      },
+      {
+        "draw": 3086,
+        "rand15": 27035
+      },
+      {
+        "draw": 3091,
+        "rand15": 47
+      },
+      {
+        "draw": 3092,
+        "rand15": 25071
+      }
+    ],
+    "observed_rand15": [
+      12757,
+      27035,
+      47,
+      25071
+    ],
+    "sequence_matches": true,
+    "inferred_time_seed_unix_seconds": 1792550494,
+    "inferred_time_seed_utc": "2026-10-21T02:41:34+00:00",
+    "seed_search_window_unix_seconds": [
+      1792543317,
+      1792550517
+    ],
+    "unique_seed_matches_in_window": 1,
+    "seed_directly_captured": false
+  },
+  "interpretation": "The two constructor resets from both components match the current source model when both components are created on the same thread: the first component follows the 3080 one-time table draws, then four UI draws, then two Mic draws; the second component skips the once-only table generation, consumes four UI draws, then two Mic draws.",
+  "limitations": [
+    "Only component construction was exercised; component initialize, setupProcessing, activation, and audio processing were not called.",
+    "The host created both components serially on its main thread; this does not model host thread migration.",
+    "The time seed is inferred by matching all four rand() returns over the stated two-hour search interval, not captured at the _time64/srand callsite.",
+    "This does not compare target and port rendered audio or resolve the previous instance-B output mismatch."
+  ]
+}

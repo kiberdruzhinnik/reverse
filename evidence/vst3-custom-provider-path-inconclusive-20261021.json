@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-21",
+  "question": "Did calling PlugProvider::initialize before accessing stored component pointers cause silence from the licensed original in the custom host?",
+  "rea_reference": {
+    "host_main_evidence_id": "ev_d9fa4eb3ab0d75f189840b3f3d234de6207cea9470d264cda5627c72578d8956",
+    "host_main_source_sha256": "f1d0f7a80dd219b0667b815b2b7d899c9ea866baf71df7c1c922d19bf6f143e6"
+  },
+  "custom_probe": {
+    "source_sha256": "b78af0f0ada6344014e1d0b34d614ece5184fab34074fe6682340063a77bccde",
+    "executable_sha256": "e8d7cca5a2394ac2ffe34795f4728020952e0d6d7327099ea822e3350df5c6e7",
+    "provider_path": "PlugProvider::getComponent() followed by getController(); no explicit initialize() call",
+    "license_imported_before_run": true,
+    "sample_rate_hz": 48000,
+    "block_size": 512,
+    "frames_per_channel": 4096,
+    "selector_normalized": 0.5,
+    "output_sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31",
+    "nonzero_values": 0
+  },
+  "known_host_control": {
+    "host_sha256": "f1d0f7a80dd219b0667b815b2b7d899c9ea866baf71df7c1c922d19bf6f143e6",
+    "output_sha256": "f021f9f608a69ed9fbc64179441959db5ba2de01103a0ec985fc79dd08c75a76",
+    "nonzero_values": 8192
+  },
+  "conclusion": "Using PlugProvider::getComponent/getController rather than initialize/getComponentPtr/getControllerPtr did not resolve the custom host's silent target output. The launch-second control is nonzero, so provider access style alone is not the cause. This custom probe remains invalid for parity; no DSP change is justified."
+}

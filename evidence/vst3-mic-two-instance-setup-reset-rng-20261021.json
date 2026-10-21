@@ -1,0 +1,172 @@
+{
+  "date_utc": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+    "license_imported": true,
+    "wine_prefix": "build-win64/rea-license-prefix"
+  },
+  "rea": {
+    "reset_function": "FUN_180015da0",
+    "reset_evidence_id": "ev_ac25e15b4367575a92a80866f41ca79dcd62607a3ec68b727ed6f11b7d0a07c2",
+    "controller_constructor_file": "rea-controller-mic-two-instance-constructor-20261021.json",
+    "controller_constructor_evidence_id": "ev_c1d2a1e0836a1cfdfb6f5c0d31a03c2aa54f3bc2c6c674e74498ccbbf9bd13b2"
+  },
+  "host": {
+    "source_sha256": "bf12c484e1d70e110c5f9d19366ea4eadb1dfaacde7a6dc43765e2a223b8701b",
+    "executable_sha256": "acc76ee0006a923f933757e9ecebe0788e220342e0f9e2bab0ac603548810cba",
+    "lifecycle": "two serial PlugProvider instances; initialize, stereo bus arrangement, setParamNormalized(6,0.5), 64-bit offline setupProcessing at 44100 Hz with 512 max frames, then setActive and setProcessing",
+    "initialization_success": [
+      true,
+      true
+    ],
+    "setup_processing_hresult": [
+      "0x00000000",
+      "0x00000000"
+    ],
+    "set_active_hresult": [
+      "0x00000000",
+      "0x00000000"
+    ],
+    "set_processing_hresult": [
+      "0x80004001",
+      "0x80004001"
+    ],
+    "set_processing_note": "E_NOTIMPL; the host records this result and continues, matching the prior host behavior of ignoring setProcessing failure",
+    "rendered_audio": false,
+    "host_thread_id": 1,
+    "lifecycle_log_sha256": "4739b6be22c39b4c32fe72b86f77bad8fea75d1f8aa522360c25362246d83b09"
+  },
+  "debugger": {
+    "method": "Wine winedbg GDB bridge",
+    "target_module_base": "0x6ffffca50000",
+    "breakpoint": "0x6ffffca66125",
+    "target_breakpoint": "0x180016125",
+    "breakpoint_meaning": "immediately after the CRT rand() wrapper returns from FUN_180015da0"
+  },
+  "events": [
+    {
+      "ordinal": 1,
+      "lifecycle": "instance 0 constructor",
+      "child": "0x7fffff871bd0",
+      "slot_inferred": "+0x5f0",
+      "rand15": 8778
+    },
+    {
+      "ordinal": 2,
+      "lifecycle": "instance 0 constructor",
+      "child": "0x7fffff872140",
+      "slot_inferred": "+0x5f8",
+      "rand15": 21898
+    },
+    {
+      "ordinal": 3,
+      "lifecycle": "instance 1 constructor",
+      "child": "0x7fffff940b80",
+      "slot_inferred": "+0x5f0",
+      "rand15": 22619
+    },
+    {
+      "ordinal": 4,
+      "lifecycle": "instance 1 constructor",
+      "child": "0x7fffff9410f0",
+      "slot_inferred": "+0x5f8",
+      "rand15": 7692
+    },
+    {
+      "ordinal": 5,
+      "lifecycle": "instance 0 setupProcessing",
+      "child": "0x7fffff871bd0",
+      "slot_inferred": "+0x5f0",
+      "rand15": 155
+    },
+    {
+      "ordinal": 6,
+      "lifecycle": "instance 0 setupProcessing",
+      "child": "0x7fffff872140",
+      "slot_inferred": "+0x5f8",
+      "rand15": 9212
+    },
+    {
+      "ordinal": 7,
+      "lifecycle": "instance 1 setupProcessing",
+      "child": "0x7fffff940b80",
+      "slot_inferred": "+0x5f0",
+      "rand15": 26335
+    },
+    {
+      "ordinal": 8,
+      "lifecycle": "instance 1 setupProcessing",
+      "child": "0x7fffff9410f0",
+      "slot_inferred": "+0x5f8",
+      "rand15": 11409
+    }
+  ],
+  "rng_sequence_check": {
+    "one_time_table_draws": 3080,
+    "ui_draws_per_instance": 4,
+    "constructor_mic_draws_per_instance": 2,
+    "setup_mic_draws_per_instance": 2,
+    "expected_draw_positions": [
+      {
+        "draw": 3085,
+        "rand15": 8778
+      },
+      {
+        "draw": 3086,
+        "rand15": 21898
+      },
+      {
+        "draw": 3091,
+        "rand15": 22619
+      },
+      {
+        "draw": 3092,
+        "rand15": 7692
+      },
+      {
+        "draw": 3093,
+        "rand15": 155
+      },
+      {
+        "draw": 3094,
+        "rand15": 9212
+      },
+      {
+        "draw": 3095,
+        "rand15": 26335
+      },
+      {
+        "draw": 3096,
+        "rand15": 11409
+      }
+    ],
+    "observed_rand15": [
+      8778,
+      21898,
+      22619,
+      7692,
+      155,
+      9212,
+      26335,
+      11409
+    ],
+    "sequence_matches_current_model": true,
+    "inferred_time_seed_unix_seconds": 1792550748,
+    "inferred_time_seed_utc": "2026-10-21T02:45:48+00:00",
+    "search_window_unix_seconds": [
+      1792543558,
+      1792550758
+    ],
+    "unique_matches_in_window": 1,
+    "time_seed_directly_captured": false
+  },
+  "interpretation": "Both target component constructor resets and both setupProcessing reset pairs match the current source model when components are initialized and set up serially on the same host thread. This validates the reset draw count/order for this lifecycle but does not establish audio-output parity.",
+  "limitations": [
+    "No process() call or rendered output was produced.",
+    "The target returned E_NOTIMPL from setProcessing on both components; the host continued after recording this, as the retained host does.",
+    "Both instances ran on one thread; cross-thread host construction/setup remains unmeasured.",
+    "The _time64 seed is inferred from eight observed rand() outputs and a bounded search interval, not captured at the seed callsite.",
+    "Slot mapping follows pointer reuse and REA constructor allocation order; parent-controller offsets were not captured at runtime."
+  ]
+}

@@ -15,7 +15,7 @@ constexpr std::array<ParameterInfo, kParameterCount> kParameterInfo{{
     {"High Pass", 0.0, 4.0, 1.0, 0.0, 5, false},
     {"Low Shelv Freq", 0.0, 3.0, 1.0, 2.0, 4, false},
     {"Low Shelv Gain", -16.0, 16.0, 0.1, 0.0, 0, false},
-    {"Mid Freq", 0.0, 5.0, 1.0, 1.0, 6, false},
+    {"Mid Freq", 0.0, 5.0, 1.0, 2.0, 6, false},
     {"Mid Gain", -16.0, 16.0, 0.1, 0.0, 0, false},
     {"High Shelv", -16.0, 16.0, 0.1, 0.0, 0, false},
     {"Gain", 0.0, 20.0, 1.0, 4.0, 21, false},
@@ -29,7 +29,7 @@ constexpr std::array<ParameterInfo, kParameterCount> kParameterInfo{{
     {"High Shelv Power", 0.0, 1.0, 1.0, 1.0, 0, true},
     {"EQ In", 0.0, 1.0, 1.0, 1.0, 0, true},
     {"Phase invert", 0.0, 1.0, 1.0, 0.0, 0, true},
-    {"Show Labels", 0.0, 1.0, 1.0, 1.0, 0, true},
+    {"Show Labels", 0.0, 1.0, 1.0, 0.0, 0, true},
 }};
 
 std::size_t indexOf(Parameter parameter) {

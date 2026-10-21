@@ -1,0 +1,101 @@
+{
+  "record_type": "runtime-dsp-parity-investigation",
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port_production": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "4a7287fb73ef7ee0716b959bd5ef1493617dbbb8038ee8a46c45ec17c20d58e2"
+  },
+  "host": {
+    "path": "codex-tmp/host-work/mic-two-instance-parity-host.exe",
+    "sha256": "e4319bf2f8c5f212dad60befd498e0d580d972249c653be0a6561ed3caef784a",
+    "architecture": "x86_64-windows",
+    "wine_prefix": "build-win64/rea-license-prefix",
+    "license_imported": true,
+    "host_thread_count": 1,
+    "instance_order": ["target-0", "port-0", "target-1", "port-1"],
+    "sample_rate_hz": 44100,
+    "block_size_frames": 512,
+    "rendered_frames_per_instance": 8192,
+    "sample_format": "Float64",
+    "selector_parameter_id": 6,
+    "selector_normalized": 0.5,
+    "process_context": {
+      "state_flags": "0x2400",
+      "tempo_bpm": 120,
+      "time_signature": "4/4"
+    }
+  },
+  "rng_alignment": {
+    "port_table_time_seed": 1792551596,
+    "target_reset_values_captured_by_gdb": {
+      "thread": 1,
+      "instance_0_constructor": [22328, 4489],
+      "instance_1_constructor": [5054, 14530],
+      "instance_0_setup_processing": [8333, 29962],
+      "instance_1_setup_processing": [20220, 19950]
+    },
+    "port_reset_values_logged_by_temporary_trace_build": {
+      "thread": 1,
+      "instance_0_constructor": [22328, 4489],
+      "instance_1_constructor": [5054, 14530],
+      "instance_0_setup_processing": [8333, 29962],
+      "instance_1_setup_processing": [20220, 19950]
+    },
+    "interpretation": "The target and port reset draws match one-to-one in this run. This rules out a differing rand draw value or simple draw-order offset for the captured resets; it does not prove that the same internal fields or processing states are initialized."
+  },
+  "multi_instance_audio_comparison": {
+    "input_sha256": "f0334b0a57058dbfd9e5eff7b283beb470929a0458e9ce1d023fc4e77ff04569",
+    "output_sha256": {
+      "target_0": "4abee51857af355a07ae0e0022938d83f8045ec70277375c7596c90330533285",
+      "target_1": "b0cefa1ccae0f4c302545c0f55d0461861bf73b9b10de1ff55702057a6a4719e",
+      "port_0": "fa359aa49ed245cbf08c730f4971926e1cd0fff9ad52670d05d5bbe8f79633fc",
+      "port_1": "2d3471c0a3d7329674e3ef30749ebd43a8af8fe55452a520f1686d2e897fc65b"
+    },
+    "same_index_comparison": {
+      "target_0_vs_port_0": {
+        "bit_identical": false,
+        "max_abs_error": 0.266542158084771,
+        "mean_abs_error": 0.06459148829355751,
+        "rms_error": 0.07957984390758849,
+        "different_values": 16384
+      },
+      "target_1_vs_port_1": {
+        "bit_identical": false,
+        "max_abs_error": 0.348327884800962,
+        "mean_abs_error": 0.08875487084900412,
+        "rms_error": 0.11018321214021458,
+        "different_values": 16384
+      }
+    },
+    "closest_cross_instance_pair": {
+      "target_1_vs_port_0": {
+        "bit_identical": false,
+        "max_abs_error": 0.000004778665620264189,
+        "mean_abs_error": 0.000000874540163826,
+        "rms_error": 0.0000011449592505235496,
+        "different_values": 16384
+      }
+    },
+    "port_build_note": "The port loaded for this diagnostic was a temporary trace-enabled build. Its only source changes wrote the table seed and constructor/setup random draws to a file; it did not modify DSP equations or control flow. The tested production binary was restored afterward."
+  },
+  "single_pair_follow_up": {
+    "launch_second_reported_by_host": 1792551739,
+    "target_output_sha256": "9329e7807c47f7df352b91f99e886bce58e8eb140f7932f5241ad4b3200ddeb1",
+    "port_output_sha256": "dcda0b6dc3578111d32a0bb7c81069aeef74c74c2b50b1dd25b615b038a306a0",
+    "input_sha256": "f0334b0a57058dbfd9e5eff7b283beb470929a0458e9ce1d023fc4e77ff04569",
+    "bit_identical": false,
+    "max_abs_error": 0.26654233241444114,
+    "mean_abs_error": 0.06459147412053466,
+    "different_values": 16384,
+    "limitation": "This follow-up used one target and one port instance, but did not capture the target reset values in that same process. It shows the mismatch is not dependent on creating a second component; startup alignment for this launch is not independently established."
+  },
+  "remaining_unknowns": [
+    "Which target-owned state fields are changed between the observed Mic reset draws and the processor's first audio block.",
+    "Whether controller-to-processor parameter state transfer or another setup callback changes the target's active Mic objects.",
+    "The exact component/controller/child-object association used by each process call."
+  ]
+}

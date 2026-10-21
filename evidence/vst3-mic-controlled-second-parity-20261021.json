@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+    "license_registry_sha256": "033be9106ccbe89eb94be4021ca51a07e6f29bc3a05252520e0660f2051d5e7c",
+    "wine_prefix": "build-win64/rea-license-prefix"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "4a7287fb73ef7ee0716b959bd5ef1493617dbbb8038ee8a46c45ec17c20d58e2"
+  },
+  "host": {
+    "path": "build-win64/stereo-mic-host.exe",
+    "sha256": "f1d0f7a80dd219b0667b815b2b7d899c9ea866baf71df7c1c922d19bf6f143e6",
+    "method": "Both host processes were released concurrently immediately after the same Unix-second boundary from a warmed Wine prefix."
+  },
+  "render": {
+    "sample_rate_hz": 48000,
+    "block_size": 512,
+    "frames_per_channel": 4096,
+    "parameter_id": 6,
+    "selector_normalized": 0.5,
+    "input_sha256": "0ddb6ba8894b06b6cd760989677d84c637cf3d2206ee48c772493c14c549518c",
+    "output_sha256_target": "f5a53c1fad9e3bcf18d3a64cc407a6d89f2037bee940a8c1e1210980ee20c833",
+    "output_sha256_port": "f5a53c1fad9e3bcf18d3a64cc407a6d89f2037bee940a8c1e1210980ee20c833",
+    "compared_float64_values": 8192,
+    "mismatches": 0,
+    "peak_absolute_error": 0.0
+  },
+  "scope": "This confirms current-build single-instance Mic startup parity for one aligned launch second, selector, sample rate, block size, and stimulus. It does not establish independently timed startup, other selectors, or multi-instance parity."
+}

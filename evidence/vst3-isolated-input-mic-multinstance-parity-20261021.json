@@ -1,0 +1,112 @@
+{
+  "record_type": "runtime-dsp-parity",
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "f7731d614ac17e01adabd10e62b0668b643466a274f2e3dfd2bf8685a2a9f4fa",
+    "build": "Win64 MinGW static-runtime VST3"
+  },
+  "license": {
+    "registry_file": "data/license.reg",
+    "imported_into": "build-win64/rea-license-prefix",
+    "activated_target_loaded": true
+  },
+  "rea_evidence": {
+    "vst3_process_callback": "ev_646d18102387907332699563d1288e3f3b5754d615e3a51dec6099bd0b80a36f",
+    "mic_sample_routine": "ev_89ccaf7a333e78f6763e36f01f972528f8d6eec34ec192be3eda6984dd061f2e",
+    "parameter_apply_helper": "ev_9572af68f8760a076f70ac79b7300e3891e68c2cdf3b75ca41a0877ef35cf9b5",
+    "mic_sample_routine_xrefs": "ev_880256c3ae127048233b0aa0d1a278f649df958be04384ba986f983f9a004913"
+  },
+  "host": {
+    "path": "codex-tmp/host-work/mic-two-instance-parity-host.exe",
+    "sha256": "ac8a4e3c15ef28bf669348c7b2aa7dd6f61c1ba38797b73c60bf804d65aa2cd8",
+    "platform": "Win64 under Wine",
+    "instances_in_one_process": ["target-0", "port-0", "target-1", "port-1"],
+    "host_thread_count": 1,
+    "sample_format": "Float64",
+    "sample_rate_hz": 44100,
+    "block_size_frames": 512,
+    "frames_per_instance": 8192,
+    "selector_parameter_id": 6,
+    "process_context": {
+      "state_flags": "0x2400",
+      "tempo_bpm": 120,
+      "time_signature": "4/4"
+    },
+    "input_buffer_policy": "A fresh copy of each original input block is supplied to each plug-in instance. A previous diagnostic confirmed the licensed target modifies its supplied input buffers in place; sharing them made later instances receive changed audio and invalidated the initial comparisons.",
+    "input_sha256": "f0334b0a57058dbfd9e5eff7b283beb470929a0458e9ce1d023fc4e77ff04569",
+    "input_unchanged_after_render": true
+  },
+  "parameter_default_correction": {
+    "target_and_port_readback_before_fix": {
+      "mid_frequency_id_3": {
+        "target_normalized": 0.4,
+        "port_normalized": 0.2
+      },
+      "show_labels_id_14": {
+        "target_normalized": 0.0,
+        "port_normalized": 1.0
+      }
+    },
+    "port_defaults_after_fix": {
+      "mid_frequency_plain_default": 2.0,
+      "show_labels_plain_default": 0.0
+    },
+    "target_and_port_readback_after_fix": "All 15 normalized parameters were equal. Mid frequency read 0.4 and Show Labels read 0.0 on both.",
+    "source_file": "src/dsp.cpp"
+  },
+  "mic_mode_parity": {
+    "selector_normalized": 0.5,
+    "selector_index": 10,
+    "per_instance_output_sha256": {
+      "target_0": "3e9bd92f81960b5d82b4dc58040018f61f60563f89a4bd0ec587e06435b30bf1",
+      "port_0": "3e9bd92f81960b5d82b4dc58040018f61f60563f89a4bd0ec587e06435b30bf1",
+      "target_1": "914e4b8d5d5e0da69c90803066fb47f4fccb4235535658514e506cf95e2704ef",
+      "port_1": "914e4b8d5d5e0da69c90803066fb47f4fccb4235535658514e506cf95e2704ef"
+    },
+    "target_0_vs_port_0": {
+      "bit_identical": true,
+      "values_compared": 16384,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0
+    },
+    "target_1_vs_port_1": {
+      "bit_identical": true,
+      "values_compared": 16384,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0
+    },
+    "within_target_instance_startup_difference": {
+      "target_0_vs_target_1_bit_identical": false,
+      "max_abs_error": 0.000004309763987575543,
+      "mean_abs_error": 0.0000008867040014486726,
+      "port_0_vs_port_1_has_same_difference": true
+    }
+  },
+  "off_mode_control": {
+    "selector_normalized": 0.4,
+    "selector_index": 8,
+    "all_four_outputs_sha256": "75a011d60f77ccea54f2628de83e1359892da68d5e9f001e4d9278c47ed68a99",
+    "all_four_outputs_bit_identical": true,
+    "values_per_output": 16384
+  },
+  "buffer_alias_diagnostic": {
+    "shared_input_before_fix_was_mutated": true,
+    "max_input_change": 0.6015940399364875,
+    "changed_input_values": 16384,
+    "conclusion": "Prior multi-instance comparisons that reused one input buffer across plug-ins are invalid and should not be treated as DSP parity evidence. The isolated-input runs recorded here supersede them."
+  },
+  "reset_draw_alignment": {
+    "target_and_port_constructor_and_setup_rand_values_matched_in_a_separate_trace_run": true,
+    "scope": "The eight target reset returns matched the port trace in order for two same-thread components; exact values are preserved in evidence/vst3-mic-rng-draw-alignment-audio-mismatch-20261021.json."
+  },
+  "remaining_work": [
+    "Repeat isolated-input multi-instance parity across more sample rates and block sizes.",
+    "Compare more Mic selector values and live transitions with isolated block copies.",
+    "Continue the broader EQ and saturation parameter-space parity audit."
+  ]
+}
