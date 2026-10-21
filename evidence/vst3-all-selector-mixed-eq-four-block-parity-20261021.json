@@ -1,0 +1,386 @@
+{
+  "title": "All Line and Mic selectors with mixed-EQ transitions at four block sizes",
+  "date": "2026-10-21",
+  "reference_plugin": "data/Burnley73.vst3",
+  "reference_sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+  "port_plugin": "build-win64/VST3/Burnley73.vst3",
+  "port_sha256": "9ca7a8cd411624d136c9b9dd8a66e3f9e6c42c21a00913cd02b1d7afb6cdbb2f",
+  "host_source": "codex-tmp/tmp/all-selector-mixed-eq-host.cpp",
+  "host_source_sha256": "c516927187d39ddfbeca2026b6cca71208588bea50f73b0031e45e493e827880",
+  "host_executable": "codex-tmp/tmp/all-selector-mixed-eq-host.exe",
+  "host_executable_sha256": "304084d70b1393a6ff052a2224383c87f7e11a62abe9fafe5d63572e603486d7",
+  "selectors": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "selector_normalized_values": [
+    0.0,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "frames_per_selector": 1024,
+  "eq_schedule": "Eight mixed three-band EQ states repeated across the 20 selector segments. At each 1024-frame boundary, Low frequency/gain, Mid frequency/gain, High gain, and EQ In are queued together. High-drive deterministic stereo tones, noise, and impulses at scale 8.",
+  "instances": "Two target and two port instances with isolated input copies; corresponding ordinal pairs compared.",
+  "rates_and_blocks": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 32,
+      "frames_per_instance": 20480,
+      "input_peak": 6.398622859137975,
+      "input_sha256": "0c2ccaad079915895d3fce19e8486b31f476c35493124b90eb862fc83263c7fd",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "1cb9e3cb55977928855b7deda5510899c0f72644caf07970b158288baafdb786",
+          "port_sha256": "1cb9e3cb55977928855b7deda5510899c0f72644caf07970b158288baafdb786"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "913a0130d8a7e66044ce1ac1a7ddb04142f96410b920e6fedf73aed988b0e84c",
+          "port_sha256": "913a0130d8a7e66044ce1ac1a7ddb04142f96410b920e6fedf73aed988b0e84c"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 80,
+      "frames_per_instance": 20480,
+      "input_peak": 6.398622859137975,
+      "input_sha256": "0c2ccaad079915895d3fce19e8486b31f476c35493124b90eb862fc83263c7fd",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "b83acbf6ba213f38c92f71f955758bd42b1061dc7c752a58d6eed3e1fcd0c2ea",
+          "port_sha256": "b83acbf6ba213f38c92f71f955758bd42b1061dc7c752a58d6eed3e1fcd0c2ea"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "09228a3fb602f99d8593c4145dd5858e3bf1856e73641514b0f42688e3d8d8e4",
+          "port_sha256": "09228a3fb602f99d8593c4145dd5858e3bf1856e73641514b0f42688e3d8d8e4"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 640,
+      "frames_per_instance": 20480,
+      "input_peak": 6.398622859137975,
+      "input_sha256": "0c2ccaad079915895d3fce19e8486b31f476c35493124b90eb862fc83263c7fd",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "2d05b87c548b1ab248197a04dfdd957d23d4e5166d4b2ce59dc420663e367043",
+          "port_sha256": "2d05b87c548b1ab248197a04dfdd957d23d4e5166d4b2ce59dc420663e367043"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "78ca64c02d432daf48ce8ecbf754d726f9409a194f2a7fb585d5028d6dffaa2b",
+          "port_sha256": "78ca64c02d432daf48ce8ecbf754d726f9409a194f2a7fb585d5028d6dffaa2b"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 1024,
+      "frames_per_instance": 20480,
+      "input_peak": 6.398622859137975,
+      "input_sha256": "0c2ccaad079915895d3fce19e8486b31f476c35493124b90eb862fc83263c7fd",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "74b9bfe341142814581e2f2d123a541b3258d5ae08ec4c1cb8738ae73d810bb9",
+          "port_sha256": "74b9bfe341142814581e2f2d123a541b3258d5ae08ec4c1cb8738ae73d810bb9"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "a03f2999888361d9ef88ad420368bad4cde925481f3d63fc812bec0920fa4944",
+          "port_sha256": "a03f2999888361d9ef88ad420368bad4cde925481f3d63fc812bec0920fa4944"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 32,
+      "frames_per_instance": 20480,
+      "input_peak": 6.005199028535776,
+      "input_sha256": "5b11e54c20173da563a4781a33ac1fe1434a2a0a930a66f50edf408554ac24e8",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "bf5947aa1822d6c2bd75b7d4619c286a03955526bafeacb3d77376601e53b1f1",
+          "port_sha256": "bf5947aa1822d6c2bd75b7d4619c286a03955526bafeacb3d77376601e53b1f1"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "a2274ff33bd26f0cdfaa440f8ac1a25303583a478c1a33c8b043abc583fb8aef",
+          "port_sha256": "a2274ff33bd26f0cdfaa440f8ac1a25303583a478c1a33c8b043abc583fb8aef"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 80,
+      "frames_per_instance": 20480,
+      "input_peak": 6.005199028535776,
+      "input_sha256": "5b11e54c20173da563a4781a33ac1fe1434a2a0a930a66f50edf408554ac24e8",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "6693316c8b6bc1ac04907746c43c86d4ed45ad4216da5111698653b8edd26c32",
+          "port_sha256": "6693316c8b6bc1ac04907746c43c86d4ed45ad4216da5111698653b8edd26c32"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "d8194b79c6520773db61e782441b1b3131bbc6cf8d6055554c0a68705a880b96",
+          "port_sha256": "d8194b79c6520773db61e782441b1b3131bbc6cf8d6055554c0a68705a880b96"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 640,
+      "frames_per_instance": 20480,
+      "input_peak": 6.005199028535776,
+      "input_sha256": "5b11e54c20173da563a4781a33ac1fe1434a2a0a930a66f50edf408554ac24e8",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "4f3827315b813382df2af4e2da9f80ee3e7a70a625b61e4ac0d5cc015845a7a1",
+          "port_sha256": "4f3827315b813382df2af4e2da9f80ee3e7a70a625b61e4ac0d5cc015845a7a1"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "cf594929342f862b8bc0307ea91b50d3aa0432b3041b13fe0f09351b6d223a21",
+          "port_sha256": "cf594929342f862b8bc0307ea91b50d3aa0432b3041b13fe0f09351b6d223a21"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 1024,
+      "frames_per_instance": 20480,
+      "input_peak": 6.005199028535776,
+      "input_sha256": "5b11e54c20173da563a4781a33ac1fe1434a2a0a930a66f50edf408554ac24e8",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "e255aff64b28e6af7589c77aedd1cc52109f20719699d2696b0fa175ebf1f9ff",
+          "port_sha256": "e255aff64b28e6af7589c77aedd1cc52109f20719699d2696b0fa175ebf1f9ff"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "0ffa34be415571c63871171f4499d4f328c2af8d118546c2f8bbc9bbc3fbf3c1",
+          "port_sha256": "0ffa34be415571c63871171f4499d4f328c2af8d118546c2f8bbc9bbc3fbf3c1"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 32,
+      "frames_per_instance": 20480,
+      "input_peak": 5.975532976960347,
+      "input_sha256": "e6442435dcfeb63d18659b7ace26b251f5db7f0b641e5e173bfa1c5eefa3a893",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "e4ca585ee3f9abb88a73fe13a4a9382e16b9c18d6bc258779f5d880cdca7e4c1",
+          "port_sha256": "e4ca585ee3f9abb88a73fe13a4a9382e16b9c18d6bc258779f5d880cdca7e4c1"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "5621fb3bb2d3d28bf158307a05ed5f36476d507c0ce8d7cf37dc16c58dd7c8ab",
+          "port_sha256": "5621fb3bb2d3d28bf158307a05ed5f36476d507c0ce8d7cf37dc16c58dd7c8ab"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 80,
+      "frames_per_instance": 20480,
+      "input_peak": 5.975532976960347,
+      "input_sha256": "e6442435dcfeb63d18659b7ace26b251f5db7f0b641e5e173bfa1c5eefa3a893",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "edd98ea638021a0d2b0a2c9df6b2c5660b4aa44661829e9970c5f96a109ba0fb",
+          "port_sha256": "edd98ea638021a0d2b0a2c9df6b2c5660b4aa44661829e9970c5f96a109ba0fb"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "e1db6d4d5c9e14c7ce214460f2a495112da327885238865649951a55bed28c8a",
+          "port_sha256": "e1db6d4d5c9e14c7ce214460f2a495112da327885238865649951a55bed28c8a"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 640,
+      "frames_per_instance": 20480,
+      "input_peak": 5.975532976960347,
+      "input_sha256": "e6442435dcfeb63d18659b7ace26b251f5db7f0b641e5e173bfa1c5eefa3a893",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "3235f6211692405fb0d8fe58846ecafe06339b4f6a0dee2547f4b1cf4570c97e",
+          "port_sha256": "3235f6211692405fb0d8fe58846ecafe06339b4f6a0dee2547f4b1cf4570c97e"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "9a618a9b3a5328fe158ce3b72dbcfd7a294ac1c41aaaba43faeed5bbead7a36f",
+          "port_sha256": "9a618a9b3a5328fe158ce3b72dbcfd7a294ac1c41aaaba43faeed5bbead7a36f"
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 1024,
+      "frames_per_instance": 20480,
+      "input_peak": 5.975532976960347,
+      "input_sha256": "e6442435dcfeb63d18659b7ace26b251f5db7f0b641e5e173bfa1c5eefa3a893",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "3f21e7116c39bbd8e9f3a369398a378f48743c1a37b705df1b562ea9778bdc39",
+          "port_sha256": "3f21e7116c39bbd8e9f3a369398a378f48743c1a37b705df1b562ea9778bdc39"
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 40960,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "target_sha256": "071c6fec10102914bd00b3f57f5526981ec8d0afbb4f2fa1778ef27921815666",
+          "port_sha256": "071c6fec10102914bd00b3f57f5526981ec8d0afbb4f2fa1778ef27921815666"
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "run_count": 12,
+    "compared_float64_values": 983040,
+    "bit_mismatches": 0,
+    "max_absolute_error": 0.0
+  },
+  "rea_evidence_export": "evidence/rea-saturation-eq-dispatch-refresh-20261021.json",
+  "rea_snapshot": "evidence/rea-saturation-eq-dispatch-snapshot-20261021.json",
+  "rea_evidence_id": "ev_325f61ed9b80464fd221b342d93795a81e3a5576251fb493f636efecc5f2c739",
+  "limitations": [
+    "This schedule changes saturation selector and the stated EQ controls every 1024 frames; it does not exhaust every simultaneous EQ value combination.",
+    "The target returned E_NOINTERFACE from setProcessing(1), but process() rendered all frames."
+  ]
+}
