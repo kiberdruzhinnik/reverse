@@ -43,7 +43,8 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang|AppleClang")
     target_compile_options(burnley73_dsp PRIVATE -ffp-contract=off)
 endif()
 
-smtg_add_vst3plugin(Burnley73 src/plugin.cpp src/factory.cpp)
+smtg_add_vst3plugin(Burnley73 src/plugin.cpp src/factory.cpp
+    "${BURNLEY73_VST3_SDK_ROOT}/public.sdk/source/vst/vstsinglecomponenteffect.cpp")
 if(WIN32)
     target_sources(Burnley73 PRIVATE "${BURNLEY73_VST3_SDK_ROOT}/public.sdk/source/main/dllmain.cpp")
 elseif(APPLE)

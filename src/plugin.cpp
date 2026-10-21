@@ -124,15 +124,12 @@ void addParameters(ParameterContainer& container) {
 }
 }
 
-VstProcessor::VstProcessor() {
-    setControllerClass(FUID(0xA0B1C2D3, 0xE4F54768, 0x90123456, 0x789ABCDE));
-}
-
 tresult PLUGIN_API VstProcessor::initialize(FUnknown* context) {
-    const tresult result = AudioEffect::initialize(context);
+    const tresult result = SingleComponentEffect::initialize(context);
     if (result != kResultOk) return result;
     addAudioInput(STR16("Audio In"), SpeakerArr::kStereo);
     addAudioOutput(STR16("Audio Out"), SpeakerArr::kStereo);
+    addParameters(parameters);
     return kResultOk;
 }
 
@@ -140,13 +137,17 @@ tresult PLUGIN_API VstProcessor::setBusArrangements(SpeakerArrangement* inputs, 
     SpeakerArrangement* outputs, int32 numOutputs) {
     if (numInputs != 1 || numOutputs != 1 || inputs[0] != outputs[0]
         || (inputs[0] != SpeakerArr::kMono && inputs[0] != SpeakerArr::kStereo)) return kResultFalse;
-    return AudioEffect::setBusArrangements(inputs, numInputs, outputs, numOutputs);
+    return SingleComponentEffect::setBusArrangements(inputs, numInputs, outputs, numOutputs);
 }
 
 tresult PLUGIN_API VstProcessor::setupProcessing(ProcessSetup& setup) {
-    const tresult result = AudioEffect::setupProcessing(setup);
+    const tresult result = SingleComponentEffect::setupProcessing(setup);
     if (result != kResultOk) return result;
     engine_.reset(setup.sampleRate);
+    return kResultOk;
+}
+
+tresult PLUGIN_API VstProcessor::setProcessing(TBool) {
     return kResultOk;
 }
 
@@ -235,15 +236,7 @@ tresult PLUGIN_API VstProcessor::setState(IBStream* state) {
     return kResultOk;
 }
 
-tresult PLUGIN_API VstController::initialize(FUnknown* context) {
-    const tresult result = EditControllerEx1::initialize(context);
-    if (result != kResultOk) return result;
-    addParameters(parameters);
-    return kResultOk;
-}
-
-tresult PLUGIN_API VstController::setComponentState(IBStream* state) { return setState(state); }
-tresult PLUGIN_API VstController::setState(IBStream* state) {
+tresult PLUGIN_API VstProcessor::setComponentState(IBStream* state) {
     Parameters restored;
     if (!readValues(state, restored)) return kResultFalse;
     int32 bytes = 0;
@@ -253,7 +246,17 @@ tresult PLUGIN_API VstController::setState(IBStream* state) {
         setParamNormalized(paramId(i), plainToNormalized(static_cast<Parameter>(i), restored.plain[i]));
     return kResultOk;
 }
-tresult PLUGIN_API VstController::getState(IBStream* state) {
+tresult PLUGIN_API VstProcessor::setEditorState(IBStream* state) {
+    Parameters restored;
+    if (!readValues(state, restored)) return kResultFalse;
+    int32 bytes = 0;
+    if (state->read(&serializedHostFlag_, sizeof(serializedHostFlag_), &bytes) != kResultOk
+        || bytes != sizeof(serializedHostFlag_)) return kResultFalse;
+    for (std::size_t i = 0; i < kParameterCount; ++i)
+        setParamNormalized(paramId(i), plainToNormalized(static_cast<Parameter>(i), restored.plain[i]));
+    return kResultOk;
+}
+tresult PLUGIN_API VstProcessor::getEditorState(IBStream* state) {
     Parameters current;
     for (std::size_t i = 0; i < kParameterCount; ++i)
         current.setNormalized(static_cast<Parameter>(i), getParamNormalized(paramId(i)));
