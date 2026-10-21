@@ -22,6 +22,15 @@ namespace {
 // The licensed controller advertises the 15 DSP controls as IDs 0..14.
 constexpr ParamID kFirstParamId = 0;
 constexpr ParamID kHostBypassParamId = 0x62706173; // 'bpas'
+float throughTargetFloat32Scratch(float value) {
+    // The shipped VST3 widens Float32 input into double scratch, copies that
+    // scratch on host Bypass, then narrows it back to Float32. Keep both
+    // conversions observable so they cannot collapse into a raw copy; this
+    // also matches the target's signaling-NaN quieting behavior.
+    volatile double scratch = static_cast<double>(value);
+    return static_cast<float>(scratch);
+}
+
 ParamID paramId(std::size_t index) { return kFirstParamId + static_cast<ParamID>(index); }
 Parameter parameterFor(ParamID id) { return static_cast<Parameter>(id - kFirstParamId); }
 
@@ -183,7 +192,8 @@ tresult PLUGIN_API VstProcessor::process(ProcessData& data) {
             for (int32 ch = 0; ch < channels; ++ch) {
                 const auto* source = static_cast<const float*>(data.inputs[0].channelBuffers32[ch]);
                 auto* destination = static_cast<float*>(data.outputs[0].channelBuffers32[ch]);
-                std::copy_n(source, data.numSamples, destination);
+                for (int32 i = 0; i < data.numSamples; ++i)
+                    destination[i] = throughTargetFloat32Scratch(source[i]);
             }
         } else if (data.symbolicSampleSize == kSample64) {
             for (int32 ch = 0; ch < channels; ++ch) {
