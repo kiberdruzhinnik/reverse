@@ -1,0 +1,2937 @@
+{
+  "title": "Long simultaneous EQ ramps across all saturation selectors",
+  "date": "2026-10-21",
+  "reference_plugin": "data/Burnley73.vst3",
+  "reference_sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+  "port_plugin": "build-win64/VST3/Burnley73.vst3",
+  "port_sha256": "9ca7a8cd411624d136c9b9dd8a66e3f9e6c42c21a00913cd02b1d7afb6cdbb2f",
+  "host_source": "codex-tmp/tmp/all-selector-eq-ramp-host.cpp",
+  "host_source_sha256": "b066240224aff906b6add8972249f99c8e88a33264b0c0f76187cc5750d133b4",
+  "host_executable": "codex-tmp/tmp/all-selector-eq-ramp-host.exe",
+  "host_executable_sha256": "4c37cffd8cdf5efd30043f37bdb20154d9e9e806ec869fc582ad7498d7feb358",
+  "selectors": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "frames_per_selector": 5120,
+  "total_frames_per_instance": 102400,
+  "eq_schedule": {
+    "at_each_host_block": "queue all listed control points at sample offset 0; values ramp across each selector segment",
+    "low_gain_normalized": "linear 0 to 1",
+    "mid_gain_normalized": "linear 1 to 0",
+    "high_shelf_gain_normalized": "alternating linear up/down half-segment ramps",
+    "low_frequency_normalized": "cycles all four choices every 640 frames",
+    "mid_frequency_normalized": "cycles all six choices every 320 frames",
+    "high_pass_frequency_normalized": "cycles all five choices every 1024 frames",
+    "high_pass_power": "off after halfway point",
+    "low_shelf_power": "off after halfway point",
+    "mid_power": "on after first quarter",
+    "high_shelf_power": "on after third quarter",
+    "eq_in": "on after third quarter",
+    "input": "high-drive stereo tones, deterministic noise, and impulses; scale 8"
+  },
+  "host_block_sizes": [
+    128,
+    320,
+    1024
+  ],
+  "instance_setup": "Two target and two port instances receive isolated input blocks; compare corresponding ordinal positions.",
+  "runs": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 128,
+      "frames_per_instance": 102400,
+      "input_peak": 6.4314093068315925,
+      "input_sha256": "d1f348225904bc12801afc81720baca1bf5ef9504552d8f4b37018f020feca74",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 122879,
+          "max_absolute_error": 5.487536326675979e-06,
+          "relative_rms_residual_db": -130.5463493484994,
+          "relative_rms_to_peak_db": -145.38397888731114,
+          "target_rms": 1.2052567851649352,
+          "target_peak": 6.652135118147663,
+          "target_sha256": "357ae31369f8713391b712bdc6994a1dd856b37cc2cb0dec30ddb57d6f245df2",
+          "port_sha256": "12faa38134a6072c02426c7c122677289c3b113fe93aa3ef7184cdf95c7a4116",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10239,
+              "relative_rms_residual_db": -121.64714213840264,
+              "max_absolute_error": 5.407366962084659e-06
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -125.31770344815942,
+              "max_absolute_error": 4.684130869403447e-06
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -125.94855818162786,
+              "max_absolute_error": 5.487536326675979e-06
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -128.5892647289035,
+              "max_absolute_error": 3.122082826156891e-06
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -127.82298424616799,
+              "max_absolute_error": 4.380003213899641e-06
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -133.46555311210489,
+              "max_absolute_error": 1.625869501364896e-06
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -133.14965360250812,
+              "max_absolute_error": 1.8089128157594558e-06
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -136.263343906688,
+              "max_absolute_error": 9.734140292705362e-07
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -135.48159774801744,
+              "max_absolute_error": 1.1005334325242533e-06
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -135.28404734542613,
+              "max_absolute_error": 8.925805930204422e-07
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -134.42661994353892,
+              "max_absolute_error": 6.955478274173199e-07
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -133.08158481556967,
+              "max_absolute_error": 6.662065541451767e-07
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 122879,
+          "max_absolute_error": 6.370509106123912e-06,
+          "relative_rms_residual_db": -130.87697123746221,
+          "relative_rms_to_peak_db": -145.7146007710848,
+          "target_rms": 1.2052567858849852,
+          "target_peak": 6.652135118147663,
+          "target_sha256": "91d8a7dc808eb3a63a312fc2e259c4f35d9304b5ac8aca2d16d608bbf0af830a",
+          "port_sha256": "c50cbf8b075987c960277c557315c9a680811c39d331c2572b96366b531f98d8",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10239,
+              "relative_rms_residual_db": -122.74287234113325,
+              "max_absolute_error": 4.697553243337982e-06
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -124.2370433707461,
+              "max_absolute_error": 4.594182785200296e-06
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -126.9568992412743,
+              "max_absolute_error": 3.446222564429391e-06
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -127.4046739823576,
+              "max_absolute_error": 6.370509106123912e-06
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -128.71676948018023,
+              "max_absolute_error": 3.682269839710983e-06
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -132.2722576355891,
+              "max_absolute_error": 2.478127921645701e-06
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -133.56568379010193,
+              "max_absolute_error": 1.4004323729555068e-06
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -135.68657734363128,
+              "max_absolute_error": 1.3214015273099733e-06
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -135.32532892456433,
+              "max_absolute_error": 1.0251483784640136e-06
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -135.510992571104,
+              "max_absolute_error": 6.958303701010138e-07
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -135.29170991084646,
+              "max_absolute_error": 7.697201275524979e-07
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -134.71342650511454,
+              "max_absolute_error": 7.006391480324226e-07
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 320,
+      "frames_per_instance": 102400,
+      "input_peak": 6.4314093068315925,
+      "input_sha256": "d1f348225904bc12801afc81720baca1bf5ef9504552d8f4b37018f020feca74",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 122879,
+          "max_absolute_error": 6.3941831744962485e-06,
+          "relative_rms_residual_db": -130.61110121644668,
+          "relative_rms_to_peak_db": -145.44171225785806,
+          "target_rms": 1.2062005457439438,
+          "target_peak": 6.651966795628853,
+          "target_sha256": "dab0d0833215d9211e564cc74e86f1644268df7ef24f7d240841da2126b8c5cc",
+          "port_sha256": "2590cd5cf78e79f69e11ad34e6b453bed78906731427a8910ff698709b0ab574",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10239,
+              "relative_rms_residual_db": -122.01662166584471,
+              "max_absolute_error": 5.045491990873785e-06
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -124.94121620083604,
+              "max_absolute_error": 4.916025939660784e-06
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -126.02481833293805,
+              "max_absolute_error": 6.296775286518397e-06
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -127.5710727517429,
+              "max_absolute_error": 6.3941831744962485e-06
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -128.92382193723068,
+              "max_absolute_error": 3.3896005569022947e-06
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -132.32319752463843,
+              "max_absolute_error": 1.8243127126726932e-06
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -133.6590081260936,
+              "max_absolute_error": 1.5992261895858562e-06
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -135.210612616624,
+              "max_absolute_error": 1.037397561964859e-06
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -137.19130452806527,
+              "max_absolute_error": 6.81739655394864e-07
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -135.89083338539302,
+              "max_absolute_error": 6.53493794022797e-07
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -126.23324835726508,
+              "max_absolute_error": 1.5018244949316362e-06
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -135.09897144451242,
+              "max_absolute_error": 5.5846600521825e-07
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 122879,
+          "max_absolute_error": 5.561586761348991e-06,
+          "relative_rms_residual_db": -130.93817597568,
+          "relative_rms_to_peak_db": -145.76878701451366,
+          "target_rms": 1.2062005461019087,
+          "target_peak": 6.651966795628853,
+          "target_sha256": "35ede3c61ea4b8796c5706b5e0a1423435416c31d202f3b8044bfd735005c981",
+          "port_sha256": "d553675b0319f4c49a345115dcc8b3c707ea2b4f7e5035cb547647d1f7f882b8",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10239,
+              "relative_rms_residual_db": -122.36091170305514,
+              "max_absolute_error": 5.0454591735693555e-06
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -124.60680740359538,
+              "max_absolute_error": 5.561586761348991e-06
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -127.0850932586529,
+              "max_absolute_error": 3.993726997109093e-06
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -128.76276749931105,
+              "max_absolute_error": 4.34054898840186e-06
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -130.41394502954788,
+              "max_absolute_error": 2.716431679483655e-06
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -133.26225849325962,
+              "max_absolute_error": 1.4326033677125594e-06
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -132.19822288795132,
+              "max_absolute_error": 1.47310831233316e-06
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -134.89037876940105,
+              "max_absolute_error": 1.3501743889587914e-06
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -134.6877600964172,
+              "max_absolute_error": 9.790756367311637e-07
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -134.28498368127657,
+              "max_absolute_error": 9.86039212225176e-07
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -133.66514011604704,
+              "max_absolute_error": 6.339480133066289e-07
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 10240,
+              "relative_rms_residual_db": -134.83325742933826,
+              "max_absolute_error": 7.231925340939194e-07
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 1024,
+      "frames_per_instance": 102400,
+      "input_peak": 6.4314093068315925,
+      "input_sha256": "d1f348225904bc12801afc81720baca1bf5ef9504552d8f4b37018f020feca74",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2088509334839872,
+          "target_peak": 6.65157069776643,
+          "target_sha256": "4b4dfb735bf1948f8bf8cdf4227abf35b38ac2d42ff61de501c8eadba7a5f73d",
+          "port_sha256": "4b4dfb735bf1948f8bf8cdf4227abf35b38ac2d42ff61de501c8eadba7a5f73d",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2088509331674246,
+          "target_peak": 6.65157069776643,
+          "target_sha256": "ab4ab2c19cbcb0f3b265c7a4789ca857d920ba7a02cb96dfaa5dc5e3b2324f53",
+          "port_sha256": "ab4ab2c19cbcb0f3b265c7a4789ca857d920ba7a02cb96dfaa5dc5e3b2324f53",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 128,
+      "frames_per_instance": 102400,
+      "input_peak": 6.463852546770632,
+      "input_sha256": "d9ab9d453e3ad5fdd3f0f042a880a5dec356df3f2755c2e5e0cb95448fbf0bfb",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2149957579259916,
+          "target_peak": 7.058604313780779,
+          "target_sha256": "4aa27186745f953ad2b28dd7ea912a65e80ab3f01179f613863add871e5e3cd8",
+          "port_sha256": "4aa27186745f953ad2b28dd7ea912a65e80ab3f01179f613863add871e5e3cd8",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2149957560562263,
+          "target_peak": 7.058604313780779,
+          "target_sha256": "273bfd38facba331c71929b0d26ac2f3c2eda0fa9b39284ee0fb02cfd5bf7489",
+          "port_sha256": "273bfd38facba331c71929b0d26ac2f3c2eda0fa9b39284ee0fb02cfd5bf7489",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 320,
+      "frames_per_instance": 102400,
+      "input_peak": 6.463852546770632,
+      "input_sha256": "d9ab9d453e3ad5fdd3f0f042a880a5dec356df3f2755c2e5e0cb95448fbf0bfb",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2170554552661064,
+          "target_peak": 6.838622677923611,
+          "target_sha256": "a5752b5e41845d9a399f28d8aff506af29c1d8cbdf8fb3446f5e6b21a4d27834",
+          "port_sha256": "a5752b5e41845d9a399f28d8aff506af29c1d8cbdf8fb3446f5e6b21a4d27834",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2170554560789295,
+          "target_peak": 6.838622677923611,
+          "target_sha256": "9942aecf402cd21c2db819aa27b6dd88e14d28fe3445ee368a0a0c3a98d644f0",
+          "port_sha256": "9942aecf402cd21c2db819aa27b6dd88e14d28fe3445ee368a0a0c3a98d644f0",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 1024,
+      "frames_per_instance": 102400,
+      "input_peak": 6.463852546770632,
+      "input_sha256": "d9ab9d453e3ad5fdd3f0f042a880a5dec356df3f2755c2e5e0cb95448fbf0bfb",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2107440720395,
+          "target_peak": 6.1942782969142325,
+          "target_sha256": "79a1af6808bae0a2078b07af51dd65ee02653038c7369e3e38977f034f7045f8",
+          "port_sha256": "79a1af6808bae0a2078b07af51dd65ee02653038c7369e3e38977f034f7045f8",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2107440715674416,
+          "target_peak": 6.1942782969142325,
+          "target_sha256": "8964bdb8a245c4f0adf24e98790d762d61db41f3e798104fcf80728c7212ac11",
+          "port_sha256": "8964bdb8a245c4f0adf24e98790d762d61db41f3e798104fcf80728c7212ac11",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 128,
+      "frames_per_instance": 102400,
+      "input_peak": 6.431608328208369,
+      "input_sha256": "48737db72d30b6cd32c8041e7803cae8817a134657143334e7d58773ebe64bd3",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2131999028438891,
+          "target_peak": 6.2192764217113865,
+          "target_sha256": "c25480e7107fdfd41e557328ee6d31bb74d18c770589bc1602178f2639308d40",
+          "port_sha256": "c25480e7107fdfd41e557328ee6d31bb74d18c770589bc1602178f2639308d40",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2131999154587614,
+          "target_peak": 6.2192764217113865,
+          "target_sha256": "7b776987a20e49054abaaf6c86b6876b58dad0a430022efa116cb9f680ca94be",
+          "port_sha256": "7b776987a20e49054abaaf6c86b6876b58dad0a430022efa116cb9f680ca94be",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 320,
+      "frames_per_instance": 102400,
+      "input_peak": 6.431608328208369,
+      "input_sha256": "48737db72d30b6cd32c8041e7803cae8817a134657143334e7d58773ebe64bd3",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2138179057903506,
+          "target_peak": 6.124738519575732,
+          "target_sha256": "75dec4b87666e5d1e18fdff70791cfbf143cfab06c62c4de30a304d2c03d6d85",
+          "port_sha256": "75dec4b87666e5d1e18fdff70791cfbf143cfab06c62c4de30a304d2c03d6d85",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.213817903086511,
+          "target_peak": 6.124738519575732,
+          "target_sha256": "7d49acb36d37256138087e55ec8c9c39a53a0b8ac649c5ab24d764d793faa325",
+          "port_sha256": "7d49acb36d37256138087e55ec8c9c39a53a0b8ac649c5ab24d764d793faa325",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 1024,
+      "frames_per_instance": 102400,
+      "input_peak": 6.431608328208369,
+      "input_sha256": "48737db72d30b6cd32c8041e7803cae8817a134657143334e7d58773ebe64bd3",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.207583703555915,
+          "target_peak": 5.694333951921142,
+          "target_sha256": "2543f5bec89a9b71631076d164f4882c76e7c00ade6f92b653b08632f9ae0fc9",
+          "port_sha256": "2543f5bec89a9b71631076d164f4882c76e7c00ade6f92b653b08632f9ae0fc9",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 204800,
+          "bit_mismatches": 0,
+          "max_absolute_error": 0.0,
+          "relative_rms_residual_db": -Infinity,
+          "relative_rms_to_peak_db": -Infinity,
+          "target_rms": 1.2075837226522352,
+          "target_peak": 5.694333951921142,
+          "target_sha256": "2ff3ea1a34e3591c9679d34d649bf4db1c69da2e98304af70b5a994cdb2daae5",
+          "port_sha256": "2ff3ea1a34e3591c9679d34d649bf4db1c69da2e98304af70b5a994cdb2daae5",
+          "selector_segments": [
+            {
+              "selector_index": 0,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 1,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 2,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 3,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 4,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 5,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 6,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 7,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 9,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 10,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 11,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 12,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 13,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 14,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 15,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 16,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 17,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 18,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 19,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            },
+            {
+              "selector_index": 20,
+              "compared_float64_values": 10240,
+              "bit_mismatches": 0,
+              "relative_rms_residual_db": -Infinity,
+              "max_absolute_error": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "run_count": 9,
+    "compared_float64_values": 3686400,
+    "bit_mismatches": 491516,
+    "max_absolute_error": 6.3941831744962485e-06,
+    "largest_relative_rms_residual_db": -130.5463493484994,
+    "largest_selector_relative_rms_residual_db": -121.64714213840264
+  },
+  "rea_evidence_export": "evidence/rea-ramped-automation-process-path-20261021.json",
+  "rea_snapshot": "evidence/rea-ramped-automation-process-snapshot-20261021.json",
+  "rea_evidence_id": "ev_1b53f079ec04d4bbeb8c3e4b8ef88dc255479943e55b86d715fcd30d65cac29a",
+  "limitations": [
+    "The licensed target returns E_NOINTERFACE from setProcessing(1), but process() renders all frames.",
+    "The residual at 44.1 kHz for 128- and 320-frame blocks is concentrated in Mic selectors after transitions from Line; all measured relative RMS residuals remain below \u2212100 dB. Other six rate/block runs are bit-identical.",
+    "Automation is block-quantized, with one value point for each parameter per block; it does not test within-block sample-offset automation."
+  ]
+}
