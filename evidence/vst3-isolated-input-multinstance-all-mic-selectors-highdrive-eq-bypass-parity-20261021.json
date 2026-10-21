@@ -1,0 +1,2747 @@
+{
+  "record_type": "runtime-dsp-parity",
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "f7731d614ac17e01adabd10e62b0668b643466a274f2e3dfd2bf8685a2a9f4fa",
+    "build": "Win64 MinGW static-runtime VST3"
+  },
+  "host": {
+    "path": "codex-tmp/tmp/isolated-multinstance-mic-selector-host.exe",
+    "sha256": "f476b6c84221a91389919c03adebe829c3811bb582a180213b03ebe012608114",
+    "source_path": "codex-tmp/tmp/isolated-multinstance-mic-selector-host.cpp",
+    "source_sha256": "8880130bbae8ec8d8cabb575e91a895bfc35faefc1b3ca21b10d98437fe85394",
+    "platform": "Win64 under Wine 10",
+    "instances": [
+      "target-0",
+      "port-0",
+      "target-1",
+      "port-1"
+    ],
+    "host_threads": 1,
+    "input_policy": "Fresh independent stereo source copied for every instance and process block; one selector per invocation; per-segment high-drive EQ and host Bypass automation."
+  },
+  "test_matrix": {
+    "selectors_tested_this_record": [
+      9,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19
+    ],
+    "rates_and_blocks": {
+      "44100": 128,
+      "96000": 256
+    },
+    "segment_frames": 4096,
+    "bypass_segments": [
+      1,
+      2,
+      4,
+      7
+    ],
+    "eq_states": [
+      {
+        "low_shelf_frequency_index": 1,
+        "low_shelf_gain_db": 8,
+        "mid_frequency_index": 2,
+        "mid_gain_db": -8,
+        "high_shelf_gain_db": 8,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 2,
+        "low_shelf_gain_db": -8,
+        "mid_frequency_index": 4,
+        "mid_gain_db": 8,
+        "high_shelf_gain_db": -8,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 0,
+        "low_shelf_gain_db": 4,
+        "mid_frequency_index": 5,
+        "mid_gain_db": 4,
+        "high_shelf_gain_db": 4,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 3,
+        "low_shelf_gain_db": -4,
+        "mid_frequency_index": 1,
+        "mid_gain_db": -4,
+        "high_shelf_gain_db": -4,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 1,
+        "low_shelf_gain_db": 8,
+        "mid_frequency_index": 3,
+        "mid_gain_db": 8,
+        "high_shelf_gain_db": 0,
+        "eq_in": false
+      },
+      {
+        "low_shelf_frequency_index": 2,
+        "low_shelf_gain_db": -8,
+        "mid_frequency_index": 2,
+        "mid_gain_db": -8,
+        "high_shelf_gain_db": 0,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 0,
+        "low_shelf_gain_db": 0,
+        "mid_frequency_index": 0,
+        "mid_gain_db": 0,
+        "high_shelf_gain_db": 0,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 3,
+        "low_shelf_gain_db": 0,
+        "mid_frequency_index": 5,
+        "mid_gain_db": 0,
+        "high_shelf_gain_db": 0,
+        "eq_in": true
+      }
+    ],
+    "bypass_pattern": [
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      true
+    ]
+  },
+  "new_runs": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_index": 9,
+      "selector_normalized": 0.45,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "output_sha256": {
+        "target-0": "77fb29c4e1686ed4b7e42bf77330329829df5c8ba721e5f215f42f633f96bc05",
+        "port-0": "77fb29c4e1686ed4b7e42bf77330329829df5c8ba721e5f215f42f633f96bc05",
+        "target-1": "dcaf0f79848efe261376d9f91a743d7a82b5af59463e58164e864cb818ba9a9b",
+        "port-1": "dcaf0f79848efe261376d9f91a743d7a82b5af59463e58164e864cb818ba9a9b"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_index": 11,
+      "selector_normalized": 0.55,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "output_sha256": {
+        "target-0": "2122295578af301bf437cfd6201ba002b345bae004b72a39def7af0539697ded",
+        "port-0": "2122295578af301bf437cfd6201ba002b345bae004b72a39def7af0539697ded",
+        "target-1": "cf4d69b4e54dd63b191c44517dbb22d333595c926a2ccf3833b24bace1a9e8f2",
+        "port-1": "cf4d69b4e54dd63b191c44517dbb22d333595c926a2ccf3833b24bace1a9e8f2"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_index": 12,
+      "selector_normalized": 0.6,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "output_sha256": {
+        "target-0": "3ce5e34e09356d1e3e984b8a58b8f0c856c24dfdf16b22a1dbf5f5005d200ac9",
+        "port-0": "3ce5e34e09356d1e3e984b8a58b8f0c856c24dfdf16b22a1dbf5f5005d200ac9",
+        "target-1": "cbb895bdc93d4084944e95fcb7a7aa4d1b0c986268f10ee58bac7ee6c9142b62",
+        "port-1": "cbb895bdc93d4084944e95fcb7a7aa4d1b0c986268f10ee58bac7ee6c9142b62"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_index": 13,
+      "selector_normalized": 0.65,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "output_sha256": {
+        "target-0": "b881ad10a9fb2c1fe5d530f54bd824aeb48815dd3d11390e3bf525ecbe429c9b",
+        "port-0": "b881ad10a9fb2c1fe5d530f54bd824aeb48815dd3d11390e3bf525ecbe429c9b",
+        "target-1": "5f9f44cf562ab306dabed6fe2b6be2bc9e94244b7d19d1a7cfb3e54475a58e63",
+        "port-1": "5f9f44cf562ab306dabed6fe2b6be2bc9e94244b7d19d1a7cfb3e54475a58e63"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_index": 14,
+      "selector_normalized": 0.7,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "output_sha256": {
+        "target-0": "83868c34da2c1fce9d72b6c22c5eafbf6a1f979c3cb7b2985f16961ca07b8ee7",
+        "port-0": "83868c34da2c1fce9d72b6c22c5eafbf6a1f979c3cb7b2985f16961ca07b8ee7",
+        "target-1": "fe31400ee477d65f3e8fede123d50ffdc9eebac3afea3d2947beb32337bc7967",
+        "port-1": "fe31400ee477d65f3e8fede123d50ffdc9eebac3afea3d2947beb32337bc7967"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_index": 16,
+      "selector_normalized": 0.8,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "output_sha256": {
+        "target-0": "f8f6613d10c018f687c6275db302d7d77d2688e37dba9c1188e7be88c0f71069",
+        "port-0": "f8f6613d10c018f687c6275db302d7d77d2688e37dba9c1188e7be88c0f71069",
+        "target-1": "74839d485cb4bfba0dd965b5791b78310bea6a11a03e185167c63e7030c47450",
+        "port-1": "74839d485cb4bfba0dd965b5791b78310bea6a11a03e185167c63e7030c47450"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_index": 17,
+      "selector_normalized": 0.85,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "output_sha256": {
+        "target-0": "b8b0bc614038d9699e8f62d1b551411102e1dae98823c2f9d553f5c8228e4ea0",
+        "port-0": "b8b0bc614038d9699e8f62d1b551411102e1dae98823c2f9d553f5c8228e4ea0",
+        "target-1": "16000a7c3448d65e1ef54a91665cf0d573a8279d80222415efce336e128715df",
+        "port-1": "16000a7c3448d65e1ef54a91665cf0d573a8279d80222415efce336e128715df"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_index": 18,
+      "selector_normalized": 0.9,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "output_sha256": {
+        "target-0": "de6da2aadf2f9550f4090c2689493249bc5239d4dd6b627edab7b0c95f6986b6",
+        "port-0": "de6da2aadf2f9550f4090c2689493249bc5239d4dd6b627edab7b0c95f6986b6",
+        "target-1": "9e6209f7fd02e6af34a0c19b8687bb6c4523ec706f3987e2173c91e0038b19af",
+        "port-1": "9e6209f7fd02e6af34a0c19b8687bb6c4523ec706f3987e2173c91e0038b19af"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_index": 19,
+      "selector_normalized": 0.95,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_after_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "output_sha256": {
+        "target-0": "6309eb274a9575ddf4eeed15429a2d1836c009cc2d86b20d047a26dd3c745b40",
+        "port-0": "6309eb274a9575ddf4eeed15429a2d1836c009cc2d86b20d047a26dd3c745b40",
+        "target-1": "e0f650a52a31ff266550dfda725dc531815dc75ad50d8faa7e7cf901f0ded1e2",
+        "port-1": "e0f650a52a31ff266550dfda725dc531815dc75ad50d8faa7e7cf901f0ded1e2"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_index": 9,
+      "selector_normalized": 0.45,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "output_sha256": {
+        "target-0": "95648f4d64451089d16bf267d95c04fb437bcab60d28313908c11aa891c9242f",
+        "port-0": "95648f4d64451089d16bf267d95c04fb437bcab60d28313908c11aa891c9242f",
+        "target-1": "987fe73a618473ee11cf15c9275095245b447aa596419c26d131387786e09a10",
+        "port-1": "987fe73a618473ee11cf15c9275095245b447aa596419c26d131387786e09a10"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 9,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_index": 11,
+      "selector_normalized": 0.55,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "output_sha256": {
+        "target-0": "c927abd26681c0f0edf70c3d21422b83a437a80a5773225d9eefa8a49d8d5e3e",
+        "port-0": "c927abd26681c0f0edf70c3d21422b83a437a80a5773225d9eefa8a49d8d5e3e",
+        "target-1": "9a5988e07b1f7e77ec25dcef6842c131d4e620fd5911dd374cc76cf8bcc0df44",
+        "port-1": "9a5988e07b1f7e77ec25dcef6842c131d4e620fd5911dd374cc76cf8bcc0df44"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 11,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_index": 12,
+      "selector_normalized": 0.6,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "output_sha256": {
+        "target-0": "c1c20e85fc3530eb9be6f38505ac4359ed00f53cc8313fd48237f7b0a96c5406",
+        "port-0": "c1c20e85fc3530eb9be6f38505ac4359ed00f53cc8313fd48237f7b0a96c5406",
+        "target-1": "ce01254821c7febf15e878dc428deb2fe03a40dee6841721cb0711612bb61622",
+        "port-1": "ce01254821c7febf15e878dc428deb2fe03a40dee6841721cb0711612bb61622"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 12,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_index": 13,
+      "selector_normalized": 0.65,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "output_sha256": {
+        "target-0": "7a6c4244cb3aead34973a18f18e1343cdd2f2b5e1844da86774fecc87f74ea2c",
+        "port-0": "7a6c4244cb3aead34973a18f18e1343cdd2f2b5e1844da86774fecc87f74ea2c",
+        "target-1": "a5920b863ec2bbdf7e6d76628308a8da3406e52e3691533f5108d916393d85d0",
+        "port-1": "a5920b863ec2bbdf7e6d76628308a8da3406e52e3691533f5108d916393d85d0"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 13,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_index": 14,
+      "selector_normalized": 0.7,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "output_sha256": {
+        "target-0": "a26c42087c960d88b755d0610869a7ee44b1d1bfedf052eb7c2f506cd993ce22",
+        "port-0": "a26c42087c960d88b755d0610869a7ee44b1d1bfedf052eb7c2f506cd993ce22",
+        "target-1": "4c1c49c3192286e3270fe5f020a976a3a4771164af249a0f033bda9f9f708a46",
+        "port-1": "4c1c49c3192286e3270fe5f020a976a3a4771164af249a0f033bda9f9f708a46"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 14,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_index": 16,
+      "selector_normalized": 0.8,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "output_sha256": {
+        "target-0": "fedcf97f814a5c146be2a27e2df1ea3fd3b4c0de0e7c44c452567e1df192b06f",
+        "port-0": "fedcf97f814a5c146be2a27e2df1ea3fd3b4c0de0e7c44c452567e1df192b06f",
+        "target-1": "4a7d087c12ba75173b6786bf4dda6012fd9d495365cf657bf7d511a52cbf96e1",
+        "port-1": "4a7d087c12ba75173b6786bf4dda6012fd9d495365cf657bf7d511a52cbf96e1"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 16,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_index": 17,
+      "selector_normalized": 0.85,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "output_sha256": {
+        "target-0": "f59493c24e2cf91eb5dabca6441f23e53fcdf9f963249121aa313c5e93307bf3",
+        "port-0": "f59493c24e2cf91eb5dabca6441f23e53fcdf9f963249121aa313c5e93307bf3",
+        "target-1": "f9d330eebf8f5a03ee8d31fa410ed6183c8972868c92e41a024b4bff5b97d8a2",
+        "port-1": "f9d330eebf8f5a03ee8d31fa410ed6183c8972868c92e41a024b4bff5b97d8a2"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 17,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_index": 18,
+      "selector_normalized": 0.9,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "output_sha256": {
+        "target-0": "d7955c5fb0557ddee856f682b9eec33951da4d596a190387e73fd4bf64505612",
+        "port-0": "d7955c5fb0557ddee856f682b9eec33951da4d596a190387e73fd4bf64505612",
+        "target-1": "6be0d685bf1855f0aa1447dfc9a7ad58b8299b748e0a5c25ca3ed00fcba0e373",
+        "port-1": "6be0d685bf1855f0aa1447dfc9a7ad58b8299b748e0a5c25ca3ed00fcba0e373"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 18,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_index": 19,
+      "selector_normalized": 0.95,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_after_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "output_sha256": {
+        "target-0": "0b9b1bbaeb75d4187df8d3d0671b6baad29e2046f6c293bb33ed2c419e6b6bde",
+        "port-0": "0b9b1bbaeb75d4187df8d3d0671b6baad29e2046f6c293bb33ed2c419e6b6bde",
+        "target-1": "d2c9efc7343ed626a9f0e103d88e41fcdd69a13de6c579bc80dc2c07127df184",
+        "port-1": "d2c9efc7343ed626a9f0e103d88e41fcdd69a13de6c579bc80dc2c07127df184"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 1,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 4,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 6,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": false,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {}
+        },
+        {
+          "segment": 7,
+          "frame_count": 4096,
+          "selector_index": 19,
+          "host_bypass": true,
+          "target_port_pair_mismatches": 0,
+          "bypassed_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "target_port_mismatches": 0,
+      "all_pairs_bit_identical": true,
+      "bypass_input_mismatches_total": 0,
+      "bypassed_segments_copy_input_exactly": true
+    }
+  ],
+  "previously_measured_reference_runs": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size_frames": 128,
+      "selector_indices_covered": [
+        10,
+        15,
+        20
+      ],
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "fb13ff724fdf26ccf28043fd3a7856a452daf8ddf73fa73096f866b8740b0156",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.398622859137975,
+      "full_output_sha256": {
+        "target-0": "5c529b7fe63f0f2cf30d5f9ad52f6b3349a0be0b095a0f2322debb45aff9d29e",
+        "port-0": "5c529b7fe63f0f2cf30d5f9ad52f6b3349a0be0b095a0f2322debb45aff9d29e",
+        "target-1": "8ae7c2ee12ac0462bf78f094cc16ddbe3e3a617794182ad08f597c0f2915c955",
+        "port-1": "8ae7c2ee12ac0462bf78f094cc16ddbe3e3a617794182ad08f597c0f2915c955"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 4096,
+          "selector_index": 10,
+          "selector_normalized": 0.5,
+          "model": "Mic 10",
+          "host_bypass": false,
+          "eq": {
+            "low_shelf_frequency_index": 1,
+            "low_shelf_gain_db": 8,
+            "mid_frequency_index": 2,
+            "mid_gain_db": -8,
+            "high_shelf_gain_db": 8,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "62d8b177cb74b08c21d1a248b0631d1aace8732a4a139c8f167ebbe534c6affa",
+              "port_sha256": "62d8b177cb74b08c21d1a248b0631d1aace8732a4a139c8f167ebbe534c6affa"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "fbbe483a531ea0ba7cca548cc1feb51b5a6b2a6ab24b22384d8be0980f908cbc",
+              "port_sha256": "fbbe483a531ea0ba7cca548cc1feb51b5a6b2a6ab24b22384d8be0980f908cbc"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 4096,
+          "frame_count": 4096,
+          "selector_index": 15,
+          "selector_normalized": 0.75,
+          "model": "Mic 35",
+          "host_bypass": true,
+          "eq": {
+            "low_shelf_frequency_index": 2,
+            "low_shelf_gain_db": -8,
+            "mid_frequency_index": 4,
+            "mid_gain_db": 8,
+            "high_shelf_gain_db": -8,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "bc8b7198773ed2c5a19fad24f6835188e4541f038cca50ed8ecb0a71893b14c4",
+              "port_sha256": "bc8b7198773ed2c5a19fad24f6835188e4541f038cca50ed8ecb0a71893b14c4"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "bc8b7198773ed2c5a19fad24f6835188e4541f038cca50ed8ecb0a71893b14c4",
+              "port_sha256": "bc8b7198773ed2c5a19fad24f6835188e4541f038cca50ed8ecb0a71893b14c4"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 8192,
+          "frame_count": 4096,
+          "selector_index": 20,
+          "selector_normalized": 1.0,
+          "model": "Mic 60",
+          "host_bypass": true,
+          "eq": {
+            "low_shelf_frequency_index": 0,
+            "low_shelf_gain_db": 4,
+            "mid_frequency_index": 5,
+            "mid_gain_db": 4,
+            "high_shelf_gain_db": 4,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "11f155f907792b7d3c094610b0c1b8f465451cfffe702da20862d3acff9e7373",
+              "port_sha256": "11f155f907792b7d3c094610b0c1b8f465451cfffe702da20862d3acff9e7373"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "11f155f907792b7d3c094610b0c1b8f465451cfffe702da20862d3acff9e7373",
+              "port_sha256": "11f155f907792b7d3c094610b0c1b8f465451cfffe702da20862d3acff9e7373"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 12288,
+          "frame_count": 4096,
+          "selector_index": 10,
+          "selector_normalized": 0.5,
+          "model": "Mic 10",
+          "host_bypass": false,
+          "eq": {
+            "low_shelf_frequency_index": 3,
+            "low_shelf_gain_db": -4,
+            "mid_frequency_index": 1,
+            "mid_gain_db": -4,
+            "high_shelf_gain_db": -4,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "977b5497226c7a567edb1af008f7cc5d07197820274623971381899bd178cba0",
+              "port_sha256": "977b5497226c7a567edb1af008f7cc5d07197820274623971381899bd178cba0"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "9c8541c639653e69e1c3529b58d24142eb277443482fdaa9469295a9da6bb29f",
+              "port_sha256": "9c8541c639653e69e1c3529b58d24142eb277443482fdaa9469295a9da6bb29f"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 16384,
+          "frame_count": 4096,
+          "selector_index": 15,
+          "selector_normalized": 0.75,
+          "model": "Mic 35",
+          "host_bypass": true,
+          "eq": {
+            "low_shelf_frequency_index": 1,
+            "low_shelf_gain_db": 8,
+            "mid_frequency_index": 3,
+            "mid_gain_db": 8,
+            "high_shelf_gain_db": 0,
+            "eq_in": false
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "207c0a42798800f653726ed096b169e4d53b7a7911fd7400bf992f4a681e1fd9",
+              "port_sha256": "207c0a42798800f653726ed096b169e4d53b7a7911fd7400bf992f4a681e1fd9"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "207c0a42798800f653726ed096b169e4d53b7a7911fd7400bf992f4a681e1fd9",
+              "port_sha256": "207c0a42798800f653726ed096b169e4d53b7a7911fd7400bf992f4a681e1fd9"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 20480,
+          "frame_count": 4096,
+          "selector_index": 20,
+          "selector_normalized": 1.0,
+          "model": "Mic 60",
+          "host_bypass": false,
+          "eq": {
+            "low_shelf_frequency_index": 2,
+            "low_shelf_gain_db": -8,
+            "mid_frequency_index": 2,
+            "mid_gain_db": -8,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "776c823448b8b865617ce371d7e9080416b99a8be6e5107e441077dbed4b686e",
+              "port_sha256": "776c823448b8b865617ce371d7e9080416b99a8be6e5107e441077dbed4b686e"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "c632e0723acc10fb3e1d016b71a4df92d3270728f8395fc9970c7544a0502e70",
+              "port_sha256": "c632e0723acc10fb3e1d016b71a4df92d3270728f8395fc9970c7544a0502e70"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 24576,
+          "frame_count": 4096,
+          "selector_index": 10,
+          "selector_normalized": 0.5,
+          "model": "Mic 10",
+          "host_bypass": false,
+          "eq": {
+            "low_shelf_frequency_index": 0,
+            "low_shelf_gain_db": 0,
+            "mid_frequency_index": 0,
+            "mid_gain_db": 0,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "d5e4ea95065cbed8a0fba84ccc731f936d1865f1a30f78f25626ac10cf6c6044",
+              "port_sha256": "d5e4ea95065cbed8a0fba84ccc731f936d1865f1a30f78f25626ac10cf6c6044"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "0cc2c1474cee93d306ded1d0b352d015e1f41d62c8a572e350e06b8b166b7e6a",
+              "port_sha256": "0cc2c1474cee93d306ded1d0b352d015e1f41d62c8a572e350e06b8b166b7e6a"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 28672,
+          "frame_count": 4096,
+          "selector_index": 20,
+          "selector_normalized": 1.0,
+          "model": "Mic 60",
+          "host_bypass": true,
+          "eq": {
+            "low_shelf_frequency_index": 3,
+            "low_shelf_gain_db": 0,
+            "mid_frequency_index": 5,
+            "mid_gain_db": 0,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "a764c748920cd8ca7866f8d851f4ace1ffab03e989955492e10b68205c581b41",
+              "port_sha256": "a764c748920cd8ca7866f8d851f4ace1ffab03e989955492e10b68205c581b41"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "a764c748920cd8ca7866f8d851f4ace1ffab03e989955492e10b68205c581b41",
+              "port_sha256": "a764c748920cd8ca7866f8d851f4ace1ffab03e989955492e10b68205c581b41"
+            }
+          ]
+        }
+      ],
+      "all_pairs_bit_identical": true,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size_frames": 256,
+      "selector_indices_covered": [
+        10,
+        15,
+        20
+      ],
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "ee2cf66d599c5aa3d439ee134685a1ec2f7e71abbf995927a74c2894cc31c2fd",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.441219108232861,
+      "full_output_sha256": {
+        "target-0": "4359cd31f4be88d3050f63f8d853a834179e4757925cf82ea0ff7d47b3c6d06e",
+        "port-0": "4359cd31f4be88d3050f63f8d853a834179e4757925cf82ea0ff7d47b3c6d06e",
+        "target-1": "05456ac7f1cc73565fe106e407e36a00ab23648bcecf31a46e37912f1cc91aa9",
+        "port-1": "05456ac7f1cc73565fe106e407e36a00ab23648bcecf31a46e37912f1cc91aa9"
+      },
+      "segments": [
+        {
+          "segment": 0,
+          "start_frame": 0,
+          "frame_count": 4096,
+          "selector_index": 10,
+          "selector_normalized": 0.5,
+          "model": "Mic 10",
+          "host_bypass": false,
+          "eq": {
+            "low_shelf_frequency_index": 1,
+            "low_shelf_gain_db": 8,
+            "mid_frequency_index": 2,
+            "mid_gain_db": -8,
+            "high_shelf_gain_db": 8,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "00d6307200b2a0bf71de094267c9ed0794c2161424e5c01b462ef3f6769501ec",
+              "port_sha256": "00d6307200b2a0bf71de094267c9ed0794c2161424e5c01b462ef3f6769501ec"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "e0d25d538a3e299f8573daf4b6d535683a2dd781e46872c3a007902f9f687fbe",
+              "port_sha256": "e0d25d538a3e299f8573daf4b6d535683a2dd781e46872c3a007902f9f687fbe"
+            }
+          ]
+        },
+        {
+          "segment": 1,
+          "start_frame": 4096,
+          "frame_count": 4096,
+          "selector_index": 15,
+          "selector_normalized": 0.75,
+          "model": "Mic 35",
+          "host_bypass": true,
+          "eq": {
+            "low_shelf_frequency_index": 2,
+            "low_shelf_gain_db": -8,
+            "mid_frequency_index": 4,
+            "mid_gain_db": 8,
+            "high_shelf_gain_db": -8,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "b60cc01fd6547be6f6ce079b4a26b4b0de780757394f2b06a3a69927ccb57bfd",
+              "port_sha256": "b60cc01fd6547be6f6ce079b4a26b4b0de780757394f2b06a3a69927ccb57bfd"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "b60cc01fd6547be6f6ce079b4a26b4b0de780757394f2b06a3a69927ccb57bfd",
+              "port_sha256": "b60cc01fd6547be6f6ce079b4a26b4b0de780757394f2b06a3a69927ccb57bfd"
+            }
+          ]
+        },
+        {
+          "segment": 2,
+          "start_frame": 8192,
+          "frame_count": 4096,
+          "selector_index": 20,
+          "selector_normalized": 1.0,
+          "model": "Mic 60",
+          "host_bypass": true,
+          "eq": {
+            "low_shelf_frequency_index": 0,
+            "low_shelf_gain_db": 4,
+            "mid_frequency_index": 5,
+            "mid_gain_db": 4,
+            "high_shelf_gain_db": 4,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "9ce8c315f03b25fad67737a2f3bf848e22a220b26d23f22e855c00e9ca91650f",
+              "port_sha256": "9ce8c315f03b25fad67737a2f3bf848e22a220b26d23f22e855c00e9ca91650f"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "9ce8c315f03b25fad67737a2f3bf848e22a220b26d23f22e855c00e9ca91650f",
+              "port_sha256": "9ce8c315f03b25fad67737a2f3bf848e22a220b26d23f22e855c00e9ca91650f"
+            }
+          ]
+        },
+        {
+          "segment": 3,
+          "start_frame": 12288,
+          "frame_count": 4096,
+          "selector_index": 10,
+          "selector_normalized": 0.5,
+          "model": "Mic 10",
+          "host_bypass": false,
+          "eq": {
+            "low_shelf_frequency_index": 3,
+            "low_shelf_gain_db": -4,
+            "mid_frequency_index": 1,
+            "mid_gain_db": -4,
+            "high_shelf_gain_db": -4,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "71c6c2dc9e4eeb4f4a7186554d2e853ef1a6f7b72dbbd342aca3ec4db8782056",
+              "port_sha256": "71c6c2dc9e4eeb4f4a7186554d2e853ef1a6f7b72dbbd342aca3ec4db8782056"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "bb6f041ddb9f40692af5f86ab6710806230f9dfa600b640c2c0d05e6fab0663e",
+              "port_sha256": "bb6f041ddb9f40692af5f86ab6710806230f9dfa600b640c2c0d05e6fab0663e"
+            }
+          ]
+        },
+        {
+          "segment": 4,
+          "start_frame": 16384,
+          "frame_count": 4096,
+          "selector_index": 15,
+          "selector_normalized": 0.75,
+          "model": "Mic 35",
+          "host_bypass": true,
+          "eq": {
+            "low_shelf_frequency_index": 1,
+            "low_shelf_gain_db": 8,
+            "mid_frequency_index": 3,
+            "mid_gain_db": 8,
+            "high_shelf_gain_db": 0,
+            "eq_in": false
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "d2ff4bb537d1f0b72703b94847ab0cd5e6d34d234ea69108b53d1b08ebd3c839",
+              "port_sha256": "d2ff4bb537d1f0b72703b94847ab0cd5e6d34d234ea69108b53d1b08ebd3c839"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "d2ff4bb537d1f0b72703b94847ab0cd5e6d34d234ea69108b53d1b08ebd3c839",
+              "port_sha256": "d2ff4bb537d1f0b72703b94847ab0cd5e6d34d234ea69108b53d1b08ebd3c839"
+            }
+          ]
+        },
+        {
+          "segment": 5,
+          "start_frame": 20480,
+          "frame_count": 4096,
+          "selector_index": 20,
+          "selector_normalized": 1.0,
+          "model": "Mic 60",
+          "host_bypass": false,
+          "eq": {
+            "low_shelf_frequency_index": 2,
+            "low_shelf_gain_db": -8,
+            "mid_frequency_index": 2,
+            "mid_gain_db": -8,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "45d981824a433a7dec71b7101a10b59745936887bd5ce884100c8ef2ed655fb9",
+              "port_sha256": "45d981824a433a7dec71b7101a10b59745936887bd5ce884100c8ef2ed655fb9"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "3986ed03baf123810056111e4b51a89e69c951f8c7aad5f91d02b6a1a5986a12",
+              "port_sha256": "3986ed03baf123810056111e4b51a89e69c951f8c7aad5f91d02b6a1a5986a12"
+            }
+          ]
+        },
+        {
+          "segment": 6,
+          "start_frame": 24576,
+          "frame_count": 4096,
+          "selector_index": 10,
+          "selector_normalized": 0.5,
+          "model": "Mic 10",
+          "host_bypass": false,
+          "eq": {
+            "low_shelf_frequency_index": 0,
+            "low_shelf_gain_db": 0,
+            "mid_frequency_index": 0,
+            "mid_gain_db": 0,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "7a398b466aaa3afaac1525f88c506888264c5b8a0608f7b167ed6069ad58cdc7",
+              "port_sha256": "7a398b466aaa3afaac1525f88c506888264c5b8a0608f7b167ed6069ad58cdc7"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": null,
+              "port_passes_input_exactly_if_bypassed": null,
+              "values_compared": 8192,
+              "target_sha256": "a1d5255f02dc081ddab6c0960fafc8fd959429d63425dbaf882b1b122f8b47d7",
+              "port_sha256": "a1d5255f02dc081ddab6c0960fafc8fd959429d63425dbaf882b1b122f8b47d7"
+            }
+          ]
+        },
+        {
+          "segment": 7,
+          "start_frame": 28672,
+          "frame_count": 4096,
+          "selector_index": 20,
+          "selector_normalized": 1.0,
+          "model": "Mic 60",
+          "host_bypass": true,
+          "eq": {
+            "low_shelf_frequency_index": 3,
+            "low_shelf_gain_db": 0,
+            "mid_frequency_index": 5,
+            "mid_gain_db": 0,
+            "high_shelf_gain_db": 0,
+            "eq_in": true
+          },
+          "instance_pairs": [
+            {
+              "instance": 0,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "297bad6148b1a1a8640b4176dec9f91465d5b23d9002b866ba48a0de0eff8334",
+              "port_sha256": "297bad6148b1a1a8640b4176dec9f91465d5b23d9002b866ba48a0de0eff8334"
+            },
+            {
+              "instance": 1,
+              "target_port_equal": true,
+              "target_passes_input_exactly_if_bypassed": true,
+              "port_passes_input_exactly_if_bypassed": true,
+              "values_compared": 8192,
+              "target_sha256": "297bad6148b1a1a8640b4176dec9f91465d5b23d9002b866ba48a0de0eff8334",
+              "port_sha256": "297bad6148b1a1a8640b4176dec9f91465d5b23d9002b866ba48a0de0eff8334"
+            }
+          ]
+        }
+      ],
+      "all_pairs_bit_identical": true,
+      "bypassed_segments_copy_input_exactly": true
+    }
+  ],
+  "summary": {
+    "new_run_count": 18,
+    "new_selector_rate_cases": 18,
+    "previously_measured_selector_rate_cases": 6,
+    "complete_selector_indices": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "sample_rates_hz": [
+      44100,
+      96000
+    ],
+    "all_selector_rate_combinations_covered": true,
+    "new_values_compared": 2359296,
+    "new_mismatches": 0,
+    "new_all_pairs_bit_identical": true,
+    "new_bypassed_segments_copy_input_exactly": true,
+    "aggregate_values_compared_including_previous": 2621440,
+    "aggregate_mismatches": 0
+  },
+  "conclusion": "All Mic selector indices 9 through 20 were covered at 44.1 and 96 kHz with the long high-drive EQ and host Bypass sequence. The new selector runs matched bit-for-bit, bypassed segments copied the original input exactly, and buffers remained unchanged."
+}

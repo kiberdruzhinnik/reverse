@@ -1,0 +1,245 @@
+{
+  "record_type": "controlled-vst3-runtime-parity",
+  "date": "2026-10-21",
+  "question": "Does the Float32 host-Bypass path match the licensed VST3 conversion behavior for finite and exceptional IEEE-754 inputs?",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "210bf2c6e0b37c3385aaa4854ba7bd6befe14bd2bb0a2635bc623fd01055f858",
+    "toolchain": "static MinGW-w64 x86_64",
+    "source_change": "src/plugin.cpp Float32 host-Bypass converts through volatile double scratch before narrowing"
+  },
+  "rea_evidence_ids": [
+    "ev_1b53f079ec04d4bbeb8c3e4b8ef88dc255479943e55b86d715fcd30d65cac29a",
+    "ev_0a2d436f08fd02dbf080384f71cec2f92b08cf99b8db6f12bd3ea0a49986b8f6",
+    "ev_5cde65cb440391be9fcbdfccb81d6625ba32570b1b109833bc25fe1434f0f5cd",
+    "ev_eb95163617903c9be6ff93fe6b464ea4723ceb41105f000bc441db819c207998",
+    "ev_97790aea28a25df51fc72aef9a2bb2669c760b1da95f6add47d040276fd9279d"
+  ],
+  "host": {
+    "executable": "codex-tmp/tmp/isolated-multinstance-f32-host.exe",
+    "executable_sha256": "9335abd3bf8d2e441186ab00d8ba69d8e8617837ea3ff91e3d53c77038830074",
+    "source_sha256": "9c6cca289d77d1870df6f0ee7b7742541ae500febf73ac7d4ea02467edf34b52",
+    "wine_prefix": "build-win64/rea-license-prefix",
+    "license_registry_value_present": true,
+    "render_frames_per_instance": 32768,
+    "symbolic_sample_size": "Float32",
+    "selector_normalized": 0.5,
+    "selector_index": 10,
+    "instances": [
+      "target-0",
+      "port-0",
+      "target-1",
+      "port-1"
+    ],
+    "host_bypass_segments": [
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      true
+    ],
+    "segment_frames": 4096,
+    "eq_automation": "Eight mixed Low/Mid/High EQ states with EQ In toggles, same schedule as the existing high-drive host matrix.",
+    "input": "Independent stereo 997/613 Hz tones, deterministic noise and periodic impulses; inserted eight raw Float32 edge values at frames 4096-4103 during a bypassed segment.",
+    "rate_block_matrix": [
+      {
+        "sample_rate_hz": 44100,
+        "block_size_frames": 128
+      },
+      {
+        "sample_rate_hz": 96000,
+        "block_size_frames": 256
+      },
+      {
+        "sample_rate_hz": 192000,
+        "block_size_frames": 512
+      }
+    ]
+  },
+  "edge_values_per_channel": [
+    "0x7f800001",
+    "0xff800123",
+    "0x7fc12345",
+    "0xffc54321",
+    "0x00000001",
+    "0x80000000",
+    "0x7f800000",
+    "0xff800000"
+  ],
+  "before_fix": {
+    "result": "mismatch",
+    "float32_values_per_pair": 65536,
+    "mismatches_per_pair": 4,
+    "target_pair_0_sha256": "5359ea35900dfcd3f5ceacee29ad6ae791e459a6a7497ffffcd90a17d649005a",
+    "port_pair_0_sha256": "0b973715b6d7b21123e20728a452ca2a346a88971543ed7ace7956a420e760cc",
+    "target_quieted_signaling_nan_bits": [
+      "0x7fc00001",
+      "0xffc00123"
+    ],
+    "port_preserved_input_bits": [
+      "0x7f800001",
+      "0xff800123"
+    ]
+  },
+  "after_fix": {
+    "result": "bit-identical",
+    "float32_values_per_pair": 65536,
+    "total_values_compared": 393216,
+    "mismatches_per_pair": [
+      0,
+      0
+    ],
+    "pair_0_target_sha256": "013f7dea33d275d8e94a66e66cb07ce30492ee87061cd5238faa2834b79c75e0",
+    "pair_0_port_sha256": "013f7dea33d275d8e94a66e66cb07ce30492ee87061cd5238faa2834b79c75e0",
+    "pair_1_target_sha256": "367bc744fd07bb0a070b54dc1763edfa834f2d778ba666cf96ffee22a2c4d15d",
+    "pair_1_port_sha256": "367bc744fd07bb0a070b54dc1763edfa834f2d778ba666cf96ffee22a2c4d15d",
+    "per_segment_mismatches": [
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "rates_tested_hz": [
+      44100,
+      96000,
+      192000
+    ],
+    "mismatches_per_pair_per_rate": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "cases": [
+      {
+        "sample_rate_hz": 44100,
+        "block_size_frames": 128,
+        "values_per_pair": 65536,
+        "mismatches_per_pair": [
+          0,
+          0
+        ],
+        "output_sha256": {
+          "target-0": "013f7dea33d275d8e94a66e66cb07ce30492ee87061cd5238faa2834b79c75e0",
+          "port-0": "013f7dea33d275d8e94a66e66cb07ce30492ee87061cd5238faa2834b79c75e0",
+          "target-1": "367bc744fd07bb0a070b54dc1763edfa834f2d778ba666cf96ffee22a2c4d15d",
+          "port-1": "367bc744fd07bb0a070b54dc1763edfa834f2d778ba666cf96ffee22a2c4d15d"
+        }
+      },
+      {
+        "sample_rate_hz": 96000,
+        "block_size_frames": 256,
+        "values_per_pair": 65536,
+        "mismatches_per_pair": [
+          0,
+          0
+        ],
+        "output_sha256": {
+          "target-0": "ea4208d0bb692b08f38bae7d3f2a98d7441312c1f3968557e13faf27d0e89829",
+          "port-0": "ea4208d0bb692b08f38bae7d3f2a98d7441312c1f3968557e13faf27d0e89829",
+          "target-1": "fc9962d45950c318cf3b5584226ad93d84c472d25fcd0634c446becf86c80020",
+          "port-1": "fc9962d45950c318cf3b5584226ad93d84c472d25fcd0634c446becf86c80020"
+        }
+      },
+      {
+        "sample_rate_hz": 192000,
+        "block_size_frames": 512,
+        "values_per_pair": 65536,
+        "mismatches_per_pair": [
+          0,
+          0
+        ],
+        "output_sha256": {
+          "target-0": "3b2fb541966bd79502811fd34f93371770ff886b8a890340cc0126cb808e2ee0",
+          "port-0": "3b2fb541966bd79502811fd34f93371770ff886b8a890340cc0126cb808e2ee0",
+          "target-1": "7df5bb92d02c8de4f360db2a3298e81fcd7cd1f1997cd79266e3780e2010480d",
+          "port-1": "7df5bb92d02c8de4f360db2a3298e81fcd7cd1f1997cd79266e3780e2010480d"
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "The Float32 host-Bypass edge check covers three selected rate/block pairs: 44.1 kHz/128, 96 kHz/256 and 192 kHz/512; other rates and block sizes remain open.",
+    "The run combines host Bypass edge handling with one high-drive mixed-EQ schedule; it does not establish exhaustive Float32 DSP parity.",
+    "The target returned E_NOINTERFACE from setProcessing(true) in this minimal host, but process calls succeeded and each same-process target/port pair matched exactly."
+  ]
+}

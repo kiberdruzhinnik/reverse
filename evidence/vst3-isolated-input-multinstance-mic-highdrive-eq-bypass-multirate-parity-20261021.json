@@ -1,0 +1,559 @@
+{
+  "record_type": "runtime-dsp-parity",
+  "date": "2026-10-21",
+  "target": {
+    "path": "data/Burnley73.vst3",
+    "sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a"
+  },
+  "port": {
+    "path": "build-win64/VST3/Burnley73.vst3",
+    "sha256": "f7731d614ac17e01adabd10e62b0668b643466a274f2e3dfd2bf8685a2a9f4fa",
+    "build": "Win64 MinGW static-runtime VST3"
+  },
+  "host": {
+    "path": "codex-tmp/host-work/isolated-multinstance-mic-bypass-host.exe",
+    "sha256": "c4beb88d3d8ff40451dd18f981da434b690c985f6361a4a54ce8e04a8abd360c",
+    "source_path": "codex-tmp/host-work/isolated-multinstance-mic-bypass.cpp",
+    "source_sha256": "5de6764cadfac5bb9517e45019add405188fbbcf4513fa41142f7438700ff3ab",
+    "platform": "Win64 under Wine 10",
+    "instances": [
+      "target-0",
+      "port-0",
+      "target-1",
+      "port-1"
+    ],
+    "host_threads": 1,
+    "input_policy": "Fresh original stereo input copy for every instance and process block; parameter queues control model selector, host Bypass, and EQ."
+  },
+  "automation": {
+    "frames_per_instance": 32768,
+    "segment_frames": 4096,
+    "selector_indices": [
+      10,
+      15,
+      20,
+      10,
+      15,
+      20,
+      10,
+      20
+    ],
+    "selector_normalized": [
+      0.5,
+      0.75,
+      1.0,
+      0.5,
+      0.75,
+      1.0,
+      0.5,
+      1.0
+    ],
+    "bypass_parameter_id": "0x62706173",
+    "bypass_by_segment": [
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      true
+    ],
+    "eq_states": [
+      {
+        "low_shelf_frequency_index": 1,
+        "low_shelf_gain_db": 8,
+        "mid_frequency_index": 2,
+        "mid_gain_db": -8,
+        "high_shelf_gain_db": 8,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 2,
+        "low_shelf_gain_db": -8,
+        "mid_frequency_index": 4,
+        "mid_gain_db": 8,
+        "high_shelf_gain_db": -8,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 0,
+        "low_shelf_gain_db": 4,
+        "mid_frequency_index": 5,
+        "mid_gain_db": 4,
+        "high_shelf_gain_db": 4,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 3,
+        "low_shelf_gain_db": -4,
+        "mid_frequency_index": 1,
+        "mid_gain_db": -4,
+        "high_shelf_gain_db": -4,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 1,
+        "low_shelf_gain_db": 8,
+        "mid_frequency_index": 3,
+        "mid_gain_db": 8,
+        "high_shelf_gain_db": 0,
+        "eq_in": false
+      },
+      {
+        "low_shelf_frequency_index": 2,
+        "low_shelf_gain_db": -8,
+        "mid_frequency_index": 2,
+        "mid_gain_db": -8,
+        "high_shelf_gain_db": 0,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 0,
+        "low_shelf_gain_db": 0,
+        "mid_frequency_index": 0,
+        "mid_gain_db": 0,
+        "high_shelf_gain_db": 0,
+        "eq_in": true
+      },
+      {
+        "low_shelf_frequency_index": 3,
+        "low_shelf_gain_db": 0,
+        "mid_frequency_index": 5,
+        "mid_gain_db": 0,
+        "high_shelf_gain_db": 0,
+        "eq_in": true
+      }
+    ],
+    "eq_parameter_ids": {
+      "low_shelf_frequency": 1,
+      "low_shelf_gain": 2,
+      "mid_frequency": 3,
+      "mid_gain": 4,
+      "high_shelf_gain": 5,
+      "model_selector": 6,
+      "eq_in": 12
+    }
+  },
+  "runs": [
+    {
+      "sample_rate_hz": 88200,
+      "block_size_frames": 256,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "289767d1a3fd3903fc571204b3d8ecf34374957025ae1e5d06e5957d83eb2d9a",
+      "input_after_sha256": "289767d1a3fd3903fc571204b3d8ecf34374957025ae1e5d06e5957d83eb2d9a",
+      "input_unchanged": true,
+      "input_peak_absolute": 6.376849211556461,
+      "full_output_sha256": {
+        "target-0": "f407992004f1ea60716b4a080ee435720d389086af9ce1858b34e663537668c7",
+        "port-0": "f407992004f1ea60716b4a080ee435720d389086af9ce1858b34e663537668c7",
+        "target-1": "b681793b0cd131a2ab3ebe2d62e417132885913558509e4d669314e21a7fdd72",
+        "port-1": "b681793b0cd131a2ab3ebe2d62e417132885913558509e4d669314e21a7fdd72"
+      },
+      "segment_results": [
+        {
+          "segment": 0,
+          "selector_index": 10,
+          "bypass": false,
+          "outputs": {
+            "target-0": {
+              "sha256": "dd92e34dea69de31801ef799337b7ae2808f70c774d80ab0177b8ae0a1c6ca67"
+            },
+            "port-0": {
+              "sha256": "dd92e34dea69de31801ef799337b7ae2808f70c774d80ab0177b8ae0a1c6ca67"
+            },
+            "target-1": {
+              "sha256": "b9a602e51de8093ddae85a3c57ccdcacf07982831da829a7070b7d27efeea027"
+            },
+            "port-1": {
+              "sha256": "b9a602e51de8093ddae85a3c57ccdcacf07982831da829a7070b7d27efeea027"
+            }
+          },
+          "pair_mismatches": 0
+        },
+        {
+          "segment": 1,
+          "selector_index": 15,
+          "bypass": true,
+          "outputs": {
+            "target-0": {
+              "sha256": "a33814cf803062e398c73dbfa4240218653c9db270a6d191687da9fef9c24212"
+            },
+            "port-0": {
+              "sha256": "a33814cf803062e398c73dbfa4240218653c9db270a6d191687da9fef9c24212"
+            },
+            "target-1": {
+              "sha256": "a33814cf803062e398c73dbfa4240218653c9db270a6d191687da9fef9c24212"
+            },
+            "port-1": {
+              "sha256": "a33814cf803062e398c73dbfa4240218653c9db270a6d191687da9fef9c24212"
+            }
+          },
+          "pair_mismatches": 0,
+          "bypass_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "selector_index": 20,
+          "bypass": true,
+          "outputs": {
+            "target-0": {
+              "sha256": "78815271d97e3c6d97bdb2e81103b965e57b4a16ff7d32894be3e5ffd59b20a8"
+            },
+            "port-0": {
+              "sha256": "78815271d97e3c6d97bdb2e81103b965e57b4a16ff7d32894be3e5ffd59b20a8"
+            },
+            "target-1": {
+              "sha256": "78815271d97e3c6d97bdb2e81103b965e57b4a16ff7d32894be3e5ffd59b20a8"
+            },
+            "port-1": {
+              "sha256": "78815271d97e3c6d97bdb2e81103b965e57b4a16ff7d32894be3e5ffd59b20a8"
+            }
+          },
+          "pair_mismatches": 0,
+          "bypass_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "selector_index": 10,
+          "bypass": false,
+          "outputs": {
+            "target-0": {
+              "sha256": "4e2c51f1c3e0a674b592ed3ee3c6a0e871319b9c36aefd3920a1dd15876a8fa4"
+            },
+            "port-0": {
+              "sha256": "4e2c51f1c3e0a674b592ed3ee3c6a0e871319b9c36aefd3920a1dd15876a8fa4"
+            },
+            "target-1": {
+              "sha256": "13d6f68f310d17957ba8845affc2f9c94c5313b542c2a33370adb762c03bc7e6"
+            },
+            "port-1": {
+              "sha256": "13d6f68f310d17957ba8845affc2f9c94c5313b542c2a33370adb762c03bc7e6"
+            }
+          },
+          "pair_mismatches": 0
+        },
+        {
+          "segment": 4,
+          "selector_index": 15,
+          "bypass": true,
+          "outputs": {
+            "target-0": {
+              "sha256": "8c2ba37c985a1ec4401a712d96100766f44c8a27da88f1e61a8fc6285e845419"
+            },
+            "port-0": {
+              "sha256": "8c2ba37c985a1ec4401a712d96100766f44c8a27da88f1e61a8fc6285e845419"
+            },
+            "target-1": {
+              "sha256": "8c2ba37c985a1ec4401a712d96100766f44c8a27da88f1e61a8fc6285e845419"
+            },
+            "port-1": {
+              "sha256": "8c2ba37c985a1ec4401a712d96100766f44c8a27da88f1e61a8fc6285e845419"
+            }
+          },
+          "pair_mismatches": 0,
+          "bypass_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "selector_index": 20,
+          "bypass": false,
+          "outputs": {
+            "target-0": {
+              "sha256": "44350b8adab245560acb617731b2d4dbed2fe354843c9b6fbd27edd42056b7cc"
+            },
+            "port-0": {
+              "sha256": "44350b8adab245560acb617731b2d4dbed2fe354843c9b6fbd27edd42056b7cc"
+            },
+            "target-1": {
+              "sha256": "8f2b4ce1dbce609e504e455c97a1e5189760ed9921cb479e955d28fecccc7bae"
+            },
+            "port-1": {
+              "sha256": "8f2b4ce1dbce609e504e455c97a1e5189760ed9921cb479e955d28fecccc7bae"
+            }
+          },
+          "pair_mismatches": 0
+        },
+        {
+          "segment": 6,
+          "selector_index": 10,
+          "bypass": false,
+          "outputs": {
+            "target-0": {
+              "sha256": "4662faf8c06bcc36d4fdd3da82855720e70efdc0c28c68fec8927ab154410f05"
+            },
+            "port-0": {
+              "sha256": "4662faf8c06bcc36d4fdd3da82855720e70efdc0c28c68fec8927ab154410f05"
+            },
+            "target-1": {
+              "sha256": "a6503bb6b762c5fd13038cde34b8ff39a25d13ea6eb97c99fcc00cc5684985a3"
+            },
+            "port-1": {
+              "sha256": "a6503bb6b762c5fd13038cde34b8ff39a25d13ea6eb97c99fcc00cc5684985a3"
+            }
+          },
+          "pair_mismatches": 0
+        },
+        {
+          "segment": 7,
+          "selector_index": 20,
+          "bypass": true,
+          "outputs": {
+            "target-0": {
+              "sha256": "2624e932b74f797112a8d1f1a84277cee4594695c6256d574d70df28ab70d235"
+            },
+            "port-0": {
+              "sha256": "2624e932b74f797112a8d1f1a84277cee4594695c6256d574d70df28ab70d235"
+            },
+            "target-1": {
+              "sha256": "2624e932b74f797112a8d1f1a84277cee4594695c6256d574d70df28ab70d235"
+            },
+            "port-1": {
+              "sha256": "2624e932b74f797112a8d1f1a84277cee4594695c6256d574d70df28ab70d235"
+            }
+          },
+          "pair_mismatches": 0,
+          "bypass_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "pair_mismatches": 0,
+      "all_target_port_pairs_bit_identical": true,
+      "bypassed_segments_copy_input_exactly": true
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size_frames": 512,
+      "frames_per_instance": 32768,
+      "sample_format": "Float64",
+      "input_sha256": "407af78214b164989f7ae1547759918918198c2e92d9cbff6d2bab21a6a7c513",
+      "input_after_sha256": "407af78214b164989f7ae1547759918918198c2e92d9cbff6d2bab21a6a7c513",
+      "input_unchanged": true,
+      "input_peak_absolute": 5.975532976960347,
+      "full_output_sha256": {
+        "target-0": "e8c770c39abfed41417394fbb32278a7cdde0c5a5c131382e0c788e9b73112e7",
+        "port-0": "e8c770c39abfed41417394fbb32278a7cdde0c5a5c131382e0c788e9b73112e7",
+        "target-1": "e692b79f196a34b7c0f1b68fce5ecca4e07afde9c66b2cd446908f9d3c40eda2",
+        "port-1": "e692b79f196a34b7c0f1b68fce5ecca4e07afde9c66b2cd446908f9d3c40eda2"
+      },
+      "segment_results": [
+        {
+          "segment": 0,
+          "selector_index": 10,
+          "bypass": false,
+          "outputs": {
+            "target-0": {
+              "sha256": "2917ed24527b2bfdbfff76985eec7bacef65339246abecb164c18969b5e3ddec"
+            },
+            "port-0": {
+              "sha256": "2917ed24527b2bfdbfff76985eec7bacef65339246abecb164c18969b5e3ddec"
+            },
+            "target-1": {
+              "sha256": "2c0fe98462529655dc030d992db0cbc3b1180a2eea39ef269d566cd1e948bb79"
+            },
+            "port-1": {
+              "sha256": "2c0fe98462529655dc030d992db0cbc3b1180a2eea39ef269d566cd1e948bb79"
+            }
+          },
+          "pair_mismatches": 0
+        },
+        {
+          "segment": 1,
+          "selector_index": 15,
+          "bypass": true,
+          "outputs": {
+            "target-0": {
+              "sha256": "8950446ce19dc582c866977b74ad570d07e3f08471b39278f52757058186f570"
+            },
+            "port-0": {
+              "sha256": "8950446ce19dc582c866977b74ad570d07e3f08471b39278f52757058186f570"
+            },
+            "target-1": {
+              "sha256": "8950446ce19dc582c866977b74ad570d07e3f08471b39278f52757058186f570"
+            },
+            "port-1": {
+              "sha256": "8950446ce19dc582c866977b74ad570d07e3f08471b39278f52757058186f570"
+            }
+          },
+          "pair_mismatches": 0,
+          "bypass_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 2,
+          "selector_index": 20,
+          "bypass": true,
+          "outputs": {
+            "target-0": {
+              "sha256": "0b19a470efb9c9928aaa00612d7f8664b8f1934a3a7814902e3451ac88022173"
+            },
+            "port-0": {
+              "sha256": "0b19a470efb9c9928aaa00612d7f8664b8f1934a3a7814902e3451ac88022173"
+            },
+            "target-1": {
+              "sha256": "0b19a470efb9c9928aaa00612d7f8664b8f1934a3a7814902e3451ac88022173"
+            },
+            "port-1": {
+              "sha256": "0b19a470efb9c9928aaa00612d7f8664b8f1934a3a7814902e3451ac88022173"
+            }
+          },
+          "pair_mismatches": 0,
+          "bypass_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 3,
+          "selector_index": 10,
+          "bypass": false,
+          "outputs": {
+            "target-0": {
+              "sha256": "c03fc723acd40cc490e83d03a19fca9923157a1906d97c3abedf7ac7c8cc9b9b"
+            },
+            "port-0": {
+              "sha256": "c03fc723acd40cc490e83d03a19fca9923157a1906d97c3abedf7ac7c8cc9b9b"
+            },
+            "target-1": {
+              "sha256": "4f81a0efed9d3513570b421ddfb6db3026ac2c0a48b3ce5685808a68b07562a6"
+            },
+            "port-1": {
+              "sha256": "4f81a0efed9d3513570b421ddfb6db3026ac2c0a48b3ce5685808a68b07562a6"
+            }
+          },
+          "pair_mismatches": 0
+        },
+        {
+          "segment": 4,
+          "selector_index": 15,
+          "bypass": true,
+          "outputs": {
+            "target-0": {
+              "sha256": "39f13ac39a281941378a56facdc382fc46ff87f48fc0a2f695191a8951bd7f47"
+            },
+            "port-0": {
+              "sha256": "39f13ac39a281941378a56facdc382fc46ff87f48fc0a2f695191a8951bd7f47"
+            },
+            "target-1": {
+              "sha256": "39f13ac39a281941378a56facdc382fc46ff87f48fc0a2f695191a8951bd7f47"
+            },
+            "port-1": {
+              "sha256": "39f13ac39a281941378a56facdc382fc46ff87f48fc0a2f695191a8951bd7f47"
+            }
+          },
+          "pair_mismatches": 0,
+          "bypass_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        },
+        {
+          "segment": 5,
+          "selector_index": 20,
+          "bypass": false,
+          "outputs": {
+            "target-0": {
+              "sha256": "70fcb6576a3bc1028087fef636874e93c14c53e3766bd7e18815e524f69b3907"
+            },
+            "port-0": {
+              "sha256": "70fcb6576a3bc1028087fef636874e93c14c53e3766bd7e18815e524f69b3907"
+            },
+            "target-1": {
+              "sha256": "92ecdbeb895e736c506c625bf82942cc57b4c71153da200617937ab9999ebf5d"
+            },
+            "port-1": {
+              "sha256": "92ecdbeb895e736c506c625bf82942cc57b4c71153da200617937ab9999ebf5d"
+            }
+          },
+          "pair_mismatches": 0
+        },
+        {
+          "segment": 6,
+          "selector_index": 10,
+          "bypass": false,
+          "outputs": {
+            "target-0": {
+              "sha256": "1ebb818d042498d58d2b6c8d6421bab9c4a27393fa0ab77cadf882afb70d2c73"
+            },
+            "port-0": {
+              "sha256": "1ebb818d042498d58d2b6c8d6421bab9c4a27393fa0ab77cadf882afb70d2c73"
+            },
+            "target-1": {
+              "sha256": "a3b855973e5472e61250c1fe430766fa84d7a457377f9b61a1eb661930aa1943"
+            },
+            "port-1": {
+              "sha256": "a3b855973e5472e61250c1fe430766fa84d7a457377f9b61a1eb661930aa1943"
+            }
+          },
+          "pair_mismatches": 0
+        },
+        {
+          "segment": 7,
+          "selector_index": 20,
+          "bypass": true,
+          "outputs": {
+            "target-0": {
+              "sha256": "595f29a83c47666b1d9fc192e93c44110bd816b47ca7685cfae17924c1aecebb"
+            },
+            "port-0": {
+              "sha256": "595f29a83c47666b1d9fc192e93c44110bd816b47ca7685cfae17924c1aecebb"
+            },
+            "target-1": {
+              "sha256": "595f29a83c47666b1d9fc192e93c44110bd816b47ca7685cfae17924c1aecebb"
+            },
+            "port-1": {
+              "sha256": "595f29a83c47666b1d9fc192e93c44110bd816b47ca7685cfae17924c1aecebb"
+            }
+          },
+          "pair_mismatches": 0,
+          "bypass_input_mismatches": {
+            "target-0": 0,
+            "port-0": 0,
+            "target-1": 0,
+            "port-1": 0
+          }
+        }
+      ],
+      "pair_mismatches": 0,
+      "all_target_port_pairs_bit_identical": true,
+      "bypassed_segments_copy_input_exactly": true
+    }
+  ],
+  "summary": {
+    "run_count": 2,
+    "corresponding_instance_pairs": 4,
+    "values_compared": 262144,
+    "mismatches": 0,
+    "all_pairs_bit_identical": true,
+    "bypassed_segments_copy_input_exactly": true
+  },
+  "conclusion": "Mic 10/35/60 high-drive EQ and host Bypass automation matched at the tested 88.2 and 192 kHz settings; bypass segments copied inputs exactly and processing resumed bit-identically."
+}
