@@ -1,0 +1,196 @@
+{
+  "title": "High-drive mixed-EQ parity at small and large host block sizes",
+  "date": "2026-10-21",
+  "reference_plugin": "data/Burnley73.vst3",
+  "reference_sha256": "a08cb9fb1a4636a51f7b366940d2d6dffebf696ee1fec5bc43484763a97f381a",
+  "port_plugin": "build-win64/VST3/Burnley73.vst3",
+  "port_sha256": "9ca7a8cd411624d136c9b9dd8a66e3f9e6c42c21a00913cd02b1d7afb6cdbb2f",
+  "host_source": "codex-tmp/host-work/isolated-multinstance-highdrive-eq.cpp",
+  "host_source_sha256": "c398471ee054f54564c0a5a3738e1be4ca6f772084294aae9fbe2e7e26765b79",
+  "host_executable": "codex-tmp/host-work/isolated-multinstance-highdrive-eq-host.exe",
+  "host_executable_sha256": "00daf76611c2814e6dcfeeff9e5c4253135c5bf2dfca414ddd6176a5f0548775",
+  "model_selector_normalized": 0.5,
+  "model_selector_index": 10,
+  "eq_schedule": "Eight mixed three-band EQ states at 1024-frame boundaries, including EQ In Off/On; each state queues Low frequency/gain, Mid frequency/gain, High gain and EQ In together. High-drive deterministic stereo tones, noise and impulses at scale 8.",
+  "instance_setup": "Two licensed-target and two port instances; each receives isolated copies of the same input blocks.",
+  "runs": [
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 32,
+      "frames_per_instance": 8192,
+      "input_peak": 6.395262083420468,
+      "input_sha256": "b3bd52642b78ca506ebe0ebc8a5fe1d305e2d9280362d7c69f78677ccd1e9315",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "5c8ad57451ec1c1390122331dbe07abb6797ba44ba08cbc834f534f556989de1",
+          "port_sha256": "5c8ad57451ec1c1390122331dbe07abb6797ba44ba08cbc834f534f556989de1",
+          "max_absolute_error": 0.0
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "3f2944817a08348b7cb4143a53a33a99aba4b21b520542d52347c87b14e4a6ac",
+          "port_sha256": "3f2944817a08348b7cb4143a53a33a99aba4b21b520542d52347c87b14e4a6ac",
+          "max_absolute_error": 0.0
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 44100,
+      "block_size": 1024,
+      "frames_per_instance": 8192,
+      "input_peak": 6.395262083420468,
+      "input_sha256": "b3bd52642b78ca506ebe0ebc8a5fe1d305e2d9280362d7c69f78677ccd1e9315",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "74b284c958fd332d2894873c07854959796c909e0e27f0bf6e069625e412e2ca",
+          "port_sha256": "74b284c958fd332d2894873c07854959796c909e0e27f0bf6e069625e412e2ca",
+          "max_absolute_error": 0.0
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "4752a1a98a0637a3c25da330123b7ac5ac8a201bd90c34bca91a5d80d326c2a3",
+          "port_sha256": "4752a1a98a0637a3c25da330123b7ac5ac8a201bd90c34bca91a5d80d326c2a3",
+          "max_absolute_error": 0.0
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 32,
+      "frames_per_instance": 8192,
+      "input_peak": 5.962654720785837,
+      "input_sha256": "7816fb4a6b39ebfaa610c74aa977a9c574ad5fc962040040bd84366da456cf30",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "9eda49263f158d41207070b7dff84afb2069c6f1bdda1f86de1711093022841e",
+          "port_sha256": "9eda49263f158d41207070b7dff84afb2069c6f1bdda1f86de1711093022841e",
+          "max_absolute_error": 0.0
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "4b1a92698bb48ad9803be763d3922f63dbe6cd8e7a102d8fca8adc32c224e3a1",
+          "port_sha256": "4b1a92698bb48ad9803be763d3922f63dbe6cd8e7a102d8fca8adc32c224e3a1",
+          "max_absolute_error": 0.0
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 96000,
+      "block_size": 1024,
+      "frames_per_instance": 8192,
+      "input_peak": 5.962654720785837,
+      "input_sha256": "7816fb4a6b39ebfaa610c74aa977a9c574ad5fc962040040bd84366da456cf30",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "b9a98364d8b3d086ef0cc9c28b3f79bb47916a569a705e70f496798c33d64955",
+          "port_sha256": "b9a98364d8b3d086ef0cc9c28b3f79bb47916a569a705e70f496798c33d64955",
+          "max_absolute_error": 0.0
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "5dc4189785f79fd8be5439daa6e68741092b7d961663a989aa2f007c58b02880",
+          "port_sha256": "5dc4189785f79fd8be5439daa6e68741092b7d961663a989aa2f007c58b02880",
+          "max_absolute_error": 0.0
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 32,
+      "frames_per_instance": 8192,
+      "input_peak": 5.975532976960347,
+      "input_sha256": "716fc6f105c93de1e7a175180eba22b230bf006ec266285ea0cb9ec4cc7bb87d",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "a6562c2c1af2a57ae17a613cc92410d901022d9ac9bf51b72ed78117b5723677",
+          "port_sha256": "a6562c2c1af2a57ae17a613cc92410d901022d9ac9bf51b72ed78117b5723677",
+          "max_absolute_error": 0.0
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "9db8b5f1b1861a05f6eea91dddbe0608a4624e0800c0897b42aec10196f3ad85",
+          "port_sha256": "9db8b5f1b1861a05f6eea91dddbe0608a4624e0800c0897b42aec10196f3ad85",
+          "max_absolute_error": 0.0
+        }
+      ]
+    },
+    {
+      "sample_rate_hz": 192000,
+      "block_size": 1024,
+      "frames_per_instance": 8192,
+      "input_peak": 5.975532976960347,
+      "input_sha256": "716fc6f105c93de1e7a175180eba22b230bf006ec266285ea0cb9ec4cc7bb87d",
+      "input_unchanged_after_processing": true,
+      "pairs": [
+        {
+          "pair": "target-0/port-0",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "906f7b13fec55507ee2c1a2c77d8f335750c9195cb55a0b87ab3f239c7c07833",
+          "port_sha256": "906f7b13fec55507ee2c1a2c77d8f335750c9195cb55a0b87ab3f239c7c07833",
+          "max_absolute_error": 0.0
+        },
+        {
+          "pair": "target-1/port-1",
+          "compared_float64_values": 16384,
+          "bit_mismatches": 0,
+          "target_sha256": "35e51091005049428dca7c29bed6c38e7ed549587091fdb9c0cad303d89a2fae",
+          "port_sha256": "35e51091005049428dca7c29bed6c38e7ed549587091fdb9c0cad303d89a2fae",
+          "max_absolute_error": 0.0
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "runs": 6,
+    "compared_float64_values": 196608,
+    "bit_mismatches": 0,
+    "max_absolute_error": 0.0
+  },
+  "rea_evidence_export": "evidence/rea-saturation-sample-function-refresh-20261021.json",
+  "rea_snapshot": "evidence/rea-saturation-sample-function-snapshot-20261021.json",
+  "rea_functions": [
+    {
+      "procedure": "FUN_1800152c0",
+      "evidence_id": "ev_4749950d134de09866b6e6bb671e7753a947ab651ff6c6008bbae04e71086249"
+    },
+    {
+      "procedure": "FUN_180016a90",
+      "evidence_id": "ev_88fdb9d22c10f9ee2d24e047b11df352519bf4ea53361a2cd830aab4a58170b8"
+    }
+  ],
+  "limitations": [
+    "This block-size expansion holds the model selector at Mic index 10 and tests the listed EQ transition schedule; all-selector dense EQ and high-drive comparisons are recorded separately.",
+    "The licensed target returns E_NOINTERFACE from setProcessing(1), but process() rendered every requested frame."
+  ]
+}
